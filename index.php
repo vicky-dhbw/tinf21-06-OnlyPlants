@@ -1,3 +1,13 @@
+<?php
+session_start();
+$_SESSION['currentPage']="index.php";
+$_SESSION['plants_page']="php/plants.php";
+$_SESSION['premiumContent_page']="php/premiumContent.php";
+$_SESSION['contact_page']="php/contact.php";
+$_SESSION['Logo']="assets/images/Logo.png";
+$_SESSION['home_page']="index.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +17,12 @@
     <title>Document</title>
 </head>
 <body>
-<h1>
-    <img id="Logo" src="assets/images/Logo.png" width="350" height="150">
-</h1>
+<?php include __DIR__."/php/templates/header.php"; ?>
+
+<h1>Index.php</h1>
+
+</span>
+
 
 </body>
 </html>

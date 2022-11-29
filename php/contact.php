@@ -1,3 +1,11 @@
+<?php
+session_start();
+$_SESSION['Logo']="../assets/images/Logo.png";
+$_SESSION['plants_page']="plants.php";
+$_SESSION['premiumContent_page']="premiumContent.php";
+$_SESSION['contact_page']="contact.php";
+$_SESSION['home_page']="../index.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +16,8 @@
     <title>Document</title>
 </head>
 <body>
+<?php include __DIR__.'/templates/header.php'; ?>
+<h1>Contact Page</h1>
 
 </body>
 </html>
