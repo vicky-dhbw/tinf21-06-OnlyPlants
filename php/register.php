@@ -53,7 +53,7 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <a href="signin.php" target="_parent"><button type="button" class="btn1 mt-3 mb-5">register now</button></a>
+                            <a href="signin.php" target="_parent"><button type="button" class="btn1 mt-3 mb-3">register now</button></a>
                         </div>
                     </div>
 
