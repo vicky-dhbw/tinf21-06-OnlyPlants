@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row no-gutters">
             <div class="col-lg-5">
-                <img src="plant.jpg" class="img-fluid" alt="">
+                <img src="../assets/images/plant.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-lg-7 px-5 pt-5">
                 <img src="../assets/images/Logo.png" alt="logo" height="100" width="250">
