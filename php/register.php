@@ -20,26 +20,40 @@
             </div>
             <div class="col-lg-7 px-5 pt-5">
                 <img src="../assets/images/Logo.png" alt="logo" height="100" width="250">
-                <h4>Sign into your account</h4>
-                <form>
+                <h4>Register yourself!</h4>
+                <form action="process_form.php" method="post">
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="email" placeholder="email address" class="form-control my-3 p-4">
+                            <input type="text" name="name" placeholder="enter your name" class="form-control my-2 p-2">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="password" placeholder="******" class="form-control my-3 p-4">
+                            <input type="text" name="email" placeholder="enter your email" class="form-control my-2 p-2">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="password" name="password" placeholder="******" class="form-control my-2 p-2">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <select id="prior" name="user_type">
+                                <option value="user" selected>User</option>
+                                <option value="admin" >Admin</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <a href="../index.php" target="_parent"><button type="button" class="btn1 mt-3 mb-5">Login</button></a>
+                            <a href="signin.php" target="_parent"><button type="button" class="btn1 mt-3 mb-5">register now</button></a>
                         </div>
                     </div>
-                    <p>Don't have an account? <a href="register.php">register here</a></p>
+
+                    <p>Already have an account? <a href="signin.php">sign in here</a></p>
                 </form>
             </div>
         </div>
