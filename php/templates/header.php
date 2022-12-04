@@ -15,9 +15,13 @@ session_start();
 </head>
 <body>
 <header>
-    <img class="logo" src="<?php echo $_SESSION['Logo']?>" alt="logo" height="150" width="350">
+    <img class="logo" src="<?php echo $_SESSION['Logo']?>" alt="logo" height="100" width="250">
     <link rel="stylesheet" href="../css/headerstyle.css">
     <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
         <ul class="nav_links">
             <li><a href="<?php echo $_SESSION['home_page']?>">Home</a></li>
             <li><a href="<?php echo $_SESSION['plants_page'];?>">Plants</a></li>
