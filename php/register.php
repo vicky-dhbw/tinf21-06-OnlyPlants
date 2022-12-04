@@ -40,10 +40,14 @@
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <select id="prior" name="user_type">
-                                <option value="user" selected>User</option>
-                                <option value="admin" >Admin</option>
-                            </select>
+                            <label>
+                                <input type="radio" name="ok" value="1" checked>
+                                user
+                            </label>
+                            <label>
+                                <input type="radio" name="ok" value="2">
+                                admin
+                            </label>
                         </div>
                     </div>
 
