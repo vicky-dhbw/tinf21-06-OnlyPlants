@@ -6,6 +6,7 @@ $_SESSION['premiumContent_page']="php/premiumContent.php";
 $_SESSION['contact_page']="php/contact.php";
 $_SESSION['Logo']="assets/images/Logo.png";
 $_SESSION['home_page']="index.php";
+$_SESSION['signin_page']="php/signin.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

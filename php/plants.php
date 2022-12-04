@@ -5,6 +5,7 @@ $_SESSION['plants_page']="plants.php";
 $_SESSION['premiumContent_page']="premiumContent.php";
 $_SESSION['contact_page']="contact.php";
 $_SESSION['home_page']="../index.php";
+$_SESSION['signin_page']="signin.php";
 ?>
 <!doctype html>
 <html lang="en">

@@ -30,7 +30,7 @@ session_start();
             <li><a href="">Something</a></li>
         </ul>
     </nav>
-    <a class="cta" href=""><button>Sign In</button></a>
+    <a class="cta" href="<?php echo $_SESSION['signin_page'];?>"><button>Sign In</button></a>
 </header>
 </body>
 </html>
