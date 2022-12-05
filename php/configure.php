@@ -28,8 +28,9 @@ $conn->exec($sql);
 echo "users table created successfully";
 
 
-
-$sql="INSERT INTO users(name,email,password,type) VALUES ('Admin','admin@admin.de','admin123','admin')";
+$sql = "SELECT email FROM users WHERE firstName='Max';";
+if($pdo->query($sql)==null)
+    $sql="INSERT INTO users(name,email,password,type) VALUES ('Admin','admin@admin.de','admin123','admin')";
 $conn->exec($sql);
 
 $sql="INSERT INTO users(name,email,password,type) VALUES ('User','user@user.de','user123','user')";
