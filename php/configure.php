@@ -1,20 +1,45 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = '';
 
-$pdo = new PDO('mysql:host=localhost', 'root', '');
-$sql = "CREATE DATABASE IF NOT EXISTS OnlyPlants;";
-$pdo->query($sql);
+
+$conn = new PDO("mysql:host=$servername", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "CREATE DATABASE IF NOT EXISTS OnlyPlants";
+$conn->exec($sql);
+echo "Database created successfully<br>";
+
+$sql=null;
+
+$conn = new PDO("mysql:host=$servername;dbname=OnlyPlants", $username, $password);
+// sql to create table
+$sql = "CREATE TABLE IF NOT EXISTS users(
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+  name VARCHAR(30) NOT NULL,
+  email VARCHAR(30) NOT NULL,
+  password VARCHAR(30) NOT NULL,
+  type VARCHAR(30) NOT NULL,
+  reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  )";
+
+// use exec() because no results are returned
+$conn->exec($sql);
+echo "users table created successfully";
 
 
-$pdo = new PDO('mysql:host=localhost;dbname=OnlyPlants;charset=utf8', 'root', '');
-$sql = "CREATE TABLE IF NOT EXISTS users (
-  id int unsigned NOT NULL AUTO_INCREMENT,
-  email varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  password varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  firstName varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  lastname varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (id), UNIQUE (email)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-//SQL-Befehl ausführen:
-$pdo->query($sql);
+
+$sql="INSERT INTO users(name,email,password,type) VALUES ('Admin','admin@admin.de','admin123','admin')";
+$conn->exec($sql);
+
+$sql="INSERT INTO users(name,email,password,type) VALUES ('User','user@user.de','user123','user')";
+$conn->exec($sql);
+
+echo "data taken";
+
+
+
+
+
+
+

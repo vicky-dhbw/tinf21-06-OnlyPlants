@@ -24,49 +24,7 @@ $_SESSION['signin_page']="php/signin.php";
 
 <h1>Home</h1>
 
-<?php
-//Verbindung zu phpMyAdmin herstellen:
-$pdo = new PDO('mysql:host=localhost', 'root', '');
-//SQL-Befehl, um Datenbank zu erstellen:
-$sql = "CREATE DATABASE IF NOT EXISTS OnlyPlants;";
-//SQL-Befehl ausführen:
-$pdo->query($sql);
-
-
-//Verbindung zur Datenbank herstellen:
-$pdo = new PDO('mysql:host=localhost;dbname=OnlyPlants;charset=utf8', 'root', '');
-//Tabelle erstellen:
-$sql = "CREATE TABLE IF NOT EXISTS users (
-  id int unsigned NOT NULL AUTO_INCREMENT,
-  email varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  password varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  firstName varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  lastname varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (id), UNIQUE (email)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-//SQL-Befehl ausführen:
-$pdo->query($sql);
-
-//Wegen Fehlermeldung if Prüfung:
-$sql = "SELECT email FROM users WHERE firstName='Max';";
-if($pdo->query($sql)==null) {
-//User einfügen:
-$sql = "INSERT INTO users (email, password, firstName, lastname)
-    VALUES('admin@admin.de','Geheim#2022','Max','Mustermann')";
-//SQL-Befehl ausführen:
-$pdo->query($sql);
-}
-
-//Datenabfrage:
-$sql = "SELECT email, firstName, lastname FROM users";
-foreach ($pdo->query($sql) as $row) {
-   echo $row['firstName']." ".$row['lastname']."<br>";
-   echo "E-Mail: ".$row['email']."<br><br>";
-}
-?>
-
+<?php include "php/configure.php"?>
 
 <!--This link has to be in the end of the body for bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
