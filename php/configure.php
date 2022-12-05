@@ -28,13 +28,17 @@ $conn->exec($sql);
 echo "users table created successfully";
 
 
-$sql = "SELECT email FROM users WHERE firstName='Max';";
-if($pdo->query($sql)==null)
+$sql = "SELECT email FROM users WHERE name='Admin';";
+if($pdo->query($sql)==null){
     $sql="INSERT INTO users(name,email,password,type) VALUES ('Admin','admin@admin.de','admin123','admin')";
-$conn->exec($sql);
+    $conn->exec($sql);
+}
 
-$sql="INSERT INTO users(name,email,password,type) VALUES ('User','user@user.de','user123','user')";
-$conn->exec($sql);
+$sql = "SELECT email FROM users WHERE name='User';";
+if($pdo->query($sql)==null){
+    $sql="INSERT INTO users(name,email,password,type) VALUES ('User','user@user.de','user123','user')";
+    $conn->exec($sql);
+}
 
 echo "data taken";
 
