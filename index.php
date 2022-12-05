@@ -49,11 +49,15 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
 //SQL-Befehl ausführen:
 $pdo->query($sql);
 
+//Wegen Fehlermeldung if Prüfung:
+$sql = "SELECT email FROM users WHERE firstName='Max';";
+if($pdo->query($sql)==null) {
 //User einfügen:
-$sql = "INSERT INTO users (email, password, firstName, lastname) 
+$sql = "INSERT INTO users (email, password, firstName, lastname)
     VALUES('admin@admin.de','Geheim#2022','Max','Mustermann')";
 //SQL-Befehl ausführen:
 $pdo->query($sql);
+}
 
 //Datenabfrage:
 $sql = "SELECT email, firstName, lastname FROM users";
@@ -61,12 +65,6 @@ foreach ($pdo->query($sql) as $row) {
    echo $row['firstName']." ".$row['lastname']."<br>";
    echo "E-Mail: ".$row['email']."<br><br>";
 }
-/*
-  'straße' varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  'nr' int NOT NULL,
-  'ort' varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  'plz' int NOT NULL,
-  'Land' varchar(255) COLLATE utf8_unicode_ci NOT NULL,*/
 ?>
 
 

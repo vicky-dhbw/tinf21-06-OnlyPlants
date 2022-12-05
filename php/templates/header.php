@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();  Wegen Fehlermeldung auskommentiert
 ?>
 
 <!doctype html>
