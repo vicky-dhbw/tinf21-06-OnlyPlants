@@ -8,7 +8,6 @@ $conn = new PDO("mysql:host=$servername", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "CREATE DATABASE IF NOT EXISTS OnlyPlants";
 $conn->exec($sql);
-echo "Database created successfully<br>";
 
 $sql=null;
 
@@ -24,7 +23,6 @@ $sql = "CREATE TABLE IF NOT EXISTS users(
   )";
 
 $conn->exec($sql);
-echo "users table created successfully";
 
 $email = "admin@admin.de";
 $stmt = $conn->prepare("SELECT * FROM users WHERE email=?");
@@ -33,7 +31,6 @@ $user = $stmt->fetch();
 if (!$user) {
     $sql="INSERT INTO users(name,email,password,type) VALUES ('Admin','admin@admin.de','admin123','admin')";
     $conn->exec($sql);
-    echo "all good";
 }
 
 $email = "user@user.de";
@@ -43,7 +40,6 @@ $user = $stmt->fetch();
 if (!$user) {
     $sql="INSERT INTO users(name,email,password,type) VALUES ('User','user@user.de','user123','user')";
     $conn->exec($sql);
-    echo "all good";
 }
 
 
