@@ -29,16 +29,13 @@ echo "users table created successfully";
 
 
 $sql = "SELECT email FROM users WHERE name='Admin';";
-if($conn->query($sql)==null){
     $sql="INSERT INTO users(name,email,password,type) VALUES ('Admin','admin@admin.de','admin123','admin')";
     $conn->exec($sql);
-}
+
 
 $sql = "SELECT email FROM users WHERE name='User';";
-if($conn->query($sql)==null){
     $sql="INSERT INTO users(name,email,password,type) VALUES ('User','user@user.de','user123','user')";
     $conn->exec($sql);
-}
 
 echo "data taken";
 
