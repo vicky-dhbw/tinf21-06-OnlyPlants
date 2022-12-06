@@ -1,0 +1,79 @@
+@media only screen and (min-width: 1101px) {
+    .openclose {
+        margin-left: 5%;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .buttonspan {
+        display: block;
+        background-color: #90EE90;
+    }
+    .spanlinebreak {
+        background-color: #90EE90;
+    }
+    #table1 {
+    width: 90%;
+    padding-left:5%;
+    padding-right:5%;
+    border-radius: 10px;
+    margin-left: 5%;
+    background-color: #90EE90;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+.h1 {
+    color: black;
+    padding: 1% 5% 1% 0%;
+    text-align: left;
+    background-color: #90EE90;
+}
+.f1 {
+    background-color: #90EE90;
+}
+.c1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    border-style: none;
+    background-color: #90EE90;
+    padding-right:3px;
+    padding-left: 3px;
+    margin: 5px 5px 5px 5px;
+    width: 150px;
+    display: inline-block;
+}
+.c2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 10px;
+    color: grey;
+    padding-right:3px;
+    padding-left: 3px;
+    margin: 5px 5px 5px 5px;
+    width: 150px;
+    display: inline-block;
+}
+td, th {
+    background-color: #90EE90;
+}
+.b1 {
+    width: 100px;
+    height: 22px;
+    margin: 5px 5px 5px 5px;
+padding: 2px 25px 7px;
+background-color: #1F8475;
+color: white;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+transition: all 0.3s ease 0s;
+}
+}
