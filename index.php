@@ -8,8 +8,8 @@ $_SESSION['Logo']="assets/images/Logo.png";
 $_SESSION['home_page']="index.php";
 $_SESSION['signin_page']="php/signin.php";
 
-include_once "php/configure.php";
-?>
+include_once "php/configure.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

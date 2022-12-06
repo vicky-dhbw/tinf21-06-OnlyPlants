@@ -23,21 +23,29 @@ $sql = "CREATE TABLE IF NOT EXISTS users(
   reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   )";
 
-// use exec() because no results are returned
 $conn->exec($sql);
 echo "users table created successfully";
 
-
-$sql = "SELECT email FROM users WHERE name='Admin';";
+$email = "admin@admin.de";
+$stmt = $conn->prepare("SELECT * FROM users WHERE email=?");
+$stmt->execute([$email]);
+$user = $stmt->fetch();
+if (!$user) {
     $sql="INSERT INTO users(name,email,password,type) VALUES ('Admin','admin@admin.de','admin123','admin')";
     $conn->exec($sql);
+    echo "all good";
+}
 
-
-$sql = "SELECT email FROM users WHERE name='User';";
+$email = "user@user.de";
+$stmt = $conn->prepare("SELECT * FROM users WHERE email=?");
+$stmt->execute([$email]);
+$user = $stmt->fetch();
+if (!$user) {
     $sql="INSERT INTO users(name,email,password,type) VALUES ('User','user@user.de','user123','user')";
     $conn->exec($sql);
+    echo "all good";
+}
 
-echo "data taken";
 
 
 
