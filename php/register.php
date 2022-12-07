@@ -21,7 +21,7 @@
             <div class="col-lg-7 px-5 pt-5">
                 <img src="../assets/images/Logo.png" alt="logo" height="100" width="250">
                 <h4>Register yourself!</h4>
-                <form action="process_form.php" method="post">
+                <form action="process-form.php" method="post">
                     <div class="form-row">
                         <div class="col-lg-7">
                             <input type="text" name="name" placeholder="enter your name" class="form-control my-2 p-2">
@@ -41,11 +41,11 @@
                     <div class="form-row">
                         <div class="col-lg-7">
                             <label>
-                                <input type="radio" name="ok" value="1" checked>
+                                <input type="radio" name="type" value="user" checked>
                                 user
                             </label>
                             <label>
-                                <input type="radio" name="ok" value="2">
+                                <input type="radio" name="type" value="admin">
                                 admin
                             </label>
                         </div>
@@ -53,7 +53,7 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <a href="signin.php" target="_parent"><button type="button" class="btn1 mt-3 mb-3">register now</button></a>
+                            <a href="signin.php" target="_parent"><button type="submit" class="btn1 mt-3 mb-3">register now</button></a>
                         </div>
                     </div>
 
