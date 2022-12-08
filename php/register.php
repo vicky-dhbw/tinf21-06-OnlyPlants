@@ -56,7 +56,6 @@
                             <button type="submit" class="btn1 mt-3 mb-3">register now</button>
                         </div>
                     </div>
-
                     <p>Already have an account? <a href="signin.php">sign in here</a></p>
                 </form>
             </div>
