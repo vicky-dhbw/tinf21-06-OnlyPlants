@@ -21,22 +21,22 @@
             <div class="col-lg-7 px-5 pt-5">
                 <img src="../assets/images/Logo.png" alt="logo" height="100" width="250">
                 <h4>Sign into your account</h4>
-                <form>
+                <form action="process-sign-in.php" method="post">
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="email" placeholder="email address" class="form-control my-3 p-4">
+                            <input type="email" placeholder="email address" name=email class="form-control my-3 p-4">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="password" placeholder="******" class="form-control my-3 p-4">
+                            <input type="password" placeholder="******" name="password" class="form-control my-3 p-4">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <a href="../index.php" target="_parent"><button type="button" class="btn1 mt-3 mb-5">Login</button></a>
+                            <button type="submit" class="btn1 mt-3 mb-5">Login</button>
                         </div>
                     </div>
                     <p>Don't have an account? <a href="register.php">register here</a></p>
