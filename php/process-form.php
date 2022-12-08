@@ -32,10 +32,10 @@ if(strlen($name)!=0&&strlen($password)!=0&&strlen($email)!=0){
     $email=null;
     $password=null;
 
-    include "signin.php";
+    header("Location: signin.php");
 }
 else{
-    include "register.php";
+    header("Location: register.php");
 }
 
 
