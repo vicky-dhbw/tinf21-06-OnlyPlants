@@ -15,6 +15,7 @@ echo "$password"."<br>";
 echo "$type"."<br>";
 var_dump($_POST);
 */
+
 try {
     $conn = new PDO("mysql:host=$servername;dbname=OnlyPlants", 'root', '');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,17 +23,22 @@ try {
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
-if(isset($name,$password,$email)){
+if(strlen($name)!=0&&strlen($password)!=0&&strlen($email)!=0){
+
     $sql="INSERT INTO users(name,email,password,type) VALUES ('$name','$email','$password','$type')";
     $conn->exec($sql);
     //echo "data taken";
+    $name=null;
+    $email=null;
+    $password=null;
+
+    include "signin.php";
+}
+else{
+    include "register.php";
 }
 
-$name=null;
-$email=null;
-$password=null;
 
-include_once "signin.php";
 
 
 
