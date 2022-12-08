@@ -1,45 +1,29 @@
 *{
+    margin: 0;
     padding: 0;
-    margin:0;
     box-sizing: border-box;
-}
-body{
-    background-image: url("../assets/images/plant_background.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.row{
-    background: white;
-    border-radius: 30px;
-    box-shadow: 12px 12px 22px grey;
-}
-img{
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-
+    font-family: 'Poppins', sans-serif;
 }
 
-.btn1{
-    border: none;
-    outline: none;
-    height: 50px;
+.container {
     width: 100%;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    font-weight: bold;
-}
-.btn1:hover{
-    background: #8DB87A;
-    border: 1px solid;
-    color: black;
+    height: 100vh;
+    background: #3c5077;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/*
---------- Popup design------------
- */
+.btn{
+    padding: 10px 60px;
+    background: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
+}
 
 .popup{
     width: 400px;
