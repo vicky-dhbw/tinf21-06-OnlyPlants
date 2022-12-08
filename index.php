@@ -25,6 +25,8 @@ include_once "php/configure.php"; ?>
 
 <h1>Home</h1>
 Vicky Sharma
+<?php echo $_SESSION['sign-in-sign-out'];
+echo "myBoobs";?>
 
 <!--This link has to be in the end of the body for bootstrap-->
 </body>

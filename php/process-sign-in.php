@@ -1,10 +1,12 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = '';
 
 $email=$_POST["email"];
 $password=$_POST["password"];
+$_SESSION['sign-in-sign-out']=0;
 
 /*
 echo "$name"."<br>";
@@ -30,6 +32,8 @@ if(strlen($email)!=0&&strlen($password!=0)){
     $test_password = $stmt->fetch();
 
     if(strcmp($test_password[0],$password)==0){
+
+        $_SESSION['sign-in-sign-out']=1;
         header ("Location: ../index.php");
         /*echo "$password";
         echo "$test_password[0]";

@@ -1,5 +1,6 @@
 <?php
 //session_start();  Wegen Fehlermeldung auskommentiert
+session_start();
 ?>
 
 <!doctype html>
@@ -30,7 +31,19 @@
             <li><a href="">Something</a></li>
         </ul>
     </nav>
-    <a class="cta" href="<?php echo $_SESSION['signin_page'];?>"><button>Sign In</button></a>
+    <a class="cta" href="<?php if($_SESSION['sign-in-sign-out']==1){$_SESSION['signed-in']=true;echo $_SESSION['home_page'];}else{echo $_SESSION['signin_page'];}?>"><button>
+            <?php
+             if($_SESSION['sign-in-sign-out']==1){
+                 echo "SIGN OUT";
+                 $_SESSION['sign-in-sign-out']=0;
+             }elseif ($_SESSION['signed-in']){
+                 echo "SIGN OUT";
+             }
+             else{
+                 echo "SIGN IN";
+             }
+             ?></button>
+    </a>
 </header>
 </body>
 </html>
