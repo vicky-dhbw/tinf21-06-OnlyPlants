@@ -26,7 +26,7 @@ include_once "php/configure.php"; ?>
 
 <h1>Home</h1>
 <?php echo $_SESSION['sign-in-sign-out'];
-echo $_SESSION['user'];
+echo "User: ".$_SESSION['user'];
 
 
 ?>
