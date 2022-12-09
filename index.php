@@ -8,6 +8,7 @@ $_SESSION['Logo']="assets/images/Logo.png";
 $_SESSION['home_page']="index.php";
 $_SESSION['signin_page']="php/signin.php";
 
+
 include_once "php/configure.php"; ?>
 
 <!DOCTYPE html>
@@ -24,7 +25,11 @@ include_once "php/configure.php"; ?>
 <?php include __DIR__."/php/templates/header.php"; ?>
 
 <h1>Home</h1>
-<?php echo $_SESSION['sign-in-sign-out']; ?>
+<?php echo $_SESSION['sign-in-sign-out'];
+echo $_SESSION['user'];
+
+
+?>
 
 <!--This link has to be in the end of the body for bootstrap-->
 </body>

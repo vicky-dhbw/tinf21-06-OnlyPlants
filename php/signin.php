@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../css/signin.css">
-    <title>Hello, world!</title>
+    <title></title>
 </head>
 <body>
 <section class="Form my-4 mx-5">
@@ -36,10 +36,11 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <button type="submit" class="btn1 mt-3 mb-5">Login</button>
+                            <button type="submit" class="btn1 mt-3 mb-3">Login</button>
                         </div>
                     </div>
                     <p>Don't have an account? <a href="register.php">register here</a></p>
+                    <p>See our website? <a href="../index.php">visit website</a></p>
                 </form>
             </div>
         </div>

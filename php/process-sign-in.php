@@ -33,6 +33,10 @@ if(strlen($email)!=0&&strlen($password!=0)){
 
     if(strcmp($test_password[0],$password)==0){
 
+        $stmt= $conn->prepare("SELECT name FROM users WHERE email=?");
+        $stmt->execute([$email]);
+        $test_name = $stmt->fetch();
+        $_SESSION['user']=$test_name[0];
         $_SESSION['sign-in-sign-out']=1;
         header ("Location: ../index.php");
         $password=null;

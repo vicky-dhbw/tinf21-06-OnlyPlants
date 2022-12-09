@@ -1,6 +1,7 @@
 <?php
 //session_start();  Wegen Fehlermeldung auskommentiert
 session_start();
+$is_signed_in=$_SESSION['sign-in-sign-out']==1 ? "SIGN OUT": "SIGN IN";
 ?>
 
 <!doctype html>
@@ -31,17 +32,19 @@ session_start();
             <li><a href="">Something</a></li>
         </ul>
     </nav>
-    <a class="cta" href="<?php if($_SESSION['sign-in-sign-out']==1){echo $_SESSION['home_page'];}else{echo $_SESSION['signin_page'];}?>"><button>
-            <?php
-             if($_SESSION['sign-in-sign-out']==1){
-                 echo "SIGN OUT";
-                 $_SESSION['sign-in-sign-out']=0;
-             }
-             else{
-                 echo "SIGN IN";
-             }
-             ?></button>
+    <a class="cta" href="<?php if(!$is_signed_in){echo $_SESSION['home_page'];}else{echo $_SESSION['signin_page'];}?>">
+        <button>
+            <?php  echo $is_signed_in;
+            if($_SESSION['sign-in-sign-out']==1){
+                $_SESSION['sign-in-sign-out']=0;
+            }
+            else{
+                $_SESSION['user']=null;
+            }
+            ?>
+        </button>
     </a>
 </header>
+
 </body>
 </html>
