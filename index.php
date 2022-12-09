@@ -24,9 +24,7 @@ include_once "php/configure.php"; ?>
 <?php include __DIR__."/php/templates/header.php"; ?>
 
 <h1>Home</h1>
-Vicky Sharma
-<?php echo $_SESSION['sign-in-sign-out'];
-echo "myBoobs";?>
+<?php echo $_SESSION['sign-in-sign-out']; ?>
 
 <!--This link has to be in the end of the body for bootstrap-->
 </body>
