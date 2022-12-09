@@ -35,16 +35,10 @@ if(strlen($email)!=0&&strlen($password!=0)){
 
         $_SESSION['sign-in-sign-out']=1;
         header ("Location: ../index.php");
-        /*echo "$password";
-        echo "$test_password[0]";
-        echo "---------";*/
         $password=null;
     }
     else{
         header("Location: signin.php");
-        /*echo "$password";
-        echo "$test_password[0]";
-        echo "XXXXXXXXXX";*/
         $password=null;
     }
 }
