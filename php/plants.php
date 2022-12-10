@@ -6,6 +6,7 @@ $_SESSION['premiumContent_page']="premiumContent.php";
 $_SESSION['contact_page']="contact.php";
 $_SESSION['home_page']="../index.php";
 $_SESSION['signin_page']="signin.php";
+$_SESSION['controlButtonPage']='controlButton.php';
 ?>
 <!doctype html>
 <html lang="en">

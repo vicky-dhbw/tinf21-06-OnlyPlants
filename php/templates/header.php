@@ -36,10 +36,11 @@ if($_SESSION['sign-in-sign-out']==1){
             <li><a href="">Something</a></li>
         </ul>
     </nav>
-        <button onclick="<?php session_start(); if(isset($_SESSION['sign-in-sign-out'])){header($_SESSION['home_page']);}
-        else{header($_SESSION['signin_page']);}?>">
+    <form method="post" action="<?php session_start(); echo $_SESSION['controlButtonPage']?>">
+        <button type="submit" name="signInButton" >
             <?php session_start(); echo $_SESSION['is_signed_in']?>
         </button>
+    </form>
 </header>
 
 </body>
