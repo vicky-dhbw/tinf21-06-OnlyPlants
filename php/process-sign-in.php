@@ -6,7 +6,6 @@ $password = '';
 
 $email=$_POST["email"];
 $password=$_POST["password"];
-$_SESSION['sign-in-sign-out']=0;
 
 /*
 echo "$name"."<br>";

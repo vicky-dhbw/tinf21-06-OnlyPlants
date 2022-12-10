@@ -1,15 +1,16 @@
 <?php
 session_start();
+
+require "php/configure.php";
 $_SESSION['currentPage']="index.php";
 $_SESSION['plants_page']="php/plants.php";
 $_SESSION['premiumContent_page']="php/premiumContent.php";
 $_SESSION['contact_page']="php/contact.php";
 $_SESSION['Logo']="assets/images/Logo.png";
-$_SESSION['home_page']="index.php";
+$_SESSION['home_page']="#";
 $_SESSION['signin_page']="php/signin.php";
 
-
-include_once "php/configure.php"; ?>
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +24,11 @@ include_once "php/configure.php"; ?>
 </head>
 <body>
 <?php include __DIR__."/php/templates/header.php"; ?>
-
 <h1>Home</h1>
-<?php echo $_SESSION['sign-in-sign-out'];
-echo "User: ".$_SESSION['user'];
-
+<?php session_start();
+echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
+echo "USER: ".$_SESSION['user']."<br>";
+echo "USER ".$_SESSION['is_signed_in'];
 
 ?>
 

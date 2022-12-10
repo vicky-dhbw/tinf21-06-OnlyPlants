@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_SESSION['Logo']="../assets/images/Logo.png";
-$_SESSION['plants_page']="plants.php";
+$_SESSION['plants_page']="#";
 $_SESSION['premiumContent_page']="premiumContent.php";
 $_SESSION['contact_page']="contact.php";
 $_SESSION['home_page']="../index.php";
@@ -110,7 +110,11 @@ $_SESSION['signin_page']="signin.php";
 <?php
 $color = $_GET["color"]??"Standardwert";
 $height = $_GET["height"]??"Standardwert";
-echo $color." ".$height
+echo $color." ".$height;
+echo"<br>";
+echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
+echo "USER: ".$_SESSION['user']."<br>";
+echo "USER ".$_SESSION['is_signed_in'];
 ?>
 </body>
 </html>
