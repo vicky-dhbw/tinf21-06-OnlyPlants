@@ -31,7 +31,7 @@ $currentPage='index';
 echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
 echo "USER: ".$_SESSION['user']."<br>";
 echo "USER ".$_SESSION['is_signed_in'];
-include "php/templates/footer.php"
+echo session_id();
 ?>
 
 </body>

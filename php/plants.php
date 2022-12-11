@@ -117,6 +117,7 @@ echo"<br>";
 echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
 echo "USER: ".$_SESSION['user']."<br>";
 echo "USER ".$_SESSION['is_signed_in'];
+echo session_id();
 ?>
 </body>
 </html>

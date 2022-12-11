@@ -42,6 +42,22 @@ if (!$user) {
     $conn->exec($sql);
 }
 
+$sql = "CREATE TABLE IF NOT EXISTS plants(
+  plantID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+  id INT(6) NOT NULL,
+  url VARCHAR(60) NOT NULL,
+  name VARCHAR(30) NOT NULL,
+  category VARCHAR(30) NOT NULL,
+  type VARCHAR(30) NOT NULL,
+  color VARCHAR(30) NOT NULL,
+  height VARCHAR(30) NOT NULL,
+  age VARCHAR(30) NOT NULL,
+  isPremium INT(6),
+  created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  )";
+
+$conn->exec($sql);
+
 
 
 

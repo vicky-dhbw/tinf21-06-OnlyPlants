@@ -46,7 +46,7 @@ header{
 
 button{
     padding: 9px 25px;
-    background-color: #1F8475;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 50px;
@@ -55,7 +55,7 @@ button{
 }
 
 button:hover{
-    background-color: black;
+    background-color: #1F8475;
 }
 .checkbtn{
     font-size: 30px;
