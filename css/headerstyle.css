@@ -9,7 +9,7 @@
 
 li,a,button{
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 16px;
     color: mediumseagreen;
     text-decoration: none;
@@ -20,6 +20,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+    margin-top: 3%;
 }
 
 .logo {
@@ -39,7 +40,7 @@ header{
     transition: all 0.3s ease 0s;
 }
 
-.nav_links li a:hover{
+.nav_links li a:hover, li a.active{
     color: black;
 }
 
@@ -54,7 +55,7 @@ button{
 }
 
 button:hover{
-    background-color: #1F8475;
+    background-color: black;
 }
 .checkbtn{
     font-size: 30px;

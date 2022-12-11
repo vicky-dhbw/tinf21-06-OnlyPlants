@@ -10,6 +10,7 @@ $_SESSION['Logo']="assets/images/Logo.png";
 $_SESSION['home_page']="#";
 $_SESSION['signin_page']="php/signin.php";
 $_SESSION['controlButtonPage']='php/controlButton.php';
+$currentPage='index';
 
  ?>
 

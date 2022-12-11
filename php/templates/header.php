@@ -29,10 +29,10 @@ if($_SESSION['sign-in-sign-out']==1){
             <i class="fa fa-bars"></i>
         </label>
         <ul class="nav_links">
-            <li><a href="<?php echo $_SESSION['home_page']?>">Home</a></li>
-            <li><a href="<?php echo $_SESSION['plants_page'];?>">Plants</a></li>
-            <li><a href="<?php echo $_SESSION['premiumContent_page'];?>">Premium Contents</a></li>
-            <li><a href="<?php echo $_SESSION['contact_page'];?>">Contact</a></li>
+            <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $_SESSION['home_page']; ?>">Home</a></li>
+            <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $_SESSION['plants_page'];?>">Plants</a></li>
+            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $_SESSION['premiumContent_page'];?>">Premium Contents</a></li>
+            <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $_SESSION['contact_page'];?>">Contact</a></li>
             <li><a href="">Something</a></li>
         </ul>
     </nav>

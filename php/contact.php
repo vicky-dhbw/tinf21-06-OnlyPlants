@@ -7,6 +7,7 @@ $_SESSION['contact_page']="#";
 $_SESSION['home_page']="../index.php";
 $_SESSION['signin_page']="signin.php";
 $_SESSION['controlButtonPage']='controlButton.php';
+$currentPage='contact';
 ?>
 <!doctype html>
 <html lang="en">
