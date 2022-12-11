@@ -30,9 +30,8 @@ $_SESSION['controlButtonPage']='php/controlButton.php';
 echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
 echo "USER: ".$_SESSION['user']."<br>";
 echo "USER ".$_SESSION['is_signed_in'];
-
+include "php/templates/footer.php"
 ?>
 
-<!--This link has to be in the end of the body for bootstrap-->
 </body>
 </html>
