@@ -21,7 +21,7 @@ if($_SESSION['sign-in-sign-out']==1){
 </head>
 <body>
 <header>
-    <img class="logo" src="<?php echo $_SESSION['Logo']?>" alt="logo" height="100" width="250">
+    <img class="logo" src="<?php echo $Logo?>" alt="logo" height="100" width="250">
     <link rel="stylesheet" href="../css/headerstyle.css">
     <nav>
         <input type="checkbox" id="check">
@@ -29,14 +29,14 @@ if($_SESSION['sign-in-sign-out']==1){
             <i class="fa fa-bars"></i>
         </label>
         <ul class="nav_links">
-            <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $_SESSION['home_page']; ?>">Home</a></li>
-            <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $_SESSION['plants_page'];?>">Plants</a></li>
-            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $_SESSION['premiumContent_page'];?>">Premium Contents</a></li>
-            <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $_SESSION['contact_page'];?>">Contact</a></li>
+            <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
+            <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
+            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Contents</a></li>
+            <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a></li>
             <li><a href="">Something</a></li>
         </ul>
     </nav>
-    <form method="post" action="<?php session_start(); echo $_SESSION['controlButtonPage']?>">
+    <form method="post" action="<?php echo $controlButtonPage ?>">
         <button type="submit" name="signInButton" >
             <?php session_start(); echo $_SESSION['is_signed_in']?>
         </button>

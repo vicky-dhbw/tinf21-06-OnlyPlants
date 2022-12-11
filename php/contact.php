@@ -1,12 +1,12 @@
 <?php
 session_start();
-$_SESSION['Logo']="../assets/images/Logo.png";
-$_SESSION['plants_page']="plants.php";
-$_SESSION['premiumContent_page']="premiumContent.php";
-$_SESSION['contact_page']="#";
-$_SESSION['home_page']="../index.php";
-$_SESSION['signin_page']="signin.php";
-$_SESSION['controlButtonPage']='controlButton.php';
+$Logo="../assets/images/Logo.png";
+$plants_page="#";
+$premiumContent_page="premiumContent.php";
+$contact_page="contact.php";
+$home_page="../index.php";
+$signin_page="signin.php";
+$controlButtonPage='controlButton.php';
 $currentPage='contact';
 ?>
 <!doctype html>
