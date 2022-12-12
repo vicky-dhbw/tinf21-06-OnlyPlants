@@ -1,80 +1,54 @@
-@media only screen and (min-width: 724px) and (max-width: 1101px) {
-    .openclose {
-        margin-left: 5%;
+@media only screen and (min-width: 814px) and (max-width: 1425px) {
+    .profileInfo {
+        padding: 0% 2% 2% 2%;
+        margin: 2% 17% 2% 17%;
+        min-width: 605px;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+    }
+
+    span {
+        display: block;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    label,
+    .input {
         font-family: "Montserrat", sans-serif;
         font-weight: 500;
         font-size: 16px;
         text-decoration: none;
+        text-align: center;
+        border-style: none;
+        padding-right: 3px;
+        padding-left: 3px;
+        margin: 5px 5px 5px 5px;
+        width: 200px;
     }
-    .buttonspan {
-        display: block;
-        background-color: #90EE90;
+
+    label {
+        background-color: rgba(255, 255, 255, 0.9);
+        display: inline-block;
     }
-    .spanlinebreak {
-        display: block;
-        background-color: #90EE90;
+
+    .input {
+        border-radius: 10px;
+        color: grey;
+        background-color: #a3bd98;
+        display: inline-block;
     }
-    #table1 {
-    width: 90%;
-    padding-left:5%;
-    padding-right:5%;
-    border-radius: 10px;
-    margin-left: 5%;
-    background-color: #90EE90;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
-}
-.h1 {
-    color: black;
-    padding: 1% 5% 1% 0%;
-    text-align: left;
-    background-color: #90EE90;
-}
-.f1 {
-    background-color: #90EE90;
-}
-.c1 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
-    border-style: none;
-    background-color: #90EE90;
-    padding-right:3px;
-    padding-left: 3px;
-    margin: 5px 5px 5px 5px;
-    width: 150px;
-    display: inline-block;
-}
-.c2 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
-    border-style: none;
-    border-radius: 10px;
-    color: grey;
-    padding-right:3px;
-    padding-left: 3px;
-    margin: 5px 5px 5px 5px;
-    width: 150px;
-    display: inline-block;
-}
-td, th {
-    background-color: #90EE90;
-}
-.b1 {
-    width: 100px;
-    height: 22px;
-    margin: 5px 5px 5px 5px;
-padding: 2px 25px 7px;
-background-color: #1F8475;
-color: white;
-border: none;
-border-radius: 50px;
-cursor: pointer;
-transition: all 0.3s ease 0s;
-}
+
+    .createPlantSpan {
+        padding: 2% 2% 2% 10%;
+        margin: 11% 25% 11% 17%;
+        min-width: 605px;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-block;
+    }
 }
