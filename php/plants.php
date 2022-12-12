@@ -107,7 +107,6 @@ $currentPage='plants';
 <div>
 
 </div>
-<!-- filter einklappbar und ausklappbar machen, um platz zu sparen-->
 <?php
 $color = $_GET["color"]??"Standardwert";
 $height = $_GET["height"]??"Standardwert";
