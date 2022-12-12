@@ -121,5 +121,4 @@
         <img src="../assets/images/plant.jpg" class="profileImage">
     </span>
 </body>
-
 </html>
