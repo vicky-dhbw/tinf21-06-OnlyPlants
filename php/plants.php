@@ -29,6 +29,7 @@ $currentPage='plants';
     <link rel="stylesheet" href="../CSS/plantswindowbig.css">
     <link rel="stylesheet" href="../CSS/plantswindowmiddle.css">
     <link rel="stylesheet" href="../CSS/plantswindowsmall.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
@@ -128,5 +129,34 @@ echo "USER: ".$user."<br>";
 echo "USER ".$is_signed_in;
 echo session_id();
 ?>
+
+<div class="myDiv">
+    <?php
+    $names=['leaf_sky.jpg','cute.jpg','leaves.jpg','img3.jpg'];
+    foreach ($names as $name){ ?>
+        <div class="card-grid">
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="<?php echo "../assets/images/". $name?>">
+                </div>
+                <div class="card-body">
+                    <p>Name: </p>
+                    <p>Category: </p>
+                    <p>Created by: </p>
+                    <p>Age: </p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn_">Edit</button>
+                    <button class="btn_ btn-outline">Delete</button>
+                </div>
+            </div>
+        </div>
+    <?php }
+    ?>
+
+</div>
+
+
+
 </body>
 </html>
