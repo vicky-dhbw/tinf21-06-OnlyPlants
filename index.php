@@ -47,6 +47,10 @@ echo session_id();*/
         height: 30rem;
         width: 70rem;
     }
+    .bd-example{
+        height: 30rem;
+        width: 80rem;
+    }
 
 
 </style>
