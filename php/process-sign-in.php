@@ -1,5 +1,4 @@
 <?php
-session_start();
 $servername = "localhost";
 $username = "root";
 $password = '';
@@ -24,30 +23,33 @@ try{
 }
 
 
-
-if(strlen($email)!=0&&strlen($password!=0)){
-    $stmt = $conn->prepare("SELECT password FROM users WHERE email=?");
-    $stmt->execute([$email]);
-    $test_password = $stmt->fetch();
-
-    if(strcmp($test_password[0],$password)==0){
-
-        $stmt= $conn->prepare("SELECT name FROM users WHERE email=?");
+if(isset($_POST['submit'])){
+    session_start();
+    if(strlen($email)!=0&&strlen($password!=0)){
+        $stmt = $conn->prepare("SELECT password FROM users WHERE email=?");
         $stmt->execute([$email]);
-        $test_name = $stmt->fetch();
-        $_SESSION['user']=$test_name[0];
-        $_SESSION['sign-in-sign-out']=1;
-        header ("Location: ../index.php");
-        $password=null;
+        $test_password = $stmt->fetch();
+
+        if(strcmp($test_password[0],$password)==0){
+
+            $stmt= $conn->prepare("SELECT name FROM users WHERE email=?");
+            $stmt->execute([$email]);
+            $test_name = $stmt->fetch();
+            $_SESSION['user']=$test_name[0];
+            $_SESSION['sign-in-sign-out']=1;
+            header ("Location: ../index.php");
+            $password=null;
+        }
+        else{
+            header("Location: signin.php");
+            $password=null;
+        }
     }
     else{
         header("Location: signin.php");
-        $password=null;
     }
 }
-else{
-    header("Location: signin.php");
-}
+
 
 
 

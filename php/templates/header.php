@@ -1,10 +1,8 @@
 <?php
-//session_start();  Wegen Fehlermeldung auskommentiert
-session_start();
-if($_SESSION['sign-in-sign-out']==1){
-    $_SESSION['is_signed_in']="SIGN OUT";
+if($sign_in_sign_out==1){
+    $is_signed_in="SIGN OUT";
 }else{
-    $_SESSION['is_signed_in']="SIGN IN";
+    $is_signed_in="SIGN IN";
 }
 ?>
 
@@ -24,10 +22,6 @@ if($_SESSION['sign-in-sign-out']==1){
     <img class="logo" src="<?php echo $Logo?>" alt="logo" height="100" width="250">
     <link rel="stylesheet" href="../css/headerstyle.css">
     <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fa fa-bars"></i>
-        </label>
         <ul class="nav_links">
             <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
             <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
@@ -38,7 +32,7 @@ if($_SESSION['sign-in-sign-out']==1){
     </nav>
     <form method="post" action="<?php echo $controlButtonPage ?>">
         <button type="submit" name="signInButton" >
-            <?php session_start(); echo $_SESSION['is_signed_in']?>
+            <?php echo $is_signed_in?>
         </button>
     </form>
 </header>

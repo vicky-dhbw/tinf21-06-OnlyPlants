@@ -36,7 +36,7 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <button type="submit" class="btn1 mt-3 mb-3">Login</button>
+                            <button type="submit" class="btn1 mt-3 mb-3" name="submit">Login</button>
                         </div>
                     </div>
                     <p>Don't have an account? <a href="register.php">register here</a></p>

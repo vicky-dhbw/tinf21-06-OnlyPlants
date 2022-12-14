@@ -1,6 +1,13 @@
 <?php
 session_start();
-
+if(isset($_SESSION['sign-in-sign-out'])){
+    $sign_in_sign_out=$_SESSION['sign-in-sign-out'];
+    $user=$_SESSION['user'];
+}
+else{
+    $sign_in_sign_out=0;
+    $user="no user";
+}
 require "php/configure.php";
 $plants_page="php/plants.php";
 $premiumContent_page="php/premiumContent.php";
@@ -28,7 +35,7 @@ $currentPage='index';
 </head>
 <body>
 <?php include __DIR__."/php/templates/header.php"; ?>
-<?php session_start();
+<?php
 /*echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
 echo "USER: ".$_SESSION['user']."<br>";
 echo "USER ".$_SESSION['is_signed_in'];

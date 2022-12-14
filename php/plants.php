@@ -1,4 +1,13 @@
 <?php
+session_start();
+if(isset($_SESSION['sign-in-sign-out'])){
+    $sign_in_sign_out=$_SESSION['sign-in-sign-out'];
+    $user=$_SESSION['user'];
+}
+else{
+    $sign_in_sign_out=0;
+    $user="no user";
+}
 $Logo="../assets/images/Logo.png";
 $plants_page="#";
 $premiumContent_page="premiumContent.php";
@@ -20,6 +29,7 @@ $currentPage='plants';
     <link rel="stylesheet" href="../CSS/plantswindowbig.css">
     <link rel="stylesheet" href="../CSS/plantswindowmiddle.css">
     <link rel="stylesheet" href="../CSS/plantswindowsmall.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <?php include __DIR__.'/templates/header.php'; ?>
@@ -113,9 +123,9 @@ $color = $_GET["color"]??"Standardwert";
 $height = $_GET["height"]??"Standardwert";
 echo $color." ".$height;
 echo"<br>";
-echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
-echo "USER: ".$_SESSION['user']."<br>";
-echo "USER ".$_SESSION['is_signed_in'];
+echo "STATUS: ".$sign_in_sign_out."<br>";
+echo "USER: ".$user."<br>";
+echo "USER ".$is_signed_in;
 echo session_id();
 ?>
 </body>
