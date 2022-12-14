@@ -47,8 +47,6 @@ echo session_id();*/
         height: 30rem;
         width: 70rem;
     }
-
-
 </style>
 
 <div class="container" >
