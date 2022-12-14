@@ -61,14 +61,14 @@ echo session_id();*/
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/images/leaves.jpg" class="d-block w-100" alt="..." >
+                    <img src="assets/images/leaf_sky.jpg" class="d-block w-100" alt="..." >
                     <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/leaf_sky.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/images/leaves.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

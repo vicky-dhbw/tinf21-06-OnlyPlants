@@ -16,11 +16,11 @@ if($sign_in_sign_out==1){
     <title>Navbar</title>
 
     <link rel="stylesheet" href="css/headerstyle.css">
+    <link rel="stylesheet" href="../css/headerstyle.css">
 </head>
 <body>
 <header>
     <img class="logo" src="<?php echo $Logo?>" alt="logo" height="100" width="250">
-    <link rel="stylesheet" href="../css/headerstyle.css">
     <nav>
         <ul class="nav_links">
             <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
