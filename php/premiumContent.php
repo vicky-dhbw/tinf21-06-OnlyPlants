@@ -9,8 +9,8 @@ else{
     $user="no user";
 }
 $Logo="../assets/images/Logo.png";
-$plants_page="#";
-$premiumContent_page="premiumContent.php";
+$plants_page="plants.php";
+$premiumContent_page="#";
 $contact_page="contact.php";
 $home_page="../index.php";
 $signin_page="signin.php";

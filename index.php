@@ -95,8 +95,9 @@ echo session_id();*/
 </div>
 <?php
 echo "STATUS: ".$sign_in_sign_out."<br>";
-echo "USER: ".$user."<br>";
+echo "USER: ".$user[1]."<br>";
 echo "USER ".$is_signed_in;
+
 
 ?>
 
