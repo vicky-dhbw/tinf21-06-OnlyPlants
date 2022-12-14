@@ -93,7 +93,12 @@ echo session_id();*/
         </div>
     </div>
 </div>
+<?php
+echo "STATUS: ".$sign_in_sign_out."<br>";
+echo "USER: ".$user."<br>";
+echo "USER ".$is_signed_in;
 
+?>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
