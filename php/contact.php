@@ -32,6 +32,13 @@ $currentPage='contact';
 <body>
 <?php include __DIR__.'/templates/nav.php'; ?>
 
+<style>
+    .form-container {
+        margin: 100px;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+</style>
 <div class="form-container">
     <h1>Contact Page</h1>
     <form action="" method="post">
