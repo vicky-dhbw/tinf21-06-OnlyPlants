@@ -34,54 +34,52 @@ $currentPage='contact';
 
 <div class="form-container">
     <h1>Contact Page</h1>
+    <form action="" method="post">
+        <p>Please read our <a href="/privacy-policy.html">privacy policy</a> before filling out the form.</p>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea class="form-control" id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+            <label for="privacy-policy">I have read the <a href="/privacy-policy.html">privacy policy</a> and agree to the processing of my data according to the privacy policy.</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <?php
+        if (isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['privacy-policy'])) {
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $message = $_POST['message'];
 
-            <form action="" method="post">
-                <p>Bitte lesen Sie unsere <a href="/datenschutzerklaerung.html">Datenschutzerklärung</a>, bevor Sie das Formular ausfüllen.</p>
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email-Adresse:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Nachricht:</label>
-                    <textarea class="form-control" id="message" name="message" required></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="datenschutz" name="datenschutz" required>
-                    <label for="datenschutz">Ich habe die <a href="/datenschutzerklaerung.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Nachricht senden</button>
+            $to = "info@onlyplants.com";
+            $subject = "New message from $name";
+            $body = "You have received a new message from $name.\n\n".
+                "Email address: $email\n\n".
+                "Message:\n$message";
 
-                <?php
-                if (isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['datenschutz'])) {
-                    $name = $_POST['name'];
-                    $email = $_POST['email'];
-                    $message = $_POST['message'];
+            // Send email
+            if (mail($to, $subject, $body)) {
+                echo "<p>Thank you for your message. We will contact you soon.</p>";
 
-                    $to = "info@onlyplants.de";
-                    $subject = "Neue Nachricht von $name";
-                    $body = "Sie haben eine neue Nachricht von $name erhalten.\n\n".
-                        "Email-Adresse: $email\n\n".
-                        "Nachricht:\n$message";
-
-                    // Email senden
-                    if (mail($to, $subject, $body)) {
-                        echo "<p>Vielen Dank für Ihre Nachricht. Wir werden uns bald bei Ihnen melden.</p>";
-
-                        // Löschen der Nutzerdaten nach erfolgreichem Senden der Nachricht
-                        unset($_POST['name']);
-                        unset($_POST['email']);
-                        unset($_POST['message']);
-                        unset($_POST['datenschutz']);
-                    } else {
-                        echo "<p>Leider ist ein Fehler beim Senden der Nachricht aufgetreten. Bitte versuchen Sie es später erneut.</p>";
-                    }
-                }
-                ?>
-            </form>
+                // Delete user data after successful message send
+                unset($_POST['name']);
+                unset($_POST['email']);
+                unset($_POST['message']);
+                unset($_POST['privacy-policy']);
+            } else {
+                echo "<p>Sorry, there was an error sending the message. Please try again later.</p>";
+            }
+        }
+        ?>
+    </form>
 </div>
 
 
