@@ -17,6 +17,7 @@ $home_page="#";
 $signin_page="php/signin.php";
 $controlButtonPage='php/controlButton.php';
 $currentPage='index';
+$admin_page="php/adminPage.php";
 
  ?>
 

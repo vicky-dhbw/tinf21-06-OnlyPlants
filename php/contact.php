@@ -16,6 +16,7 @@ $home_page="../index.php";
 $signin_page="signin.php";
 $controlButtonPage='controlButton.php';
 $currentPage='contact';
+$admin_page="adminPage.php";
 ?>
 <!doctype html>
 <html lang="en">

@@ -10,13 +10,13 @@ else{
 }
 $Logo="../assets/images/logo_.png";
 $plants_page="plants.php";
-$premiumContent_page="#";
+$premiumContent_page="premiumContent.php";
+$admin_page="adminPage.php";
 $contact_page="contact.php";
 $home_page="../index.php";
 $signin_page="signin.php";
 $controlButtonPage='controlButton.php';
-$currentPage='premiumContent';
-$admin_page="adminPage.php";
+$currentPage='admin';
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,7 +38,7 @@ $admin_page="adminPage.php";
 <?php include __DIR__.'/templates/nav.php'; ?>
 
 <div class="container">
-    <h1>Premium Content</h1>
+    <h1>Admin Page</h1>
 </div>
 
 <div class="container">
