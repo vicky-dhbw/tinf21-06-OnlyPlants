@@ -33,13 +33,15 @@
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Only Plants</a>
+        <a class="navbar-brand" href="#">
+            <img src="<?php echo $Logo?>" width="220" height="67" class="d-inline-block align-text-top">
+        </a>
         <ul class="nav_links">
-            <li><a href="">Home</a></li>
-            <li><a href="">Plants</a></li>
-            <li><a href="">Premium Contents</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Something</a></li>
+            <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
+            <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
+            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Contents</a></li>
+            <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a></li>
+            <li><a href="<?php echo $admin_page?>"><?php if($user=="Admin"){echo "Admin";}?></a></li>
         </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -52,22 +54,22 @@
             <div class=" offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link <?php echo $currentPage == 'index' ? 'active' : ''?>" aria-current="page" href="<?php echo $home_page; ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Plants</a>
+                        <a class="nav-link <?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Premium Contents</a>
+                        <a class="nav-link <?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Contents</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Admin</a>
+                        <a class="nav-link <?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a>
                     </li>
 
                 </ul>
                 <br>
-                <form class="d-flex mt-3"  action="localhost/tinf21-06-OnlyPlants/php/signin.php">
-                    <button class="btn btn-success" type="submit">Log in</button>
+                <form method="post" class="d-flex mt-3"  action="<?php echo $controlButtonPage ?>">
+                    <button class="btn btn-success" type="submit" name="signInButton"><?php echo $is_signed_in?></button>
                 </form>
 
             </div>
