@@ -1,0 +1,263 @@
+@media only screen and (min-width: 814px) and (max-width: 1425px) {
+    .spanPlantProfile {
+        padding: 0% 2% 2% 2%;
+        margin: 2% 17% 2% 17%;
+        min-width: 605px;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+    }
+
+    span {
+        display: block;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    label,
+    .input {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        border-style: none;
+        padding-right: 3px;
+        padding-left: 3px;
+        margin: 5px 5px 5px 5px;
+        width: 200px;
+    }
+
+    label {
+        background-color: rgba(255, 255, 255, 0.9);
+        display: inline-block;
+    }
+
+    .input {
+        border-radius: 10px;
+        color: grey;
+        background-color: #a3bd98;
+        display: inline-block;
+    }
+
+    .createPlantSpan {
+        padding: 2% 2% 2% 10%;
+        margin: 11% 25% 11% 17%;
+        min-width: 605px;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 1425px) {
+    .spanPlantProfile {
+        padding: 0% 2% 2% 2%;
+        margin: 2% 20% 2% 20%;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+    }
+
+    .buttonSpan {
+        display: block;
+    }
+
+    span,
+    .buttonSpan {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    label,
+    .input {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        border-style: none;
+        padding-right: 3px;
+        padding-left: 3px;
+        margin: 5px 5px 5px 5px;
+        width: 200px;
+    }
+
+    label {
+        background-color: rgba(255, 255, 255, 0.9);
+        display: inline-block;
+    }
+
+    .input {
+        border-radius: 10px;
+        color: grey;
+        background-color: #a3bd98;
+        display: inline-block;
+    }
+
+    .createPlantSpan {
+        padding: 2% 2% 2% 10%;
+        margin: 11% 25% 11% 25%;
+        min-width: 605px;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 814px) {
+    span {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    label,
+    .input {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        border-style: none;
+        padding-right: 3px;
+        padding-left: 3px;
+        margin: 5px 5px 5px 5px;
+        width: 200px;
+    }
+
+    label {
+        background-color: rgba(255, 255, 255, 0.9);
+        display: block;
+    }
+
+    .input {
+        border-radius: 10px;
+        color: grey;
+        background-color: #a3bd98;
+        display: block;
+    }
+
+    .spanPlantProfile {
+        padding: 0% 2% 2% 2%;
+        margin: 2% 15% 2% 15%;
+        min-width: 605px;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+    }
+
+    .createPlantSpan {
+        padding: 2% 2% 2% 10%;
+        margin: 11% 25% 11% 0%;
+        min-width: 605px;
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-block;
+    }
+}
+
+.tableHeading {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.profileImage {
+    margin: 5% 2% 2% 2%;
+    border-radius: 10px;
+    height: 600px;
+}
+
+a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.tableCreatePlant {
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgba(255, 255, 255);
+}
+
+details {
+    padding-bottom: 1%;
+}
+
+.backgroundImage {
+    background-image: url("../assets/images/plant_background.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+summary,
+h1,
+.plantsButton {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+summary {
+    margin-left: 10%;
+}
+
+#tableCategory {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    margin-left: 5%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+h1 {
+    color: black;
+    padding: 1% 5% 1% 0%;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+th,
+td,
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.createPlantsButton {
+    width: 100px;
+    height: 22px;
+    margin: 5px 5px 5px 5px;
+    padding: 2px 25px 7px;
+    background-color: #1F8475;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    float: right;
+}
+
+.plantsButton {
+    width: 100px;
+    height: 22px;
+    margin: 5px 5px 5px 5px;
+    padding: 2px 25px 7px;
+    background-color: #1F8475;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}

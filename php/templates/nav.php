@@ -23,7 +23,7 @@ if($sign_in_sign_out==1){
     }
     .nav_links{
         list-style: none;
-        margin-top: 20px;
+        padding-top: 15px;
     }
 
     .nav_links li{
