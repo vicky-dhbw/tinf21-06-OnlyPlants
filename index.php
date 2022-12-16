@@ -12,7 +12,7 @@ require "php/configure.php";
 $plants_page="php/plants.php";
 $premiumContent_page="php/premiumContent.php";
 $contact_page="php/contact.php";
-$Logo="assets/images/_logo.png";
+$Logo="assets/images/logo_.png";
 $home_page="#";
 $signin_page="php/signin.php";
 $controlButtonPage='php/controlButton.php';

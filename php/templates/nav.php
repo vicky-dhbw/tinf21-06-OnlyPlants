@@ -23,6 +23,7 @@ if($sign_in_sign_out==1){
     }
     .nav_links{
         list-style: none;
+        margin-top: 20px;
     }
 
     .nav_links li{
@@ -48,7 +49,7 @@ if($sign_in_sign_out==1){
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="<?php echo $Logo?>" alt="Logo" width="200" height="67" class="d-inline-block align-text-top">
+            <img src="<?php echo $Logo?>" width="220" height="67" class="d-inline-block align-text-top">
         </a>
         <ul class="nav_links">
             <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>

@@ -8,7 +8,7 @@ else{
     $sign_in_sign_out=0;
     $user="no user";
 }
-$Logo="../assets/images/_logo.png";
+$Logo="../assets/images/logo_.png";
 $plants_page="plants.php";
 $premiumContent_page="#";
 $contact_page="contact.php";
