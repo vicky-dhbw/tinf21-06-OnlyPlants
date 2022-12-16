@@ -42,7 +42,7 @@ $admin_page="adminPage.php";
 </style>
 <?php include __DIR__.'/templates/nav.php'; ?>
 
-
+//187
 
 <div class="plant_div">
     <details open=""><summary class="openclose"><b>Category/Filter</b></summary>
