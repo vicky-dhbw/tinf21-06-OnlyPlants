@@ -38,15 +38,12 @@ $currentPage='admin';
 <?php include __DIR__.'/templates/nav.php'; ?>
 
 <div class="container">
-    <h1>Admin Page</h1>
+    <h1>User Management</h1>
 </div>
 
 <div class="container">
     <?php
-    echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "USER: ".$user."<br>";
-    echo "USER ".$is_signed_in;
-
+    include "displayUsers.php";
     ?>
 </div>
 
