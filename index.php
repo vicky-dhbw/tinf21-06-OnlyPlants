@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['sign-in-sign-out'])){
     $sign_in_sign_out=$_SESSION['sign-in-sign-out'];
-    $user=$_SESSION['user'];
+    $user=$_SESSION['user'][1];
 }
 else{
     $sign_in_sign_out=0;
@@ -37,12 +37,6 @@ $admin_page="php/adminPage.php";
 <body>
 <?php include __DIR__."/php/templates/nav.php"; ?>
 
-<?php
-/*echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
-echo "USER: ".$_SESSION['user']."<br>";
-echo "USER ".$_SESSION['is_signed_in'];
-echo session_id();*/
-?>
 <style>
     .container{
         margin-top: 150px;
@@ -90,15 +84,15 @@ echo session_id();*/
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-</div>
 
-<div class="container">
     <?php
     echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "USER: ".$user[1]."<br>";
+    print_r($user)."<br>";
+    echo "USER: ".$user."<br>";
     echo "USER ".$is_signed_in;
     ?>
 </div>
+
 
 
 

@@ -142,7 +142,8 @@ $admin_page="adminPage.php";
     echo "STATUS: ".$sign_in_sign_out."<br>";
     echo "USER: ".$user."<br>";
     echo "USER ".$is_signed_in;
-    echo session_id();
+    echo session_id()."<br>";
+    print_r($user);
     ?>
 </div>
 

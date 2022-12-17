@@ -52,6 +52,7 @@ include "connection.php";
             <td>'.$password.'</td>
             <td>'.$type.'</td>
              <td>
+             
             <button class="btn btn-primary"><a href="updateUser.php? updateid='.$id.' " style="text-decoration: none" class="text-light" >Update</a></button>
             <button class="btn btn-danger"><a href="delUser.php? delid='.$id.' " class="text-light" style="text-decoration: none" >Delete</a></button>
             </td>
