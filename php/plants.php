@@ -36,7 +36,7 @@ $admin_page="adminPage.php";
 <body>
 <style>
     .plant_div{
-        margin-top: 100px;
+        margin-top: 170px;
         padding: 0;
     }
 </style>

@@ -32,7 +32,7 @@ $admin_page="adminPage.php";
 <body>
 <style>
     .container{
-        margin-top: 100px;
+        margin-top: 170px;
     }
 </style>
 <?php include __DIR__.'/templates/nav.php'; ?>

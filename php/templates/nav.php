@@ -43,7 +43,6 @@ if($sign_in_sign_out==1){
     }
 </style>
 <body>
-<h1>Hello, world!</h1>
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">

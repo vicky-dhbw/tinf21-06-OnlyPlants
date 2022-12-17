@@ -1,5 +1,6 @@
 <?php
 include "connection.php";
+
 ?>
 
 
@@ -15,8 +16,8 @@ include "connection.php";
 </head>
 <body>
 
-<div class="container">
-    <button class="btn btn-primary my-1"><a style="text-decoration: none" href="createUser.php" class="text-light">Create user</a></button>
+<div class="container my-4">
+    <button class="btn btn-dark my-3"><a style="text-decoration: none" href="createUser.php" class="text-light">Create user</a></button>
 
     <table class="table">
         <thead>
@@ -51,7 +52,7 @@ include "connection.php";
             <td>'.$password.'</td>
             <td>'.$type.'</td>
              <td>
-            <button class="btn btn-success"><a href="updateUser.php? updateid='.$id.' " style="text-decoration: none" class="text-light" >Update</a></button>
+            <button class="btn btn-primary"><a href="updateUser.php? updateid='.$id.' " style="text-decoration: none" class="text-light" >Update</a></button>
             <button class="btn btn-danger"><a href="delUser.php? delid='.$id.' " class="text-light" style="text-decoration: none" >Delete</a></button>
             </td>
         </tr>
