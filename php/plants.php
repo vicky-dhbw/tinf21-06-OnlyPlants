@@ -17,6 +17,7 @@ $signin_page="signin.php";
 $controlButtonPage='controlButton.php';
 $currentPage='plants';
 $admin_page="adminPage.php";
+$profile="profile.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -138,12 +139,16 @@ $admin_page="adminPage.php";
     $color = $_GET["color"]??"Standardwert";
     $height = $_GET["height"]??"Standardwert";
     echo $color." ".$height;
-    echo"<br>";
+
     echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "USER: ".$user."<br>";
+    echo "<br>";
     echo "USER ".$is_signed_in;
-    echo session_id()."<br>";
-    print_r($user);
+    echo "<br>";
+    echo "USER: ".$_SESSION['user']."<br>";
+    echo "ID: ".$_SESSION['id']."<br>";
+    echo "TYPE: ".$_SESSION['type']."<br>";
+    echo "<br>";
+
     ?>
 </div>
 

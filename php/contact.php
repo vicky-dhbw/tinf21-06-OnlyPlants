@@ -17,6 +17,7 @@ $signin_page="signin.php";
 $controlButtonPage='controlButton.php';
 $currentPage='contact';
 $admin_page="adminPage.php";
+$profile="profile.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -94,9 +95,13 @@ $admin_page="adminPage.php";
 <div class="container">
     <?php
     echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "USER: ".$user."<br>";
+    echo "<br>";
     echo "USER ".$is_signed_in;
-
+    echo "<br>";
+    echo "USER: ".$_SESSION['user']."<br>";
+    echo "ID: ".$_SESSION['id']."<br>";
+    echo "TYPE: ".$_SESSION['type']."<br>";
+    echo "<br>";
     ?>
 </div>
 
