@@ -29,15 +29,18 @@ if(isset($_POST['submit'])){
 
         if(strcmp($test_password,$password)==0 && strcmp($test_email,$email)==0){
 
-            $sql="select name,id from users where email='$test_email' ";
+            $sql="select name,id,type from users where email='$test_email' ";
             $result=mysqli_query($connection,$sql);
             $row=mysqli_fetch_assoc($result);
 
             $id=$row['id'];
             $name=$row['name'];
+            $type=$row['type'];
+
 
             $_SESSION['user']=$name;
             $_SESSION['id']=$id;
+            $_SESSION['type']=$type;
             $_SESSION['sign-in-sign-out']=1;
             header ("Location: ../index.php");
             $password=null;
