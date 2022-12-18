@@ -149,6 +149,8 @@ $admin_page="adminPage.php";
 
 
 <div class="myDiv">
+
+    <button class="btn btn-dark my-3"><a style="text-decoration: none" href="_createPlant.php" class="text-light">Create user</a></button>
     <?php
     $names=['leaf_sky.jpg','cute.jpg','leaves.jpg','img3.jpg'];
     foreach ($names as $name){ ?>
