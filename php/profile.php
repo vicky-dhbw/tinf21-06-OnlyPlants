@@ -15,7 +15,7 @@ $contact_page="contact.php";
 $home_page="../index.php";
 $signin_page="signin.php";
 $controlButtonPage='controlButton.php';
-$currentPage='premiumContent';
+
 $profile="#";
 ?>
 <!doctype html>
