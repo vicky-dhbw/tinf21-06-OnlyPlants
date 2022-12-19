@@ -4,6 +4,9 @@ if($sign_in_sign_out==1){
 }else{
     $is_signed_in="Sign in";
 }
+
+$show="";
+$type=$_SESSION['type'];
 ?>
 
 <!doctype html>
@@ -35,7 +38,7 @@ if($sign_in_sign_out==1){
         font-family: "Montserrat", sans-serif;
         text-decoration: none;
     }
-    @media (max-width: 900px){
+    @media (max-width: 800px){
         .nav_links{
             display: none;
         }
@@ -43,7 +46,6 @@ if($sign_in_sign_out==1){
     }
 </style>
 <body>
-<h1>Hello, world!</h1>
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
@@ -55,7 +57,12 @@ if($sign_in_sign_out==1){
             <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
             <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Contents</a></li>
             <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a></li>
-            <li><a href="<?php echo $admin_page?>"><?php if($user=="Admin"){echo "Admin";}?></a></li>
+            <li><a class="" href="<?php
+                if(strcmp($type,"admin")==0){echo $admin_page;$show="Admin";}
+                elseif(strcmp($type,"user")==0){echo $profile;$show="My Profile";}
+                ?>"><?php echo $show?>
+                </a></li>
+
         </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>

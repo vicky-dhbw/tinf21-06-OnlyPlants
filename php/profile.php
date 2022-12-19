@@ -11,12 +11,12 @@ else{
 $Logo="../assets/images/logo_.png";
 $plants_page="plants.php";
 $premiumContent_page="premiumContent.php";
-$admin_page="adminPage.php";
 $contact_page="contact.php";
 $home_page="../index.php";
 $signin_page="signin.php";
 $controlButtonPage='controlButton.php';
-$currentPage='admin';
+
+$profile="#";
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,18 +32,30 @@ $currentPage='admin';
 <body>
 <style>
     .container{
-        margin-top: 200px;
+        margin-top: 170px;
     }
 </style>
 <?php include __DIR__.'/templates/nav.php'; ?>
 
 <div class="container">
-    <h1>User Management</h1>
-    <?php
-    include "displayUsers.php";
-    ?>
+    <h1>Profile</h1>
 </div>
 
+<div class="container">
+    <?php
+
+    echo "STATUS: ".$sign_in_sign_out."<br>";
+    echo "<br>";
+    echo "USER ".$is_signed_in;
+    echo "<br>";
+    echo "USER: ".$_SESSION['user']."<br>";
+    echo "ID: ".$_SESSION['id']."<br>";
+    echo "TYPE: ".$_SESSION['type']."<br>";
+    echo "<br>";
+
+
+    ?>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

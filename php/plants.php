@@ -17,6 +17,7 @@ $signin_page="signin.php";
 $controlButtonPage='controlButton.php';
 $currentPage='plants';
 $admin_page="adminPage.php";
+$profile="profile.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,13 +37,13 @@ $admin_page="adminPage.php";
 <body>
 <style>
     .plant_div{
-        margin-top: 100px;
+        margin-top: 170px;
         padding: 0;
+        margin-left: 50px;
     }
 </style>
 <?php include __DIR__.'/templates/nav.php'; ?>
 
-//187
 
 <div class="plant_div">
     <details open=""><summary class="openclose"><b>Category/Filter</b></summary>
@@ -133,45 +134,12 @@ $admin_page="adminPage.php";
 
 <!-- filter einklappbar und ausklappbar machen, um platz zu sparen-->
 
-<div class="container">
-    <?php
-    $color = $_GET["color"]??"Standardwert";
-    $height = $_GET["height"]??"Standardwert";
-    echo $color." ".$height;
-    echo"<br>";
-    echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "USER: ".$user."<br>";
-    echo "USER ".$is_signed_in;
-    echo session_id();
-    ?>
+<div class="container my-5">
+    <button class="btn btn-dark my-3"><a style="text-decoration: none" href="_createPlant.php" class="text-light">Create Plant</a></button><br>
+    <?php include "displayPlants.php"?>
 </div>
 
 
-<div class="myDiv">
-    <?php
-    $names=['leaf_sky.jpg','cute.jpg','leaves.jpg','img3.jpg'];
-    foreach ($names as $name){ ?>
-        <div class="card-grid">
-            <div class="card card-shadow">
-                <div class="card-header card-image">
-                    <img src="<?php echo "../assets/images/". $name?>">
-                </div>
-                <div class="card-body">
-                    <p>Name: </p>
-                    <p>Category: </p>
-                    <p>Created by: </p>
-                    <p>Age: </p>
-                </div>
-                <div class="card-footer">
-                    <button class="btn_">Edit</button>
-                    <button class="btn_ btn-outline">Delete</button>
-                </div>
-            </div>
-        </div>
-    <?php }
-    ?>
-
-</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

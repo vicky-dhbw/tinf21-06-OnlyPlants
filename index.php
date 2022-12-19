@@ -2,7 +2,6 @@
 session_start();
 if(isset($_SESSION['sign-in-sign-out'])){
     $sign_in_sign_out=$_SESSION['sign-in-sign-out'];
-    $user=$_SESSION['user'];
 }
 else{
     $sign_in_sign_out=0;
@@ -18,6 +17,10 @@ $signin_page="php/signin.php";
 $controlButtonPage='php/controlButton.php';
 $currentPage='index';
 $admin_page="php/adminPage.php";
+$profile="php/profile.php";
+
+$currentUser=$_SESSION['user'];
+$number=0;
 
  ?>
 
@@ -37,12 +40,6 @@ $admin_page="php/adminPage.php";
 <body>
 <?php include __DIR__."/php/templates/nav.php"; ?>
 
-<?php
-/*echo "STATUS: ".$_SESSION['sign-in-sign-out']."<br>";
-echo "USER: ".$_SESSION['user']."<br>";
-echo "USER ".$_SESSION['is_signed_in'];
-echo session_id();*/
-?>
 <style>
     .container{
         margin-top: 150px;
@@ -90,15 +87,25 @@ echo session_id();*/
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-</div>
 
-<div class="container">
     <?php
     echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "USER: ".$user[1]."<br>";
+    echo "<br>";
     echo "USER ".$is_signed_in;
+    echo "<br>";
+    if(isset($_SESSION['user'])){echo "USER: ".$_SESSION['user']."<br>";}
+    if(isset($_SESSION['id'])){echo "ID: ".$_SESSION['id']."<br>";}
+    if(isset($_SESSION['type'])){echo "TYPE: ".$_SESSION['type']."<br>";}
+    echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    if(isset($_SESSION['id'])){
+        $number=$_SESSION['id'];}
+    echo $number;
     ?>
+
 </div>
+
 
 
 

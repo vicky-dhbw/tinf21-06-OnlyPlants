@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = '';
@@ -6,36 +7,32 @@ $password = '';
 $email=$_POST["email"];
 $password=$_POST["password"];
 
-/*
-echo "$name"."<br>";
-echo "$email"."<br>";
-echo "$password"."<br>";
-echo "$type"."<br>";
-var_dump($_POST);
-*/
-
-try{
-    $conn = new PDO("mysql:host=$servername;dbname=OnlyPlants", 'root', '');
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Connected successfully";
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
+include "connection.php";
 
 if(isset($_POST['submit'])){
-    session_start();
     if(strlen($email)!=0&&strlen($password!=0)){
-        $stmt = $conn->prepare("SELECT password FROM users WHERE email=?");
-        $stmt->execute([$email]);
-        $test_password = $stmt->fetch();
 
-        if(strcmp($test_password[0],$password)==0){
+        $sql="select * from users where email='$email' and password='$password'";
+        $result=mysqli_query($connection,$sql);
+        $row=mysqli_fetch_assoc($result);
 
-            $stmt= $conn->prepare("SELECT name FROM users WHERE email=?");
-            $stmt->execute([$email]);
-            $test_name = $stmt->fetch();
-            $_SESSION['user']=$test_name[0];
+        $test_password=$row['password'];
+        $test_email=$row['email'];
+
+        if(strcmp($test_password,$password)==0 && strcmp($test_email,$email)==0){
+
+            $sql="select name,id,type from users where email='$test_email' ";
+            $result=mysqli_query($connection,$sql);
+            $row=mysqli_fetch_assoc($result);
+
+            $id=$row['id'];
+            $name=$row['name'];
+            $type=$row['type'];
+
+
+            $_SESSION['user']=$name;
+            $_SESSION['id']=$id;
+            $_SESSION['type']=$type;
             $_SESSION['sign-in-sign-out']=1;
             header ("Location: ../index.php");
             $password=null;
