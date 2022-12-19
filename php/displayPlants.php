@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "connection.php";
 
 ?>
@@ -13,6 +14,8 @@ include "connection.php";
     <title>Document</title>
 </head>
 <body>
+
+
 <div class="container-fluid">
     <?php
     $names=['leaf_sky.jpg','cute.jpg','leaves.jpg','img3.jpg'];
@@ -48,6 +51,8 @@ include "connection.php";
         $height = $row['height'];
         $image = $row['url'];
         $username=$row['username'];
+        $plant_id=$row['id'];
+        $plant_user=$row['userid'];
         echo '
     <div class="card-grid">
             <div class="card card-shadow">
@@ -63,19 +68,28 @@ include "connection.php";
                 </div>
                 <div class="card-footer">
                     <button class="btn_">Edit</button>
-                    <button class="btn_ btn-outline">Delete</button>
+                    <button class="btn_ btn-outline"><a style="text-decoration: none" class="text-dark" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">Delete</a></button>
                 </div>
             </div>
+           
         </div>
     
     ';
     }
 
-
-
     ?>
 
 </div>
+<?php
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+if(isset($_SESSION['id'])){
+    echo $userid;
+}
+
+?>
 
 </body>
 </html>

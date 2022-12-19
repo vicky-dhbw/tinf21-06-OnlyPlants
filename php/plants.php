@@ -18,6 +18,11 @@ $controlButtonPage='controlButton.php';
 $currentPage='plants';
 $admin_page="adminPage.php";
 $profile="profile.php";
+
+$showAlert=0;
+if(isset($_SESSION['alert'])){
+    $showAlert=$_SESSION['alert'];
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -44,8 +49,29 @@ $profile="profile.php";
 </style>
 <?php include __DIR__.'/templates/nav.php'; ?>
 
+<div class="alertDiv">
+
+</div>
 
 <div class="plant_div">
+    <?php
+    if(isset($_SESSION['alert'])){
+        if($showAlert==1){
+            echo '<div class="alert alert-danger" role="alert">
+  Plant could not be deleted!
+</div>';
+    }
+        elseif ($showAlert==2){
+            echo '<div class="alert alert-success" role="alert">
+  Plant deleted successfully!
+</div>';
+        }
+        $_SESSION['alert']=0;
+
+    }
+
+
+    ?>
     <details open=""><summary class="openclose"><b>Category/Filter</b></summary>
         <table id="table1">
             <tr>
@@ -135,7 +161,9 @@ $profile="profile.php";
 <!-- filter einklappbar und ausklappbar machen, um platz zu sparen-->
 
 <div class="container my-5">
-    <button class="btn btn-dark my-3"><a style="text-decoration: none" href="_createPlant.php" class="text-light">Create Plant</a></button><br>
+    <button class="btn btn-dark my-3"><a style="text-decoration: none" href="
+    <?php if(isset($_SESSION['sign-in-sign-out'])){echo "_createPlant.php";}else{echo "register.php";}?>
+    " class="text-light">Create Plant</a></button><br>
     <?php include "displayPlants.php"?>
 </div>
 

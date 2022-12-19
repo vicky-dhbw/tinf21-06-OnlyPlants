@@ -79,7 +79,7 @@ if(isset($_POST['submit'])) {
 <div class="container">
     <div class="d-flex justify-content-between">
         <h1 class="display-4">Create Plant</h1>
-        <button class="btn btn-dark mb-5 float-right"><a href="adminPage.php" style="text-decoration: none" class="text-light" >Go back</a></button>
+        <button class="btn btn-dark mb-5 float-right"><a href="plants.php" style="text-decoration: none" class="text-light" >Go back</a></button>
     </div>
 
     <form method="post" enctype="multipart/form-data">
