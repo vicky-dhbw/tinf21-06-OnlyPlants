@@ -94,6 +94,10 @@ $profile="php/profile.php";
     echo "ID: ".$_SESSION['id']."<br>";
     echo "TYPE: ".$_SESSION['type']."<br>";
     echo "<br>";
+    echo "<br>";
+    echo "<br>";
+    $number=$_SESSION['id'][0];
+    echo $number;
     ?>
 
 </div>

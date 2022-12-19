@@ -60,7 +60,11 @@ if(isset($_POST['submit'])){
 <body>
 
 <div class="container">
-    <h1 class="display-4">Create User</h1>
+    <div class="d-flex justify-content-between">
+        <h1 class="display-4">Create User</h1>
+        <button class="btn btn-dark my-3"><a href="adminPage.php" style="text-decoration: none" class="text-light" >Go back</a></button>
+    </div>
+
     <form method="post">
         <div class="form-group mb-3">
             <label for="name">Username</label>
@@ -91,7 +95,7 @@ if(isset($_POST['submit'])){
 
         <button name="submit" type="submit" class="btn btn-success">Submit</button>
     </form>
-    <button class="btn btn-dark my-3"><a href="adminPage.php" style="text-decoration: none" class="text-light" >Go back</a></button>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

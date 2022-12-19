@@ -73,8 +73,12 @@ if(isset($_POST['submit'])){
 <body>
 
 <div class="container">
-    <button class="btn btn-dark mb-5"><a href="adminPage.php" style="text-decoration: none" class="text-light" >Go back</a></button>
-    <h1 class="display-4">Update User</h1>
+    <div class="d-flex justify-content-between">
+        <h1 class="display-4">Update User</h1>
+        <button class="btn btn-dark mb-5"><a href="adminPage.php" style="text-decoration: none" class="text-light" >Go back</a></button>
+    </div>
+
+
     <form method="post">
         <div class="form-group mb-3">
             <label for="name">Username</label>
