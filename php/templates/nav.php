@@ -23,6 +23,14 @@ $type=$_SESSION['type'];
         margin:0;
         padding:0;
     }
+    img {
+        pointer-events: none;
+        user-select: none;
+        -ms-touch-action: none;
+        -moz-touch-action: none;
+        -webkit-touch-action: none;
+        touch-action: none;
+    }
     .nav_links{
         list-style: none;
         padding-top: 15px;
