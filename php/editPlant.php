@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+$currentPage='editPlant';
 if (isset($_SESSION['sign-in-sign-out'])) {
     $sign_in_sign_out = $_SESSION['sign-in-sign-out'];
     $user = $_SESSION['user'];
@@ -26,18 +27,11 @@ $plant_user = $_GET['plant_user'];
 $current_user_id=$_SESSION['id'];
 $current_user_type=$_SESSION['type'];
 
-if(!isset($_SESSION['id'])){
-    header("Location: register.php");
-}
 
-if($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0){
+if(($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0)||!isset($_SESSION['id'])){
     $_SESSION['alert']=4;
     header("Location: plants.php");
 }
-
-
-
-
     $sql = "select * from plants where id=$plant_id";
     $result = mysqli_query($connection, $sql);
 
@@ -98,7 +92,6 @@ if($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <title>Hello, world!</title>
 </head>

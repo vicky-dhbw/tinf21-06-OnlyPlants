@@ -60,11 +60,11 @@ include "connection.php";
                     <img src="'.$image.'">
                 </div>
                 <div class="card-body">
-                    <p>Name: '.$name.'</p>
-                    <p>Created by: '.$username.'</p>
-                    <p>Category: '.$category.'</p>
-                    <p>Color: '.$color.'</p>
-                    <p>Age: '.$age.'</p>
+                    <p><strong>Name:</strong> '.$name.'</p>
+                    <p><strong>Created by</strong>: '.$username.'</p>
+                    <p><strong>Category:</strong> '.$category.'</p>
+                    <p><strong>Color:</strong> '.$color.'</p>
+                    <p><strong>Age:</strong> '.$age.'</p>
                 </div>
                 <div class="card-footer">
                     <button class="btn_"><a style="text-decoration: none" class="text-light" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">Edit</a></button>

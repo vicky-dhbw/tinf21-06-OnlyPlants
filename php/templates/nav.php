@@ -10,7 +10,6 @@ $show="";
 if(isset($_SESSION['type'])){
     $type=$_SESSION['type'];
 }
-
 ?>
 
 <!doctype html>
@@ -18,6 +17,9 @@ if(isset($_SESSION['type'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php if($currentPage=='editPlant'){
+        echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">';
+    }?>
     <title>Bootstrap demo</title>
 </head>
 <style>
@@ -61,12 +63,19 @@ if(isset($_SESSION['type'])){
             <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
             <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Contents</a></li>
             <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a></li>
+
             <li><a class="" href="<?php
                 if(strcmp($type,"admin")==0){echo $admin_page;$show="Admin";}
                 elseif(strcmp($type,"user")==0){echo $profile;$show="My Profile";}
                 ?>"><?php echo $show?>
                 </a></li>
-
+            <li><a class="" href="<?php echo $profile ?>"><?php
+                if(isset($_SESSION['type'])){
+                     if($_SESSION['type']=='admin'){
+                         echo "My Profile";
+                     }
+                }?>
+                </a></li>
         </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
