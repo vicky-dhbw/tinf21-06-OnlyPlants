@@ -17,9 +17,7 @@ if(isset($_SESSION['type'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php if($currentPage=='editPlant'){
-        echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">';
-    }?>
+
     <title>Bootstrap demo</title>
 </head>
 <style>
@@ -31,7 +29,7 @@ if(isset($_SESSION['type'])){
     }
     .nav_links{
         list-style: none;
-        padding-top: 15px;
+        padding-top: 5px;
     }
 
     .nav_links li{
@@ -56,7 +54,7 @@ if(isset($_SESSION['type'])){
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="<?php echo $Logo?>" width="220" height="67" class="d-inline-block align-text-top">
+            <img src="<?php echo $Logo?>" width="180" height="55" class="d-inline-block align-text-top">
         </a>
         <ul class="nav_links">
             <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
