@@ -6,7 +6,10 @@ if($sign_in_sign_out==1){
 }
 
 $show="";
-$type=$_SESSION['type'];
+
+if(isset($_SESSION['type'])){
+    $type=$_SESSION['type'];
+}
 ?>
 
 <!doctype html>
@@ -14,6 +17,7 @@ $type=$_SESSION['type'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Bootstrap demo</title>
 </head>
 <style>
@@ -33,7 +37,7 @@ $type=$_SESSION['type'];
     }
     .nav_links{
         list-style: none;
-        padding-top: 15px;
+        padding-top: 5px;
     }
 
     .nav_links li{
@@ -58,19 +62,26 @@ $type=$_SESSION['type'];
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="<?php echo $Logo?>" width="220" height="67" class="d-inline-block align-text-top">
+            <img src="<?php echo $Logo?>" width="180" height="55" class="d-inline-block align-text-top">
         </a>
         <ul class="nav_links">
             <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
             <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
             <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Contents</a></li>
             <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a></li>
+
             <li><a class="" href="<?php
                 if(strcmp($type,"admin")==0){echo $admin_page;$show="Admin";}
                 elseif(strcmp($type,"user")==0){echo $profile;$show="My Profile";}
                 ?>"><?php echo $show?>
                 </a></li>
-
+            <li><a class="" href="<?php echo $profile ?>"><?php
+                if(isset($_SESSION['type'])){
+                     if($_SESSION['type']=='admin'){
+                         echo "My Profile";
+                     }
+                }?>
+                </a></li>
         </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -100,6 +111,8 @@ $type=$_SESSION['type'];
                 <form method="post" class="d-flex mt-3"  action="<?php echo $controlButtonPage ?>">
                     <button class="btn btn-success" type="submit" name="signInButton"><?php echo $is_signed_in?></button>
                 </form>
+                <br>
+                <p><?php if(isset($_SESSION['sign-in-sign-out'])){echo "Logged in as  ".strtoupper($_SESSION['user']);}?></p>
 
             </div>
         </div>
