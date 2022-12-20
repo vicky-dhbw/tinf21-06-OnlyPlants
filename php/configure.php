@@ -59,11 +59,11 @@ $sql="CREATE TABLE IF NOT EXISTS plants(
 
 $conn->exec($sql);
 
-
+/*
 $sql="insert into plants(userid,username,name,type,category,color,age,height,url,isPremium)
 values(1,'Admin','Venus flytrap','cactus-succulents','wild plants','green',120,10,'../assets/images/venusFlytrap.jpeg',0)";
 
-$conn->exec($sql);
+$conn->exec($sql);*/
 
 
 

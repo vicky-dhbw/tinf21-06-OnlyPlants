@@ -18,6 +18,7 @@ $controlButtonPage='controlButton.php';
 $currentPage='premiumContent';
 $admin_page="adminPage.php";
 $profile="profile.php";
+$number=0;
 
 ?>
 <!doctype html>
@@ -45,17 +46,19 @@ $profile="profile.php";
 
 <div class="container">
     <?php
-
     echo "STATUS: ".$sign_in_sign_out."<br>";
     echo "<br>";
     echo "USER ".$is_signed_in;
     echo "<br>";
-    echo "USER: ".$_SESSION['user']."<br>";
-    echo "ID: ".$_SESSION['id']."<br>";
-    echo "TYPE: ".$_SESSION['type']."<br>";
+    if(isset($_SESSION['user'])){echo "USER: ".$_SESSION['user']."<br>";}
+    if(isset($_SESSION['id'])){echo "ID: ".$_SESSION['id']."<br>";}
+    if(isset($_SESSION['type'])){echo "TYPE: ".$_SESSION['type']."<br>";}
     echo "<br>";
-
-
+    echo "<br>";
+    echo "<br>";
+    if(isset($_SESSION['id'])){
+        $number=$_SESSION['id'];}
+    echo $number;
     ?>
 </div>
 

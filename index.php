@@ -19,6 +19,9 @@ $currentPage='index';
 $admin_page="php/adminPage.php";
 $profile="php/profile.php";
 
+$currentUser=$_SESSION['user'];
+$number=0;
+
  ?>
 
 <!DOCTYPE html>
@@ -90,13 +93,14 @@ $profile="php/profile.php";
     echo "<br>";
     echo "USER ".$is_signed_in;
     echo "<br>";
-    echo "USER: ".$_SESSION['user']."<br>";
-    echo "ID: ".$_SESSION['id']."<br>";
-    echo "TYPE: ".$_SESSION['type']."<br>";
+    if(isset($_SESSION['user'])){echo "USER: ".$_SESSION['user']."<br>";}
+    if(isset($_SESSION['id'])){echo "ID: ".$_SESSION['id']."<br>";}
+    if(isset($_SESSION['type'])){echo "TYPE: ".$_SESSION['type']."<br>";}
     echo "<br>";
     echo "<br>";
     echo "<br>";
-    $number=$_SESSION['id'][0];
+    if(isset($_SESSION['id'])){
+        $number=$_SESSION['id'];}
     echo $number;
     ?>
 

@@ -7,14 +7,6 @@ $password = '';
 $email=$_POST["email"];
 $password=$_POST["password"];
 
-/*
-echo "$name"."<br>";
-echo "$email"."<br>";
-echo "$password"."<br>";
-echo "$type"."<br>";
-var_dump($_POST);
-*/
-
 include "connection.php";
 
 if(isset($_POST['submit'])){
