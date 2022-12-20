@@ -66,6 +66,17 @@ if(isset($_SESSION['alert'])){
   Plant deleted successfully!
 </div>';
         }
+        elseif ($showAlert==3){
+            echo '<div class="alert alert-success" role="alert">
+  Plant updated successfully!
+</div>';
+        }
+        elseif ($showAlert==4){
+            echo '<div class="alert alert-danger" role="alert">
+  Oops! Plant could not be updated!
+</div>';
+        }
+
         $_SESSION['alert']=0;
 
     }

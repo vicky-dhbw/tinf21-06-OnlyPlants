@@ -23,44 +23,14 @@ if(!isset($_SESSION['id'])){
                 die(mysqli_error($connection));
             }
         }
-
-        /*
-
-        if($userid!=0 && $userid===$plant_user){
-
-            $sql="delete from plants where id=$plant_id";
-            $result=mysqli_query($connection,$sql);
-
-            if($result){
-                header("Location: plants.php ? showAlert=$showAlert.");
-            }
-            else{
-                die(mysqli_error($connection));
-            }
-        }*/
-
         else{
-
             $_SESSION['alert']=1;
             header("Location: plants.php");
         }
     }
 }
 
-/*
-    $plant_id=$_GET['plant_id'];
-    $plant_user=$_GET['plant_user'];
-if(isset($_SESSION['id'])){
-    $current_user_id=$_SESSION['id'];
-    echo "current user" .$current_user_id;
-    echo "<br>";
-}
 
-        echo "plant id: ".$plant_id;
-        echo "<br>";
-        echo "plant user: ".$plant_user;
-        echo "<br>";
-*/
 
 
 

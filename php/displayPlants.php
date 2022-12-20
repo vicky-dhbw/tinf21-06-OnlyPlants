@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include "connection.php";
 
 ?>
@@ -67,7 +67,7 @@ include "connection.php";
                     <p>Age: '.$age.'</p>
                 </div>
                 <div class="card-footer">
-                    <button class="btn_">Edit</button>
+                    <button class="btn_"><a style="text-decoration: none" class="text-light" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">Edit</a></button>
                     <button class="btn_ btn-outline"><a style="text-decoration: none" class="text-dark" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">Delete</a></button>
                 </div>
             </div>
@@ -80,16 +80,7 @@ include "connection.php";
     ?>
 
 </div>
-<?php
 
-echo "<br>";
-echo "<br>";
-echo "<br>";
-if(isset($_SESSION['id'])){
-    echo $userid;
-}
-
-?>
 
 </body>
 </html>

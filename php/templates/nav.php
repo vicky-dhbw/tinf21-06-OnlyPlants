@@ -6,7 +6,11 @@ if($sign_in_sign_out==1){
 }
 
 $show="";
-$type=$_SESSION['type'];
+
+if(isset($_SESSION['type'])){
+    $type=$_SESSION['type'];
+}
+
 ?>
 
 <!doctype html>
@@ -92,6 +96,8 @@ $type=$_SESSION['type'];
                 <form method="post" class="d-flex mt-3"  action="<?php echo $controlButtonPage ?>">
                     <button class="btn btn-success" type="submit" name="signInButton"><?php echo $is_signed_in?></button>
                 </form>
+                <br>
+                <p><?php if(isset($_SESSION['sign-in-sign-out'])){echo "Logged in as  ".strtoupper($_SESSION['user']);}?></p>
 
             </div>
         </div>

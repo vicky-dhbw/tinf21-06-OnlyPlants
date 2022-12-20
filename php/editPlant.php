@@ -1,59 +1,94 @@
 <?php
 session_start();
+
+if (isset($_SESSION['sign-in-sign-out'])) {
+    $sign_in_sign_out = $_SESSION['sign-in-sign-out'];
+    $user = $_SESSION['user'];
+} else {
+    $sign_in_sign_out = 0;
+    $user = "no user";
+}
+$Logo = "../assets/images/logo_.png";
+$plants_page = "plants.php";
+$premiumContent_page = "premiumContent.php";
+$admin_page = "adminPage.php";
+$contact_page = "contact.php";
+$home_page = "../index.php";
+$signin_page = "signin.php";
+$controlButtonPage = 'controlButton.php';
+
+
+include "templates/nav.php";
 include "connection.php";
-if(isset($_SESSION['sign-in-sign-out'])){
-    $sign_in_sign_out=$_SESSION['sign-in-sign-out'];
+
+$plant_id = $_GET['plant_id'];
+$plant_user = $_GET['plant_user'];
+$current_user_id=$_SESSION['id'];
+$current_user_type=$_SESSION['type'];
+
+if(!isset($_SESSION['id'])){
+    header("Location: register.php");
 }
-else{
-    $sign_in_sign_out=0;
+
+if($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0){
+    $_SESSION['alert']=4;
+    header("Location: plants.php");
 }
-$Logo="../assets/images/logo_.png";
-$plants_page="plants.php";
-$premiumContent_page="premiumContent.php";
-$contact_page="contact.php";
-$home_page="../index.php";
-$signin_page="signin.php";
-$controlButtonPage='controlButton.php';
-$currentPage='plants';
-$admin_page="adminPage.php";
-$profile="profile.php";
-$user=$_SESSION['id'][0];
-$username=$_SESSION['user'];
-
-if(isset($_POST['submit'])) {
-    $name = $_POST['plant_name'];
-    $type = $_POST['type'];
-    $category = $_POST['category'];
-    $color = $_POST['color'];
-    $age = (int)$_POST['age'];
-    $height = (int)$_POST['height'];
-    $image = $_FILES['file'];
 
 
-    $image_filename = $image['name'];
-    $image_file_temp = $image['tmp_name'];
-    $filename_separate = explode('.', $image_filename);
-    $file_ext = strtolower($filename_separate[1]);
-    $extension = array('jpeg', 'png', 'jpg', 'svg');
 
-    if (in_array($file_ext, $extension)) {
-        $upload_image = '../assets/images/' . $image_filename;
-        move_uploaded_file($image_file_temp, $upload_image);
-        $sql = "insert into plants(userid,username,name,type,category,color,age,height,url,isPremium) values ('$user','$username','$name','$type','$category','$color','$age','$height','$upload_image',0)";
-        $result = mysqli_query($connection, $sql);
-        if ($result) {
-            header("Location: plants.php");
-        } else {
-            echo '<div class="alert alert-danger" role="alert">
-                  <strong>Something is fishy! We could not create your plant!</strong>
-                 </div>';
-            die(mysqli_error($connection));
+
+    $sql = "select * from plants where id=$plant_id";
+    $result = mysqli_query($connection, $sql);
+
+        $row = mysqli_fetch_assoc($result);
+        $name = $row['name'];
+        $type = $row['type'];
+        $category = $row['category'];
+        $color = $row['color'];
+        $age = $row['age'];
+        $height = $row['height'];
+        $image = $row['url'];
+        $username = $row['username'];
+        $plant_id = $row['id'];
+        $plant_user = $row['userid'];
+
+
+        if(isset($_POST['submit'])){
+            //header("Location: plants.php");
+
+            $name_ = $_POST['plant_name'];
+            $type_ = $_POST['type'];
+            $category_ = $_POST['category'];
+            $color_ = $_POST['color'];
+            $age_ = (int)$_POST['age'];
+            $height_ = (int)$_POST['height'];
+            $image_ = $_FILES['file'];
+
+            $image_filename = $image_['name'];
+            $image_file_temp = $image_['tmp_name'];
+            $filename_separate = explode('.', $image_filename);
+            $file_ext = strtolower($filename_separate[1]);
+            $extension = array('jpeg', 'png', 'jpg', 'svg');
+
+            if (in_array($file_ext, $extension)) {
+                $upload_image = '../assets/images/' . $image_filename;
+                move_uploaded_file($image_file_temp, $upload_image);
+                $sql="update plants set name='$name_',type='$type_',category='$category_',color='$color_',age='$age_',height='$height_',url='$upload_image' where id=$plant_id";
+                $result = mysqli_query($connection, $sql);
+                if ($result) {
+                    $_SESSION['alert']=3;
+                    header("Location: plants.php");
+                } else {
+                    die(mysqli_error($connection));
+                }
+            }
+
         }
-    }
-
-}
 
 ?>
+
+
 
 <!doctype html>
 <html lang="en">
@@ -78,14 +113,14 @@ if(isset($_POST['submit'])) {
 <?php include __DIR__.'/templates/nav.php'; ?>
 <div class="container">
     <div class="d-flex justify-content-between">
-        <h1 class="display-4">Create Plant</h1>
+        <h1 class="display-4">Edit Plant</h1>
         <button class="btn btn-dark mb-5 float-right"><a href="plants.php" style="text-decoration: none" class="text-light" >Go back</a></button>
     </div>
 
     <form method="post" enctype="multipart/form-data">
         <div class="form-group mb-3 ">
             <label for="name">Plant name</label>
-            <input type="text" required id="name" class="form-control" placeholder="Enter plant name" name="plant_name">
+            <input type="text" required id="name" class="form-control" placeholder="Enter plant name" name="plant_name" value="<?php echo $name?>">
         </div>
 
         <label>Choose type</label>
@@ -140,24 +175,27 @@ if(isset($_POST['submit'])) {
 <div class="mb-3">
     <label class="form-label" for="age-regulator">Age</label><br>
     <input id="age-regulator" type="range" name="rangeInput" min="0" max="1000" required onchange="updateTextInput(this.value);">
-    <input type="text" class="form-control" id="textInput" value="" name="age" placeholder="age in months">
+    <input type="text" class="form-control" id="textInput" value="<?php echo $age?>" name="age" placeholder="age in months">
 </div>
 
         <div class="mb-3">
 
             <label class="form-label" for="height-regulator">Height</label><br>
             <input id="height-regulator" type="range" name="rangeInput" min="0" required max="100" onchange="updateTextInput2(this.value);">
-            <input type="text" class="form-control" id="textInput_" value="" name="height" placeholder="height in meters">
+            <input type="text" class="form-control" id="textInput_" value="<?php echo $height?>" name="height" placeholder="height in meters">
         </div>
 
 
         <div class="mb-3">
-            <input class="form-control" type="file" id="formFile" name="file">
+            <input class="form-control" type="file" id="formFile" name="file" value="<?php echo $image?>">
         </div>
 
         <button name="submit" type="submit" class="btn btn-success">Submit</button>
     </form>
 </div>
+
+</body>
+
 
 <script>
     function updateTextInput(val) {
@@ -172,5 +210,5 @@ if(isset($_POST['submit'])) {
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
-</body>
 </html>
+
