@@ -1,36 +1,58 @@
 <?php
-include "connect.php";
-if(isset($_POST['submit'])){
-    $name=$_POST['plant_name'];
-    $type=$_POST['type'];
-    $category=$_POST['category'];
-    $color=$_POST['color'];
-    $age=(int)$_POST['age'];
-    $height=(int)$_POST['height'];
-    $plant_url=$_POST['plant_url'];
+session_start();
+include "connection.php";
+if(isset($_SESSION['sign-in-sign-out'])){
+    $sign_in_sign_out=$_SESSION['sign-in-sign-out'];
+}
+else{
+    $sign_in_sign_out=0;
+}
+$Logo="../assets/images/logo_.png";
+$plants_page="plants.php";
+$premiumContent_page="premiumContent.php";
+$contact_page="contact.php";
+$home_page="../index.php";
+$signin_page="signin.php";
+$controlButtonPage='controlButton.php';
+$currentPage='plants';
+$admin_page="adminPage.php";
+$profile="profile.php";
+$user=$_SESSION['id'][0];
+$username=$_SESSION['user'];
 
-    var_dump($plant_url);
+if(isset($_POST['submit'])) {
+    $name = $_POST['plant_name'];
+    $type = $_POST['type'];
+    $category = $_POST['category'];
+    $color = $_POST['color'];
+    $age = (int)$_POST['age'];
+    $height = (int)$_POST['height'];
+    $image = $_FILES['file'];
 
-    $sql="insert into plants (name,type,category,color,age,height,url) values('$name','$type','$category','$color','$age','$height','$plant_url')";
-    $result=mysqli_query($con,$sql);
 
+    $image_filename = $image['name'];
+    $image_file_temp = $image['tmp_name'];
+    $filename_separate = explode('.', $image_filename);
+    $file_ext = strtolower($filename_separate[1]);
+    $extension = array('jpeg', 'png', 'jpg', 'svg');
 
-    if($result){
-        header("Location: display.php");
-    }else{
-        die(mysqli_error($con));
+    if (in_array($file_ext, $extension)) {
+        $upload_image = '../assets/images/' . $image_filename;
+        move_uploaded_file($image_file_temp, $upload_image);
+        $sql = "insert into plants(userid,username,name,type,category,color,age,height,url,isPremium) values ('$user','$username','$name','$type','$category','$color','$age','$height','$upload_image',0)";
+        $result = mysqli_query($connection, $sql);
+        if ($result) {
+            header("Location: plants.php");
+        } else {
+            echo '<div class="alert alert-danger" role="alert">
+                  <strong>Something is fishy! We could not create your plant!</strong>
+                 </div>';
+            die(mysqli_error($connection));
+        }
     }
 
-    echo $name. "<br>";
-    echo $type. "<br>";
-    echo  $category. "<br>";
-    echo $color. "<br>";
-    echo $age. "<br>";
-    echo $height. "<br>";
-    echo $plant_url. "<br>";
-    var_dump(is_int($age));
-    var_dump(is_int($height));
 }
+
 ?>
 
 <!doctype html>
@@ -45,12 +67,23 @@ if(isset($_POST['submit'])){
 
     <title>Hello, world!</title>
 </head>
-<body>
 
-<div class="container my-5">
-    <h1 class="display-4">Create Plant</h1>
-    <form method="post">
-        <div class="form-group mb-3">
+<style>
+    .container{
+        margin-top: 170px;
+        margin-bottom: 100px;
+    }
+</style>
+<body>
+<?php include __DIR__.'/templates/nav.php'; ?>
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <h1 class="display-4">Create Plant</h1>
+        <button class="btn btn-dark mb-5 float-right"><a href="plants.php" style="text-decoration: none" class="text-light" >Go back</a></button>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group mb-3 ">
             <label for="name">Plant name</label>
             <input type="text" required id="name" class="form-control" placeholder="Enter plant name" name="plant_name">
         </div>
@@ -104,11 +137,11 @@ if(isset($_POST['submit'])){
             <option value="white">white</option>
         </select>
 
-<div class="mb-3">
-    <label class="form-label" for="age-regulator">Age</label><br>
-    <input id="age-regulator" type="range" name="rangeInput" min="0" max="1000" required onchange="updateTextInput(this.value);">
-    <input type="text" class="form-control" id="textInput" value="" name="age" placeholder="age in months">
-</div>
+        <div class="mb-3">
+            <label class="form-label" for="age-regulator">Age</label><br>
+            <input id="age-regulator" type="range" name="rangeInput" min="0" max="1000" required onchange="updateTextInput(this.value);">
+            <input type="text" class="form-control" id="textInput" value="" name="age" placeholder="age in months">
+        </div>
 
         <div class="mb-3">
 
@@ -118,9 +151,8 @@ if(isset($_POST['submit'])){
         </div>
 
 
-        <div class="mb-3 my-3">
-            <label for="formFile" class="form-label">Plant url</label>
-            <input class="form-control mb-3" required type="file" id="formFile" name="plant_url">
+        <div class="mb-3">
+            <input class="form-control" type="file" id="formFile" name="file">
         </div>
 
         <button name="submit" type="submit" class="btn btn-success">Submit</button>
@@ -135,5 +167,10 @@ if(isset($_POST['submit'])){
         document.getElementById('textInput_').value=val;
     }
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
 </body>
 </html>
