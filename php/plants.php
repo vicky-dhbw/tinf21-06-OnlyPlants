@@ -39,10 +39,10 @@ $profile="profile.php";
     .plant_div{
         margin-top: 170px;
         padding: 0;
+        margin-left: 50px;
     }
 </style>
 <?php include __DIR__.'/templates/nav.php'; ?>
-
 
 
 <div class="plant_div">
@@ -134,52 +134,12 @@ $profile="profile.php";
 
 <!-- filter einklappbar und ausklappbar machen, um platz zu sparen-->
 
-<div class="container">
-    <?php
-    $color = $_GET["color"]??"Standardwert";
-    $height = $_GET["height"]??"Standardwert";
-    echo $color." ".$height;
-
-    echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "<br>";
-    echo "USER ".$is_signed_in;
-    echo "<br>";
-    echo "USER: ".$_SESSION['user']."<br>";
-    echo "ID: ".$_SESSION['id']."<br>";
-    echo "TYPE: ".$_SESSION['type']."<br>";
-    echo "<br>";
-
-    ?>
+<div class="container my-5">
+    <button class="btn btn-dark my-3"><a style="text-decoration: none" href="_createPlant.php" class="text-light">Create Plant</a></button><br>
+    <?php include "displayPlants.php"?>
 </div>
 
-
-<div class="myDiv">
-
-    <button class="btn btn-dark my-3"><a style="text-decoration: none" href="_createPlant.php" class="text-light">Create user</a></button>
-    <?php
-    $names=['leaf_sky.jpg','cute.jpg','leaves.jpg','img3.jpg'];
-    foreach ($names as $name){ ?>
-        <div class="card-grid">
-            <div class="card card-shadow">
-                <div class="card-header card-image">
-                    <img src="<?php echo "../assets/images/". $name?>">
-                </div>
-                <div class="card-body">
-                    <p>Name: </p>
-                    <p>Category: </p>
-                    <p>Created by: </p>
-                    <p>Age: </p>
-                </div>
-                <div class="card-footer">
-                    <button class="btn_">Edit</button>
-                    <button class="btn_ btn-outline">Delete</button>
-                </div>
-            </div>
-        </div>
-    <?php }
-    ?>
-
-</div>
+<?php include __DIR__.'/templates/footer.php'; ?>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

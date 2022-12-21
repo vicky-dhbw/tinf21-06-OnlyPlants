@@ -88,6 +88,14 @@ button:hover{
         transition: all .5s;
 
     }
+    img {
+        pointer-events: none;
+        user-select: none;
+        -ms-touch-action: none;
+        -moz-touch-action: none;
+        -webkit-touch-action: none;
+        touch-action: none;
+    }
     nav ul li{
         display: block;
         margin: 50px 0;

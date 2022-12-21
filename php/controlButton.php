@@ -10,5 +10,3 @@ if(isset($_SESSION['sign-in-sign-out'])){
 else{
     header("Location: signin.php");
 }
-
-
