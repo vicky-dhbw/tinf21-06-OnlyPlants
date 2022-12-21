@@ -1,0 +1,24 @@
+
+.circle{
+    width: 150px;
+    height: 150px;
+    background: black;
+    border-radius: 50%;
+    line-height: 0;
+    position: relative;
+
+}
+
+.circle-txt{
+    position: absolute;
+    width: inherit;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-family: Arial, serif;
+    color: white;
+}
+.user{
+    font-size: 80px;
+}
