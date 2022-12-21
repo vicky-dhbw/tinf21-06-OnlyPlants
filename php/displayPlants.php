@@ -65,17 +65,19 @@ include "connection.php";
                     <p><strong>Category:</strong> '.$category.'</p>
                     <p><strong>Color:</strong> '.$color.'</p>
                     <p><strong>Age:</strong> '.$age.'</p>
-                </div>
-                <div class="card-footer">
+                </div>'?>
+    <?php
+    if(isset($_SESSION['sign-in-sign-out'])){
+
+        echo ' <div class="card-footer">
                     <button class="btn_"><a style="text-decoration: none" class="text-light" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">Edit</a></button>
                     <button class="btn_ btn-outline"><a style="text-decoration: none" class="text-dark" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">Delete</a></button>
-                </div>
-            </div>
-           
-        </div>
-    
-    ';
+                </div>';
     }
+        ?>
+    <?php echo '  </div>
+           
+        </div>';}
 
     ?>
 
