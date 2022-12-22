@@ -18,6 +18,37 @@ $controlButtonPage='controlButton.php';
 $admin_page="adminPage.php";
 
 $profile="#";
+
+$id="";
+if(isset($_SESSION['id'])){
+    $id=$_SESSION['id'];
+}
+include "connection.php";
+
+$sql="SELECT count(*) as total_posts from plants where userid=$id and isPremium=0";
+$result=mysqli_query($connection,$sql);
+$data=mysqli_fetch_assoc($result);
+$total_posts=$data['total_posts'];
+
+$sql=null;
+$sql="SELECT count(*) as prem_posts from plants where userid=$id and isPremium=1";
+$result=mysqli_query($connection,$sql);
+$data=mysqli_fetch_assoc($result);
+$prem_posts=$data['prem_posts'];
+
+if($prem_posts==null){
+    $prem_posts=0;
+}
+
+
+$sql=null;
+$sql="SELECT * from users where id=$id";
+$result=mysqli_query($connection,$sql);
+$data=mysqli_fetch_assoc($result);
+$reg_date=explode(" ",$data['reg_date'])[0];
+$email=$data['email'];
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,30 +91,31 @@ $profile="#";
 <div class="container">
 
     <div class="row my-row">
-        <div class="col-2">
+        <div class="col-sm-4 col-md-3 col-lg-3">
             <div class="circle">
                 <div class="circle-txt">
                     <h2 class="user"><?php if(isset($_SESSION['user'])){echo $_SESSION['user'][0];}?></h2>
                 </div>
             </div>
         </div>
-        <div class="col-4 my-col">
+        <div class="col-md-4 col-sm-4">
             <h1><?php if(isset($_SESSION['user'])){echo $_SESSION['user'];}?></h1>
-            <span>Member since yesterday</span><br>
-            <span>admin@admin.de</span>
+            <span><?php echo "Member since " .$reg_date;?></span><br>
+            <span><?php echo $email;?></span>
         </div>
 
-        <div class="col-4 my-col">
+        <div class="col-sm-6 col-xs-3 col-lg-4 col-md-4 ">
             <div class="d-flex justify-content-between">
-                <h3>Posts</h3>
-                <h3>Premium Posts</h3>
+                <h4>Posts</h4>
+                <h4>Premium Posts</h4>
             </div>
             <div class="d-flex justify-content-between">
-                <h1>69</h1>
-                <h1>72</h1>
+                <h1><?php echo $total_posts?></h1>
+                <h1><?php echo $prem_posts?></h1>
             </div>
         </div>
     </div>
+    <hr class="my-4">
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
