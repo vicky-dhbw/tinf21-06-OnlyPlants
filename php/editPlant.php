@@ -18,6 +18,11 @@ $home_page = "../index.php";
 $signin_page = "signin.php";
 $controlButtonPage = 'controlButton.php';
 
+$redirectProfile=0;
+
+if(isset($_GET['redirectProfile'])){
+    $redirectProfile=1;
+}
 
 include "templates/nav.php";
 include "connection.php";
@@ -72,8 +77,14 @@ if(($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0)||!is
                 $sql="update plants set name='$name_',type='$type_',category='$category_',color='$color_',age='$age_',height='$height_',url='$upload_image' where id=$plant_id";
                 $result = mysqli_query($connection, $sql);
                 if ($result) {
-                    $_SESSION['alert']=3;
-                    header("Location: plants.php");
+                    if($redirectProfile==0){
+                        $_SESSION['alert']=3;
+                        header("Location: plants.php");
+                    }
+                    else{
+                        header("Location: profile.php");
+                    }
+
                 } else {
                     die(mysqli_error($connection));
                 }

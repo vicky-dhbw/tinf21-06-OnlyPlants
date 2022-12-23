@@ -60,6 +60,7 @@ $email=$data['email'];
     <title>Document</title>
     <link rel="icon" href="../favicon.png">
     <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
@@ -116,6 +117,55 @@ $email=$data['email'];
         </div>
     </div>
     <hr class="my-4">
+
+    <h1 class="my-6">My Posts</h1>
+    <hr class="my-4">
+    <div class="container-fluid">
+        <?php
+
+        $sql="select * from plants where userid=$id";
+        $result=mysqli_query($connection,$sql);
+
+        while ($row=mysqli_fetch_assoc($result)) {
+            $name = $row['name'];
+            $type = $row['type'];
+            $category = $row['category'];
+            $color = $row['color'];
+            $age = $row['age'];
+            $height = $row['height'];
+            $image = $row['url'];
+            $username=$row['username'];
+            $plant_id=$row['id'];
+            $plant_user=$row['userid'];
+            echo '
+    <div class="card-grid">
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="'.$image.'">
+                </div>
+                <div class="card-body">
+                    <p><strong>Name:</strong> '.$name.'</p>
+                    <p><strong>Created by</strong>: '.$username.'</p>
+                    <p><strong>Category:</strong> '.$category.'</p>
+                    <p><strong>Color:</strong> '.$color.'</p>
+                    <p><strong>Age:</strong> '.$age.'</p>
+                </div>'?>
+            <?php
+            if(isset($_SESSION['sign-in-sign-out'])){
+
+                echo ' <div class="card-footer">
+                    <button class="btn_"><a style="text-decoration: none" class="text-light" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectProfile=1">Edit</a></button>
+                    <button class="btn_ btn-outline"><a style="text-decoration: none" class="text-dark" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectProfile=1">Delete</a></button>
+                </div>';
+            }
+            ?>
+            <?php echo '  </div>
+           
+        </div>';}
+
+        ?>
+
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

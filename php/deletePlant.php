@@ -8,7 +8,11 @@ $type="";
 if(isset($_SESSION['type'])){
     $type=$_SESSION['type'];
 }
+$redirectProfile=0;
 
+if(isset($_GET['redirectProfile'])){
+    $redirectProfile=1;
+}
 
 if(!isset($_SESSION['id'])){
     $_SESSION['alert']=1;
@@ -22,8 +26,13 @@ if(!isset($_SESSION['id'])){
             $sql="delete from plants where id=$plant_id";
             $result=mysqli_query($connection,$sql);
             if($result){
-                $_SESSION['alert']=2;
-                header("Location: plants.php");
+                if($redirectProfile==0){
+                    $_SESSION['alert']=2;
+                    header("Location: plants.php");
+                }
+                else{
+                    header("Location: profile.php");
+                }
             }
             else{
                 die(mysqli_error($connection));
