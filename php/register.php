@@ -49,10 +49,6 @@
                                 <input type="radio" name="type" value="user" checked>
                                 user
                             </label>
-                            <label>
-                                <input type="radio" name="type" value="admin">
-                                admin
-                            </label>
                         </div>
                     </div>
 

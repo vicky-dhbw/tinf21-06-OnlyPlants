@@ -11,7 +11,7 @@ include "connection.php";
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>display Plants</title>
 </head>
 <body>
 
@@ -70,9 +70,13 @@ include "connection.php";
     if(isset($_SESSION['sign-in-sign-out'])){
 
         echo ' <div class="card-footer">
-                    <button class="btn_"><a style="text-decoration: none" class="text-light" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">Edit</a></button>
-                    <button class="btn_ btn-outline"><a style="text-decoration: none" class="text-dark" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">Delete</a></button>
-                </div>';
+              <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="create-outline"></ion-icon>
+             </a>
+             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="trash-outline"></ion-icon>
+             </a>
+              </div>';
     }
         ?>
     <?php echo '  </div>

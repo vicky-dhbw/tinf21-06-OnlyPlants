@@ -1,8 +1,8 @@
 .rounded-button{
-    width:60px;
-    height: 60px;
-    background: #FC9893;
-    color: black;
+    width:50px;
+    height: 50px;
+    background: #D0453E;
+    color: white;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -13,15 +13,15 @@
     transition: background 0.2s;
 }
 .rounded-button:hover{
-    background:#D0453E;
-    color: white;
+    background:#FC9893;
+    color: black;
 }
 
 .rounded-button2{
-    width:60px;
-    height: 60px;
-    background: #5BADEB;
-    color: black;
+    width:50px;
+    height: 50px;
+    background: #267CBD;
+    color: white;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -32,6 +32,6 @@
     transition: background 0.2s;
 }
 .rounded-button2:hover{
-    background:#267CBD;
-    color: white;
+    background:#5BADEB;
+    color: black;
 }
