@@ -1,0 +1,37 @@
+.rounded-button{
+    width:60px;
+    height: 60px;
+    background: #FC9893;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.rounded-button:hover{
+    background:#D0453E;
+    color: white;
+}
+
+.rounded-button2{
+    width:60px;
+    height: 60px;
+    background: #5BADEB;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.rounded-button2:hover{
+    background:#267CBD;
+    color: white;
+}
