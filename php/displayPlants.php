@@ -76,6 +76,9 @@ include "connection.php";
              <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
                  <ion-icon size="large" name="trash-outline"></ion-icon>
              </a>
+             <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
               </div>';
     }
         ?>

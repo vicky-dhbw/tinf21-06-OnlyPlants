@@ -1,6 +1,6 @@
-.rounded-button{
-    width:50px;
-    height: 50px;
+.rounded-buttonLike{
+    width:40px;
+    height: 40px;
     background: #D0453E;
     color: white;
     display: inline-flex;
@@ -12,34 +12,16 @@
     text-decoration: none;
     transition: background 0.2s;
 }
-.rounded-button:hover{
+.rounded-buttonLike:hover{
     background:#FC9893;
     color: black;
 }
 
-.rounded-button2{
-    width:50px;
-    height: 50px;
+.rounded-buttonComment{
+    width:40px;
+    height: 40px;
     background: #267CBD;
     color: white;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 30%;
-    border: none;
-    text-decoration: none;
-    transition: background 0.2s;
-}
-.rounded-button2:hover{
-    background:#5BADEB;
-    color: black;
-}
-.rounded-buttonView{
-    width:50px;
-    height: 50px;
-    background:#5B8783;
-    color: black;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +31,49 @@
     text-decoration: none;
     transition: background 0.2s;
 }
-.rounded-buttonView:hover{
-    background: #337D76;
+.rounded-buttonComment:hover{
+    background:#5BADEB;
+    color: black;
+}
+
+.rounded-buttonCreator{
+    width:40px;
+    height: 40px;
+    background: #6AA352;
     color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+}
+.rounded-buttonCreator:hover{
+    background: #6AA352;
+    color: white;
+}
+
+
+.circle{
+    width: 200px;
+    height: 200px;
+    background: black;
+    border-radius: 50%;
+    line-height: 0;
+    position: relative;
+
+}
+
+.circle-txt{
+    position: absolute;
+    width: inherit;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-family: Arial, serif;
+    color: white;
+}
+.user{
+    font-size: 80px;
 }
