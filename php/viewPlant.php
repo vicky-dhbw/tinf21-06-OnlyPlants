@@ -111,12 +111,32 @@ $plant_user = $row['userid'];
 
     <br>
     <div class="d-flex align-items-center justify-content-start">
-        <a class="rounded-buttonLike" href="#">
+        <a class="rounded-buttonLike" href="like.php? plant_id=<?php echo $plant_id?>">
             <ion-icon size="small"  name="heart-outline"></ion-icon>
         </a>
 
-        <p class="pad">1 Like </p>
-        <a class="rounded-buttonComment" href="#">
+        <p class="pad">
+            <?php
+            include "connection.php";
+            $sql="select * from plants where id='$plant_id'";
+            $result = mysqli_query($connection, $sql);
+            $data = mysqli_fetch_assoc($result);
+
+            $no_of_likes=$data['likes'];
+
+            if($no_of_likes==NULL){
+                echo '0 Likes';
+            }
+            elseif($no_of_likes==1){
+                echo "1 Like";
+            }
+            else{
+                echo $no_of_likes .' Likes';
+            }
+            ?>
+
+        </p>
+        <a class="rounded-buttonComment">
             <ion-icon size="small" name="chatbox-outline"></ion-icon>
         </a>
         <p class="pad">2 Comments</p>
@@ -147,7 +167,8 @@ $plant_user = $row['userid'];
     ?>
     <form class="mb-4" action="#">
         <div class="mb-3">
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="comment here..">
+            <label for="comment">Leave a comment...</label>
+            <input type="text" class="form-control" id="comment" placeholder="comment here..">
         </div>
         <button type="submit" class="btn btn-success">Comment</button>
     </form>

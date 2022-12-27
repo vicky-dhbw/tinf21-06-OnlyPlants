@@ -145,11 +145,11 @@ $email=$data['email'];
                     <img src="'.$image.'">
                 </div>
                 <div class="card-body">
-                    <p><strong>Name:</strong> '.$name.'</p>
-                    <p><strong>Created by</strong>: '.$username.'</p>
-                    <p><strong>Category:</strong> '.$category.'</p>
-                    <p><strong>Color:</strong> '.$color.'</p>
-                    <p><strong>Age:</strong> '.$age.'</p>
+                    <h5 class="p-2"><strong>'.$name.'</strong> </h5>
+                    <p class="p-1"><strong>Created by</strong>: '.$username.'</p>
+                    <p class="p-1"><strong>Category:</strong> '.$category.'</p>
+                    <p class="p-1"><strong>Color:</strong> '.$color.'</p>
+                    <p class="p-1"><strong>Age:</strong> '.$age.' weeks</p>
                 </div>'?>
             <?php
             if(isset($_SESSION['sign-in-sign-out'])){
