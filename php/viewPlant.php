@@ -17,6 +17,7 @@ $contact_page = "contact.php";
 $home_page = "../index.php";
 $signin_page = "signin.php";
 $controlButtonPage = 'controlButton.php';
+$profile='profile.php';
 
 include "templates/nav.php";
 include "connection.php";
