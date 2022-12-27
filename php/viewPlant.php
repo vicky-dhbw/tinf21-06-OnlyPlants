@@ -89,7 +89,7 @@ $plant_user = $row['userid'];
             <img class="plant-image" src="<?php echo $image?>" alt="">
         </div>
         <div class="col-md-6 shadow-lg plant-details">
-            <h1><?php echo $username?></h1>
+            <h1><?php echo $name?></h1>
 
             <div class="d-flex align-items-center p-2 mb-4">
                 <a class="rounded-buttonCreator">
@@ -111,12 +111,12 @@ $plant_user = $row['userid'];
 
     <br>
     <div class="d-flex align-items-center justify-content-start">
-        <a class="rounded-buttonLike">
+        <a class="rounded-buttonLike" href="#">
             <ion-icon size="small"  name="heart-outline"></ion-icon>
         </a>
 
         <p class="pad">1 Like </p>
-        <a class="rounded-buttonComment">
+        <a class="rounded-buttonComment" href="#">
             <ion-icon size="small" name="chatbox-outline"></ion-icon>
         </a>
         <p class="pad">2 Comments</p>
@@ -145,7 +145,7 @@ $plant_user = $row['userid'];
     }
 
     ?>
-    <form class="mb-4">
+    <form class="mb-4" action="#">
         <div class="mb-3">
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="comment here..">
         </div>

@@ -60,11 +60,11 @@ include "connection.php";
                     <img src="'.$image.'">
                 </div>
                 <div class="card-body">
-                    <p><strong>Name:</strong> '.$name.'</p>
+                    <h5><strong>'.$name.'</strong> </h5>
                     <p><strong>Created by</strong>: '.$username.'</p>
                     <p><strong>Category:</strong> '.$category.'</p>
                     <p><strong>Color:</strong> '.$color.'</p>
-                    <p><strong>Age:</strong> '.$age.'</p>
+                    <p><strong>Age:</strong> '.$age.' weeks</p>
                 </div>'?>
     <?php
     if(isset($_SESSION['sign-in-sign-out'])){
@@ -76,6 +76,12 @@ include "connection.php";
              <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
                  <ion-icon size="large" name="trash-outline"></ion-icon>
              </a>
+             <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
+              </div>';
+    }else{
+        echo ' <div class="card-footer">
              <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
                  <ion-icon size="large" name="eye-outline"></ion-icon>
              </a>
