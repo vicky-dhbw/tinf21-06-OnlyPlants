@@ -48,7 +48,7 @@ if (isset($_SESSION['alert'])) {
 <body>
     <style>
         .filter-div{
-            background-color: #228568;
+            background-color: #427659;
             border-radius: 15px;
             padding-top: 20px;
             padding-bottom: 10px;
@@ -66,7 +66,7 @@ if (isset($_SESSION['alert'])) {
             background-size: cover;
         }
         .layer2 {
-            background-image: url("../assets/images/greenWave4.svg");
+            background-image: url("../assets/images/greenWave6.svg");
         }
     </style>
     <?php include __DIR__ . '/templates/nav.php'; ?>
