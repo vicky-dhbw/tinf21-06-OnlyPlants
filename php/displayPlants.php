@@ -82,7 +82,7 @@ include "connection.php";
               </div>';
     }else{
         echo ' <div class="card-footer">
-             <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+             <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.'">
                  <ion-icon size="large" name="eye-outline"></ion-icon>
              </a>
               </div>';

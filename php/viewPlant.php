@@ -26,6 +26,13 @@ $plant_id = $_GET['plant_id'];
 $plant_user = $_GET['plant_user'];
 $current_user_id=$_SESSION['id'];
 $current_user_type=$_SESSION['type'];
+$redirect="";
+
+if(isset($_GET['redirect'])){
+    $redirect="profile.php";
+}else{
+    $redirect="plants.php";
+}
 
 $sql = "select * from plants where id='$plant_id'";
 $result = mysqli_query($connection, $sql);
@@ -41,6 +48,22 @@ $image = $row['url'];
 $username = $row['username'];
 $plant_id = $row['id'];
 $plant_user = $row['userid'];
+$posted=date('M j Y g:i A', strtotime($row['created']));
+
+// updating views
+
+$no_of_views=$row['views'];
+if($no_of_views==NULL){
+    $no_of_views=1;
+}
+else{
+    $no_of_views++;
+}
+
+$current_views=$no_of_views;
+$sql="update plants set views=$no_of_views where id='$plant_id'";
+$result=mysqli_query($connection,$sql);
+
 
 ?>
 <!doctype html>
@@ -80,10 +103,17 @@ $plant_user = $row['userid'];
     .my-d-flex{
         gap: 1rem;
     }
+
+    .timestamp{
+        font-size: 0.8em;
+    }
 </style>
 <body>
 
 <div class="container">
+    <div class="d-flex justify-content-start">
+        <button class="btn btn-dark mb-5 float-right"><a href="<?php echo $redirect ?>" style="text-decoration: none" class="text-light" >Go back</a></button>
+    </div>
     <div class="row">
         <div class="col-md-5 shadow-lg p-3">
             <img class="plant-image" src="<?php echo $image?>" alt="">
@@ -95,15 +125,15 @@ $plant_user = $row['userid'];
                 <a class="rounded-buttonCreator">
                     <ion-icon name="person-outline"></ion-icon>
                 </a>
-                <p class="pad">created by <?php echo $username?></p>
+                <p class="pad"><i>created by <?php echo $username. " on ".$posted?></i></p>
             </div>
 
-            <h5 class="p-1">Category: <?php echo $category?></h5>
-            <h5 class="p-1">Type: <?php echo $type?></h5>
-            <h5 class="p-1">Color: <?php echo $color?></h5>
-            <h5 class="p-1">Age in weeks: <?php echo $age?></h5>
-            <h5 class="p-1">Height in meters: <?php echo $height?></h5>
-            <h5 class="p-1">is Premium: </h5>
+            <h5 class="p-1"><strong>Category: </strong><?php echo $category?></h5>
+            <h5 class="p-1"><strong>Type: </strong><?php echo $type?></h5>
+            <h5 class="p-1"><strong>Color: </strong><?php echo $color?></h5>
+            <h5 class="p-1"><strong>Age in weeks: </strong><?php echo $age?></h5>
+            <h5 class="p-1"><strong>Height in meters: </strong><?php echo $height?></h5>
+            <h5 class="p-1"><strong>is Premium: </strong></h5>
             <br>
             <br>
         </div>
@@ -139,7 +169,48 @@ $plant_user = $row['userid'];
         <a class="rounded-buttonComment">
             <ion-icon size="small" name="chatbox-outline"></ion-icon>
         </a>
-        <p class="pad">2 Comments</p>
+        <p class="pad">
+            <?php
+            // xampp mariaDB count not working
+            include "connection.php";
+            $sql="select * from comments where plantID='$plant_id'";
+            $result = mysqli_query($connection,$sql);
+            $counter=0;
+            while ($row=mysqli_fetch_assoc($result)){
+                $counter++;
+            }
+
+            if($counter==NULL){
+                echo "0 Comments";
+            }
+            elseif ($counter==1){
+                echo "1 Comment";
+            }
+            else{
+                echo $counter ." Comments";
+            }
+
+            ?>
+        </p>
+
+        <a class="rounded-buttonView">
+            <ion-icon size="small" name="eye-outline"></ion-icon>
+        </a>
+        <p class="pad">
+
+            <?php
+
+            if($current_views==NULL){
+                echo "0 Views";
+            }
+            elseif ($current_views==1){
+                echo "1 View";
+            }
+            else{
+                echo $current_views ." Views";
+            }
+            ?>
+        </p>
     </div>
 
     <br>
@@ -149,29 +220,53 @@ $plant_user = $row['userid'];
 
     <?php
 
-    for($a=1;$a<=3;$a++){
+    $sql="select commenter,comment,created from comments where plantID='$plant_id'";
+    $result=mysqli_query($connection,$sql);
+
+    while ($row=mysqli_fetch_assoc($result)) {
+    $commenter = $row['commenter'];
+    $comment=$row['comment'];
+    $time=date('M j Y g:i A', strtotime($row['created']));
         echo '
+<p class="timestamp"><i>'.$commenter.' posted on '.$time.'</i></p>
          <div class="d-flex my-d-flex">
         <div class="circle">
             <div class="circle-txt">
-                <h2 class="user">u</h2>
+                <h2 class="user">'.$commenter[0].'</h2>
             </div>
         </div>
-        <div class="shadow p-3 mb-5 bg-light rounded">No shadow kjfbgslkbjslfbkjnsdfbn kdfnblskdjnbsdgb</div>
+        <div class="shadow p-2 mb-5 bg-light rounded">'.$comment.'</div>
     </div>
-        
-        
         ';
     }
 
     ?>
-    <form class="mb-4" action="#">
+    <?php
+    if(isset($_SESSION['sign-in-sign-out'])){
+        echo '<form class="mb-4" action="comment.php">
         <div class="mb-3">
-            <label for="comment">Leave a comment...</label>
-            <input type="text" class="form-control" id="comment" placeholder="comment here..">
+            <input type="hidden" id="disabledTextInput" class="form-control" name="plant_id" value="'.$plant_id.'">
+            <label for="comment">Leave a comment</label>
+            <input type="text" required class="form-control" name="comment" id="comment" placeholder="comment here..">
         </div>
-        <button type="submit" class="btn btn-success">Comment</button>
-    </form>
+        <button type="submit" name="submit" class="btn btn-success">Comment</button>
+    </form>';
+    }
+    else{
+        echo '<form class="mb-4" action="comment.php">
+        <div class="mb-3">
+            <input type="hidden" id="disabledTextInput" class="form-control" name="plant_id" value="'.$plant_id.'">
+            <label for="guestName">Name</label>
+            <input type="text" required class="form-control mb-4" name="guestName" id="guestName" placeholder="mr. guest..">
+            <label for="comment">Leave a comment</label>
+            <input type="text" required class="form-control" name="comment" id="comment" placeholder="comment here..">
+        </div>
+        <button type="submit" name="submit" class="btn btn-success">Comment</button>
+    </form>';
+    }
+
+    ?>
+
 </div>
 
 
