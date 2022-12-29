@@ -45,7 +45,7 @@ $sql=null;
 $sql="SELECT * from users where id=$id";
 $result=mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
-$reg_date=explode(" ",$data['reg_date'])[0];
+$reg_date=$posted=date('M j Y g:i A', strtotime($data['reg_date']));
 $email=$data['email'];
 
 
