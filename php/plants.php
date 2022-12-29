@@ -48,7 +48,7 @@ if (isset($_SESSION['alert'])) {
 <body>
     <style>
         .filter-div{
-            background-color: #4CA481;
+            background-color: #228568;
             border-radius: 15px;
             padding-top: 20px;
             padding-bottom: 10px;
