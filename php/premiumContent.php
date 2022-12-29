@@ -40,6 +40,8 @@ $number=0;
 </style>
 <?php include __DIR__.'/templates/nav.php'; ?>
 
+<?php  include "pricing.php"; ?>
+
 <div class="container">
     <h1>Premium Content</h1>
 </div>
