@@ -38,7 +38,9 @@ $number=0;
         margin-top: 170px;
     }
 </style>
-<?php include __DIR__.'/templates/nav.php'; ?>
+<?php include __DIR__.'/templates/nav.php'; ?>lude "prici
+</style>
+<?php  "pricing.php"; ?>
 
 <div class="container">
     <h1>Premium Content</h1>
