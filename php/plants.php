@@ -42,18 +42,18 @@ if (isset($_SESSION['alert'])) {
 
 <body>
     <style>
-        .plant_div {
-            margin-top: 170px;
+        .filter-div{
+            background-color: #7DBB96;
+            border-radius: 15px;
+        }
+        .alertDiv{
+            margin-top: 120px;
             padding: 0;
         }
     </style>
     <?php include __DIR__ . '/templates/nav.php'; ?>
 
     <div class="alertDiv">
-
-    </div>
-
-    <div class="plant_div">
         <?php
         if (isset($_SESSION['alert'])) {
             if ($showAlert == 1) {
@@ -79,67 +79,71 @@ if (isset($_SESSION['alert'])) {
 
 
         ?>
-        <details open="">
-            <summary class="openclose"><b>Category/Filter</b></summary>
-            <table id="table1">
-                <tr>
-                    <th>
-                        <h1 class="h1">Plant Filter</h1>
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <form method="get" class="f1">
-                            <label class="c1">category:
-                                <select name="category" class="c2">
-                                    <option value="none"> none </option>
-                                    <option value="balcony flowers">balcony flowers</option>
-                                    <option value="medicinal plants">medicinal plants</option>
-                                    <option value="pot plants">pot plants</option>
-                                    <option value="summer flowers">summer flowers</option>
-                                    <option value="wild plants">wild plants</option>
-                                    <option value="indoor plants">indoor plants</option>
-                                </select>
-                            </label>
-                            <label class="c1">type:
-                                <select name="type" class="c2">
-                                    <option value="none"> none </option>
-                                    <option value="annuals"> annuals </option>
-                                    <option value="bulbs"> bulbs </option>
-                                    <option value="cactus - succulents"> cactus - succulents </option>
-                                    <option value="climbers"> climbers </option>
-                                    <option value="conifers"> conifers </option>
-                                    <option value="ferns"> ferns </option>
-                                    <option value="fruit"> fruit </option>
-                                    <option value="vegetables">vegetables</option>
-                                    <option value="herbs"> herbs </option>
-                                    <option value="ornamental grasses"> ornamental grasses </option>
-                                    <option value="perennials"> perennials </option>
-                                    <option value="roses"> roses </option>
-                                    <option value="shrubs"> shrubs </option>
-                                    <option value="trees"> trees </option>
-                                    <option value="palms - cycads"> palms - cycads </option>
-                                    <option value="bamboos"> bambooos </option>
-                                    <option value="aquatic plants"> aquatic plants </option>
-                                    <option value="orchids"> orchids </option>
-                                </select>
-                            </label>
-                            <label class="c1"> color:
-                                <select name="color" class="c2">
-                                    <option value="none"> none </option>
-                                    <option value="blue">blue</option>
-                                    <option value="brown">brown</option>
-                                    <option value="yellow">yellow</option>
-                                    <option value="green">green</option>
-                                    <option value="mixed">mixed</option>
-                                    <option value="orange">orange</option>
-                                    <option value="pink">pink</option>
-                                    <option value="red">red</option>
-                                    <option value="violet">violet</option>
-                                    <option value="white">white</option>
-                                </select>
-                            </label>
-                            <span class="spanlinebreak">
+    </div>
+
+    <div class="container filter-div">
+
+            <details open="">
+                <summary class="openclose"><b>Category/Filter</b></summary>
+                <table id="table1">
+                    <tr>
+                        <th>
+                            <h1 class="h1">Plant Filter</h1>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form method="get" class="f1">
+                                <label class="c1">category:
+                                    <select name="category" class="c2">
+                                        <option value="none"> none </option>
+                                        <option value="balcony flowers">balcony flowers</option>
+                                        <option value="medicinal plants">medicinal plants</option>
+                                        <option value="pot plants">pot plants</option>
+                                        <option value="summer flowers">summer flowers</option>
+                                        <option value="wild plants">wild plants</option>
+                                        <option value="indoor plants">indoor plants</option>
+                                    </select>
+                                </label>
+                                <label class="c1">type:
+                                    <select name="type" class="c2">
+                                        <option value="none"> none </option>
+                                        <option value="annuals"> annuals </option>
+                                        <option value="bulbs"> bulbs </option>
+                                        <option value="cactus - succulents"> cactus - succulents </option>
+                                        <option value="climbers"> climbers </option>
+                                        <option value="conifers"> conifers </option>
+                                        <option value="ferns"> ferns </option>
+                                        <option value="fruit"> fruit </option>
+                                        <option value="vegetables">vegetables</option>
+                                        <option value="herbs"> herbs </option>
+                                        <option value="ornamental grasses"> ornamental grasses </option>
+                                        <option value="perennials"> perennials </option>
+                                        <option value="roses"> roses </option>
+                                        <option value="shrubs"> shrubs </option>
+                                        <option value="trees"> trees </option>
+                                        <option value="palms - cycads"> palms - cycads </option>
+                                        <option value="bamboos"> bambooos </option>
+                                        <option value="aquatic plants"> aquatic plants </option>
+                                        <option value="orchids"> orchids </option>
+                                    </select>
+                                </label>
+                                <label class="c1"> color:
+                                    <select name="color" class="c2">
+                                        <option value="none"> none </option>
+                                        <option value="blue">blue</option>
+                                        <option value="brown">brown</option>
+                                        <option value="yellow">yellow</option>
+                                        <option value="green">green</option>
+                                        <option value="mixed">mixed</option>
+                                        <option value="orange">orange</option>
+                                        <option value="pink">pink</option>
+                                        <option value="red">red</option>
+                                        <option value="violet">violet</option>
+                                        <option value="white">white</option>
+                                    </select>
+                                </label>
+                                <span class="spanlinebreak">
                                 <label class="c1">height:
                                     <input type="number" placeholder="height (cm)" name="height" step="0.1" class="c2">
                                 </label>
@@ -147,17 +151,18 @@ if (isset($_SESSION['alert'])) {
                                     <input type="number" placeholder="age (weeks)" name="age" step="1" class="c2">
                                 </label>
                             </span>
-                            <span class="buttonspan">
+                                <span class="buttonspan">
                                 <button type="submit" class="b1">submit</button><button type="reset" class="b1">reset</button>
                             </span>
-                        </form>
-                    </td>
-                </tr>
-            </table>
-        </details>
-        <div>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </details>
+            <div>
 
-        </div>
+            </div>
+
     </div>
 
     <!-- filter einklappbar und ausklappbar machen, um platz zu sparen-->
