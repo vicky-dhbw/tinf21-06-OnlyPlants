@@ -6,19 +6,10 @@
         text-decoration: none;
     }
 
-    .buttonspan {
-        background-color: #7DBB96;
-    }
-
-    .spanlinebreak {
-        background-color: #7DBB96;
-    }
-
     #table1 {
         width: 100%;
 
         border-radius: 10px;
-        background-color: #7DBB96;
         font-family: "Montserrat", sans-serif;
         font-weight: 500;
         font-size: 16px;
@@ -28,12 +19,8 @@
     .h1 {
         color: black;
         text-align: left;
-        background-color: #7DBB96;
     }
 
-    .f1 {
-        background-color: #7DBB96;
-    }
 
     .c1 {
         font-family: "Montserrat", sans-serif;
@@ -41,7 +28,6 @@
         font-size: 16px;
         text-decoration: none;
         border-style: none;
-        background-color: #7DBB96;
         padding-right: 3px;
         padding-left: 3px;
         margin: 5px 5px 5px 5px;
@@ -64,13 +50,9 @@
         display: block;
     }
 
-    td,
-    th {
-        background-color: #7DBB96;
-    }
 
     .b1 {
-        width: 100px;
+        width: 120px;
         height: 27px;
         margin: 5px 5px 5px 5px;
         padding: 2px 25px 7px;

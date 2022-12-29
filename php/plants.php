@@ -22,6 +22,11 @@ $showAlert = 0;
 if (isset($_SESSION['alert'])) {
     $showAlert = $_SESSION['alert'];
 }
+
+
+
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,45 +48,62 @@ if (isset($_SESSION['alert'])) {
 <body>
     <style>
         .filter-div{
-            background-color: #7DBB96;
+            background-color: #4CA481;
             border-radius: 15px;
+            padding-top: 20px;
+            padding-bottom: 10px;
         }
         .alertDiv{
-            margin-top: 120px;
+            margin-top: 100px;
             padding: 0;
+        }
+        .container-fluid{
+            aspect-ratio: 1:1;
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .layer2 {
+            background-image: url("../assets/images/greenWave4.svg");
         }
     </style>
     <?php include __DIR__ . '/templates/nav.php'; ?>
 
-    <div class="alertDiv">
-        <?php
-        if (isset($_SESSION['alert'])) {
-            if ($showAlert == 1) {
-                echo '<div class="alert alert-danger" role="alert">
+    <div class="container-fluid layer2">
+        <div class="alertDiv">
+            <br>
+            <br>
+            <br>
+            <?php
+            if (isset($_SESSION['alert'])) {
+                if ($showAlert == 1) {
+                    echo '<div class="alert alert-danger" role="alert">
   Plant could not be deleted!
 </div>';
-            } elseif ($showAlert == 2) {
-                echo '<div class="alert alert-success" role="alert">
+                } elseif ($showAlert == 2) {
+                    echo '<div class="alert alert-success" role="alert">
   Plant deleted successfully!
 </div>';
-            } elseif ($showAlert == 3) {
-                echo '<div class="alert alert-success" role="alert">
+                } elseif ($showAlert == 3) {
+                    echo '<div class="alert alert-success" role="alert">
   Plant updated successfully!
 </div>';
-            } elseif ($showAlert == 4) {
-                echo '<div class="alert alert-danger" role="alert">
+                } elseif ($showAlert == 4) {
+                    echo '<div class="alert alert-danger" role="alert">
   Oops! Plant could not be updated!
 </div>';
+                }
+
+                $_SESSION['alert'] = 0;
             }
 
-            $_SESSION['alert'] = 0;
-        }
 
+            ?>
+        </div>
 
-        ?>
-    </div>
-
-    <div class="container filter-div">
+        <div class="container shadow-lg filter-div">
 
             <details open="">
                 <summary class="openclose"><b>Category/Filter</b></summary>
@@ -93,7 +115,7 @@ if (isset($_SESSION['alert'])) {
                     </tr>
                     <tr>
                         <td>
-                            <form method="get" class="f1">
+                            <form method="get" class="f1" action="plants.php">
                                 <label class="c1">category:
                                     <select name="category" class="c2">
                                         <option value="none"> none </option>
@@ -145,38 +167,114 @@ if (isset($_SESSION['alert'])) {
                                 </label>
                                 <span class="spanlinebreak">
                                 <label class="c1">height:
-                                    <input type="number" placeholder="height (cm)" name="height" step="0.1" class="c2">
+                                    <input type="number" placeholder="height (m)" name="height" step="1" class="c2">
                                 </label>
                                 <label class="c1">age:
                                     <input type="number" placeholder="age (weeks)" name="age" step="1" class="c2">
                                 </label>
                             </span>
                                 <span class="buttonspan">
-                                <button type="submit" class="b1">submit</button><button type="reset" class="b1">reset</button>
+                                <button type="submit" name="submit" class="b1">submit</button><button type="reset" class="b1">reset</button>
+                                    <button class="b1"><a href="plants.php"></a>Show all</button>
+
                             </span>
                             </form>
                         </td>
                     </tr>
                 </table>
             </details>
-            <div>
 
-            </div>
 
-    </div>
+        </div>
 
-    <!-- filter einklappbar und ausklappbar machen, um platz zu sparen-->
+        <!-- filter einklappbar und ausklappbar machen, um platz zu sparen-->
 
-    <div class="container my-5">
-        <button class="btn btn-dark my-3"><a style="text-decoration: none" href="
+        <div class="container my-5">
+            <button class="btn btn-dark shadow my-3"><a style="text-decoration: none" href="
     <?php if (isset($_SESSION['sign-in-sign-out'])) {
-        echo "_createPlant.php";
-    } else {
-        echo "register.php";
-    } ?>
+                    echo "_createPlant.php";
+                } else {
+                    echo "register.php";
+                } ?>
     " class="text-light">Create Plant</a></button><br>
-        <?php include "displayPlants.php" ?>
+
+            <?php
+            if(isset($_GET['submit'])){
+                $category_=$_GET['category'];
+                $type_=$_GET['type'];
+                $height_=$_GET['height'];
+                $age_=$_GET['age'];
+
+                /*
+            $sql="select * from plants where category=$category_ or type=$type_ or age<=$age_ or height<=$height_";
+            $result=mysqli_query($connection,$sql);
+
+            while ($row=mysqli_fetch_assoc($result)) {
+                $name = $row['name'];
+                $type = $row['type'];
+                $category = $row['category'];
+                $color = $row['color'];
+                $age = $row['age'];
+                $height = $row['height'];
+                $image = $row['url'];
+                $username=$row['username'];
+                $plant_id=$row['id'];
+                $plant_user=$row['userid'];
+                echo '
+        <div class="card-grid">
+                <div class="card card-shadow">
+                    <div class="card-header card-image">
+                        <img src="'.$image.'">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="p-2"><strong>'.$name.'</strong> </h5>
+                        <p class="p-1"><strong>Created by</strong>: '.$username.'</p>
+                        <p class="p-1"><strong>Category:</strong> '.$category.'</p>
+                        <p class="p-1"><strong>Color:</strong> '.$color.'</p>
+                        <p class="p-1"><strong>Age:</strong> '.$age.' weeks</p>
+                    </div>'?>
+                <?php
+                if(isset($_SESSION['sign-in-sign-out'])){
+
+                    echo ' <div class="card-footer">
+                  <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                     <ion-icon size="large" name="create-outline"></ion-icon>
+                 </a>
+                 <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                     <ion-icon size="large" name="trash-outline"></ion-icon>
+                 </a>
+                 <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                     <ion-icon size="large" name="eye-outline"></ion-icon>
+                 </a>
+                  </div>';
+                }else{
+                    echo ' <div class="card-footer">
+                 <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.'">
+                     <ion-icon size="large" name="eye-outline"></ion-icon>
+                 </a>
+                  </div>';
+                }
+                ?>
+                <?php echo '  </div>
+
+            </div>';
+            }*/
+
+                echo $category_;
+                echo "<br>";
+                echo $type_;
+                echo "<br>";
+                echo $height_;
+                echo "<br>";
+                echo $age_;
+
+            }else{
+                include "displayPlants.php" ;
+            }
+            ?>
+        </div>
     </div>
+
 
     <?php include __DIR__ . '/templates/footer.php'; ?>
 
