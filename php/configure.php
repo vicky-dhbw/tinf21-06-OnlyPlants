@@ -19,6 +19,7 @@ $sql = "CREATE TABLE IF NOT EXISTS users(
   email VARCHAR(30) NOT NULL,
   password VARCHAR(30) NOT NULL,
   type VARCHAR(30) NOT NULL,
+  isPremium tinyint(1) NOT NULL,
   reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   )";
 
@@ -29,7 +30,7 @@ $stmt = $conn->prepare("SELECT * FROM users WHERE email=?");
 $stmt->execute([$email]);
 $user = $stmt->fetch();
 if (!$user) {
-    $sql="INSERT INTO users(name,email,password,type) VALUES ('Admin','admin@admin.de','admin123','admin')";
+    $sql="INSERT INTO users(name,email,password,type,isPremium) VALUES ('Admin','admin@admin.de','admin123','admin',1)";
     $conn->exec($sql);
 }
 
@@ -38,7 +39,7 @@ $stmt = $conn->prepare("SELECT * FROM users WHERE email=?");
 $stmt->execute([$email]);
 $user = $stmt->fetch();
 if (!$user) {
-    $sql="INSERT INTO users(name,email,password,type) VALUES ('User','user@user.de','user123','user')";
+    $sql="INSERT INTO users(name,email,password,type,isPremium) VALUES ('User','user@user.de','user123','user',0)";
     $conn->exec($sql);
 }
 $sql="CREATE TABLE IF NOT EXISTS plants(
@@ -53,10 +54,25 @@ $sql="CREATE TABLE IF NOT EXISTS plants(
   height int(11) NOT NULL,
   url varchar(60) NOT NULL,
   isPremium tinyint(1) NOT NULL,
+  likes int(11) NULL,
+  views int(11) NULL,
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
 
+
+$conn->exec($sql);
+
+
+$sql="CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `plantID` int(11) NOT NULL,
+  `commenter` varchar(30) NOT NULL,
+  `commenterID` int(11) DEFAULT NULL,
+  `comment` text NOT NULL,
+  created TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
 
 $conn->exec($sql);
 

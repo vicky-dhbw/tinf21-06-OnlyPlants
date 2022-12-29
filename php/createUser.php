@@ -28,7 +28,8 @@ if(isset($_POST['submit'])){
     $password=$_POST['password'];
     $type=$_POST['type'];
 
-    $sql="insert into users (name,email,password,type) values('$name','$email','$password','$type')";
+
+    $sql="insert into users (name,email,password,type,isPremium) values('$name','$email','$password','$type',0)";
     $result=mysqli_query($connection,$sql);
 
     if($result){

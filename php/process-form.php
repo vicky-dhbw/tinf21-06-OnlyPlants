@@ -25,7 +25,7 @@ try {
 }
 if(strlen($name)!=0&&strlen($password)!=0&&strlen($email)!=0){
 
-    $sql="INSERT INTO users(name,email,password,type) VALUES ('$name','$email','$password','$type')";
+    $sql="INSERT INTO users(name,email,password,type,isPremium) VALUES ('$name','$email','$password','$type',0)";
     $conn->exec($sql);
     //echo "data taken";
     $name=null;

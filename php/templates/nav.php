@@ -27,6 +27,9 @@ if(isset($_SESSION['type'])){
         margin:0;
         padding:0;
     }
+    nav {
+        position: fixed;
+    }
     img {
         pointer-events: none;
         user-select: none;

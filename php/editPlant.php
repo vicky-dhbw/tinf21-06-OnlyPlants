@@ -18,10 +18,12 @@ $home_page = "../index.php";
 $signin_page = "signin.php";
 $controlButtonPage = 'controlButton.php';
 $profile='profile.php';
-$redirectProfile=0;
+$redirectProfile="";
 
 if(isset($_GET['redirectProfile'])){
-    $redirectProfile=1;
+    $redirectProfile="profile.php";
+}else{
+    $redirectProfile="plants.php";
 }
 
 include "templates/nav.php";
@@ -119,7 +121,7 @@ if(($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0)||!is
 <div class="container">
     <div class="d-flex justify-content-between">
         <h1 class="display-4">Edit Plant</h1>
-        <button class="btn btn-dark mb-5 float-right"><a href="plants.php" style="text-decoration: none" class="text-light" >Go back</a></button>
+        <button class="btn btn-dark mb-5 float-right"><a href="<?php echo $redirectProfile?>" style="text-decoration: none" class="text-light" >Go back</a></button>
     </div>
 
     <form method="post" enctype="multipart/form-data">

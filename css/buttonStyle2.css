@@ -32,8 +32,8 @@
     transition: background 0.2s;
 }
 .rounded-buttonComment:hover{
-    background:#5BADEB;
-    color: black;
+    background:#267CBD;
+    color: white;
 }
 
 .rounded-buttonCreator{
@@ -76,4 +76,23 @@
 }
 .user{
     font-size: 80px;
+}
+
+.rounded-buttonView{
+    width:40px;
+    height: 40px;
+    background:#5B8783;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.rounded-buttonView:hover{
+    background: #5B8783;
+    color: white;
 }
