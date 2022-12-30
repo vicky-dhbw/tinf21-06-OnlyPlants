@@ -24,9 +24,6 @@ if (isset($_SESSION['alert'])) {
 }
 
 
-
-
-
 ?>
 <!doctype html>
 <html lang="en">
