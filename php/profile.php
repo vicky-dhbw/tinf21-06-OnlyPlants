@@ -83,12 +83,6 @@ $email=$data['email'];
 </style>
 <?php include __DIR__.'/templates/nav.php'; ?>
 
-<div class="container">
-    <!--<h1>Profile</h1>
-    <h2><//?php if(isset($_SESSION['user'])){echo "USER: ".$_SESSION['user'];}?></h2>
-    <h2><//?php if(isset($_SESSION['id'])){echo "ID: ".$_SESSION['id'];}?></h2>
-    <h2><//?php if(isset($_SESSION['type'])){echo "TYPE: ".$_SESSION['type'];}?></h2>-->
-</div>
 
 <div class="container">
 

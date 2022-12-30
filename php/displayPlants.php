@@ -92,6 +92,7 @@ include "connection.php";
            
         </div>';}
 
+    mysqli_close($connection);
     ?>
 
 </div>

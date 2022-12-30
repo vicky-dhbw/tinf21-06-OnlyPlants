@@ -52,6 +52,7 @@ if (isset($_SESSION['alert'])) {
             border-radius: 15px;
             padding-top: 20px;
             padding-bottom: 10px;
+            color: white;
         }
         .alertDiv{
             margin-top: 100px;
@@ -199,78 +200,81 @@ if (isset($_SESSION['alert'])) {
     " class="text-light">Create Plant</a></button><br>
 
             <?php
-            if(isset($_GET['submit'])){
-                $category_=$_GET['category'];
-                $type_=$_GET['type'];
-                $height_=$_GET['height'];
-                $age_=$_GET['age'];
+            if(isset($_GET['submit'])) {
+                $category_ = $_GET['category'];
+                $type_ = $_GET['type'];
+                $height_ = $_GET['height'];
+                $age_ = $_GET['age'];
+                $color_=$_GET['color'];
+                $counter=0;
 
-                /*
-            $sql="select * from plants where category=$category_ or type=$type_ or age<=$age_ or height<=$height_";
-            $result=mysqli_query($connection,$sql);
 
-            while ($row=mysqli_fetch_assoc($result)) {
-                $name = $row['name'];
-                $type = $row['type'];
-                $category = $row['category'];
-                $color = $row['color'];
-                $age = $row['age'];
-                $height = $row['height'];
-                $image = $row['url'];
-                $username=$row['username'];
-                $plant_id=$row['id'];
-                $plant_user=$row['userid'];
-                echo '
-        <div class="card-grid">
-                <div class="card card-shadow">
-                    <div class="card-header card-image">
-                        <img src="'.$image.'">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="p-2"><strong>'.$name.'</strong> </h5>
-                        <p class="p-1"><strong>Created by</strong>: '.$username.'</p>
-                        <p class="p-1"><strong>Category:</strong> '.$category.'</p>
-                        <p class="p-1"><strong>Color:</strong> '.$color.'</p>
-                        <p class="p-1"><strong>Age:</strong> '.$age.' weeks</p>
-                    </div>'?>
-                <?php
-                if(isset($_SESSION['sign-in-sign-out'])){
+                include "connection.php";
 
-                    echo ' <div class="card-footer">
-                  <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
-                     <ion-icon size="large" name="create-outline"></ion-icon>
-                 </a>
-                 <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
-                     <ion-icon size="large" name="trash-outline"></ion-icon>
-                 </a>
-                 <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
-                     <ion-icon size="large" name="eye-outline"></ion-icon>
-                 </a>
-                  </div>';
-                }else{
-                    echo ' <div class="card-footer">
-                 <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.'">
-                     <ion-icon size="large" name="eye-outline"></ion-icon>
-                 </a>
-                  </div>';
+                $sql="select * from plants where category='$category_' or type='$type_' or age between 0 and '$age_' or height between 0 and '$height_' or color='$color_'";
+                $result=mysqli_query($connection,$sql);
+
+                while($row=mysqli_fetch_assoc($result)){
+                    $name = $row['name'];
+                    $type = $row['type'];
+                    $category = $row['category'];
+                    $color = $row['color'];
+                    $age = $row['age'];
+                    $height = $row['height'];
+                    $image = $row['url'];
+                    $username=$row['username'];
+                    $plant_id=$row['id'];
+                    $plant_user=$row['userid'];
+
+                    echo '
+    <div class="card-grid">
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="'.$image.'">
+                </div>
+                <div class="card-body">
+                    <h5 class="p-2"><strong>'.$name.'</strong> </h5>
+                    <p class="p-1"><strong>Created by</strong>: '.$username.'</p>
+                    <p class="p-1"><strong>Category:</strong> '.$category.'</p>
+                    <p class="p-1"><strong>Type:</strong> '.$type.'</p>
+                    <p class="p-1"><strong>Color:</strong> '.$color.'</p>
+                    <p class="p-1"><strong>Age:</strong> '.$age.' weeks</p>
+                </div>'?>
+                    <?php
+                    if(isset($_SESSION['sign-in-sign-out'])){
+
+                        echo ' <div class="card-footer">
+              <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="create-outline"></ion-icon>
+             </a>
+             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="trash-outline"></ion-icon>
+             </a>
+             <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
+              </div>';
+                    }else{
+                        echo ' <div class="card-footer">
+             <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.'">
+                 <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
+              </div>';
+                    }
+                    ?>
+                    <?php echo '  </div>
+           
+        </div>';
+                    $counter++;
                 }
-                ?>
-                <?php echo '  </div>
-
-            </div>';
-            }*/
-
-                echo $category_;
-                echo "<br>";
-                echo $type_;
-                echo "<br>";
-                echo $height_;
-                echo "<br>";
-                echo $age_;
+                if($counter==0){
+                    echo '<h4>No results found!</h4>';
+            }
 
             }else{
                 include "displayPlants.php" ;
             }
+
             ?>
         </div>
     </div>

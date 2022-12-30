@@ -58,6 +58,7 @@ if(isset($_SESSION['type'])){
             display: none;
         }
     }
+
     }
 </style>
 <body>
@@ -120,6 +121,7 @@ if(isset($_SESSION['type'])){
             </div>
         </div>
     </div>
+
 </nav>
 
 </body>
