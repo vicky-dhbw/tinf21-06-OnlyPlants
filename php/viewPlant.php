@@ -247,6 +247,7 @@ $result=mysqli_query($connection,$sql);
         echo '<form class="mb-4" action="comment.php">
         <div class="mb-3">
             <input type="hidden" id="disabledTextInput" class="form-control" name="plant_id" value="'.$plant_id.'">
+            <input type="hidden" id="disabledTextInput_" class="form-control" name="redirect" value="'.$redirect.'">
             <label for="comment">Leave a comment</label>
             <input type="text" required class="form-control" name="comment" id="comment" placeholder="comment here..">
         </div>

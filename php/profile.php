@@ -218,6 +218,9 @@ $email=$data['email'];
                <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=1">
                    <ion-icon size="large" name="eye-outline"></ion-icon>
                </a>
+               <a class="rounded-button-Add" href="remove.php? plant_id='.$plant_id.'">
+                 <ion-icon size="large" name="remove-outline"></ion-icon>
+             </a>
                 </div>';
                     }
                     ?>

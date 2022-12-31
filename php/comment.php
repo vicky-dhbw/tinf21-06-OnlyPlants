@@ -32,6 +32,9 @@ echo "Commenter ID: " .$id;
 echo "<br>";
 echo "Comment: " .$comment;
 */
+if(isset($_GET['redirect'])){
+
+}
 
 $sql="insert into comments(plantID,commenter,commenterID,comment) values($plant_id,'$commenter',$id,'$comment')";
 $result = mysqli_query($connection, $sql);
