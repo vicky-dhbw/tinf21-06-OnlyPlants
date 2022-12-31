@@ -52,7 +52,7 @@ if (isset($_SESSION['alert'])) {
             color: white;
         }
         .alertDiv{
-            margin-top: 100px;
+            margin-top: 60px;
             padding: 0;
         }
         .container-fluid{
@@ -64,7 +64,7 @@ if (isset($_SESSION['alert'])) {
             background-size: cover;
         }
         .layer2 {
-            background-image: url("../assets/images/greenWave6.svg");
+            background-image: url("../assets/images/greenWave8.svg");
         }
     </style>
     <?php include __DIR__ . '/templates/nav.php'; ?>
@@ -91,6 +91,16 @@ if (isset($_SESSION['alert'])) {
                 } elseif ($showAlert == 4) {
                     echo '<div class="alert alert-danger" role="alert">
   Oops! Plant could not be updated!
+</div>';
+                }
+                elseif ($showAlert == 5) {
+                    echo '<div class="alert alert-primary" role="alert">
+  Plants successfully added to your favorite list! 🪴 
+</div>';
+                }
+                elseif ($showAlert == 6) {
+                    echo '<div class="alert alert-primary" role="alert">
+  Plant already in your favorite list! 🪴 
 </div>';
                 }
 
@@ -231,11 +241,12 @@ if (isset($_SESSION['alert'])) {
                 </div>
                 <div class="card-body">
                     <h5 class="p-2"><strong>'.$name.'</strong> </h5>
-                    <p class="p-1"><strong>Created by</strong>: '.$username.'</p>
-                    <p class="p-1"><strong>Category:</strong> '.$category.'</p>
-                    <p class="p-1"><strong>Type:</strong> '.$type.'</p>
-                    <p class="p-1"><strong>Color:</strong> '.$color.'</p>
-                    <p class="p-1"><strong>Age:</strong> '.$age.' weeks</p>
+                    <p class="p-0.5"><strong>Created by</strong>: '.$username.'</p>
+                    <p class="p-0.5"><strong>Category:</strong> '.$category.'</p>
+                    <p class="p-0.5"><strong>Type:</strong> '.$type.'</p>
+                    <p class="p-0.5"><strong>Color:</strong> '.$color.'</p>
+                    <p class="p-0.5"><strong>Age:</strong> '.$age.' weeks</p>
+                    <p class="p-0.5"><strong>Height:</strong> '.$height.' metres</p>
                 </div>'?>
                     <?php
                     if(isset($_SESSION['sign-in-sign-out'])){

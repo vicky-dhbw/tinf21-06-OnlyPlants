@@ -76,6 +76,16 @@ $sql="CREATE TABLE IF NOT EXISTS `comments` (
 
 $conn->exec($sql);
 
+$sql="CREATE TABLE IF NOT EXISTS `favorites` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `plantID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  added TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
+
+$conn->exec($sql);
+
 /*
 $sql="insert into plants(userid,username,name,type,category,color,age,height,url,isPremium)
 values(1,'Admin','Venus flytrap','cactus-succulents','wild plants','green',120,10,'../assets/images/venusFlytrap.jpeg',0)";

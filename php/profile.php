@@ -31,13 +31,13 @@ $data=mysqli_fetch_assoc($result);
 $total_posts=$data['total_posts'];
 
 $sql=null;
-$sql="SELECT count(*) as prem_posts from plants where userid=$id and isPremium=1";
+$sql="SELECT count(*) as fav from favorites where userID=$id";
 $result=mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
-$prem_posts=$data['prem_posts'];
+$fav_posts=$data['fav'];
 
-if($prem_posts==null){
-    $prem_posts=0;
+if($fav_posts==null){
+    $fav_posts=0;
 }
 
 
@@ -103,11 +103,11 @@ $email=$data['email'];
         <div class="col-sm-6 col-xs-3 col-lg-4 col-md-4 ">
             <div class="d-flex justify-content-between">
                 <h4>Posts</h4>
-                <h4>Premium Posts</h4>
+                <h4>Favorites</h4>
             </div>
             <div class="d-flex justify-content-between">
                 <h1><?php echo $total_posts?></h1>
-                <h1><?php echo $prem_posts?></h1>
+                <h1><?php echo $fav_posts?></h1>
             </div>
         </div>
     </div>
@@ -141,9 +141,11 @@ $email=$data['email'];
                 <div class="card-body">
                     <h5 class="p-2"><strong>'.$name.'</strong> </h5>
                     <p class="p-1"><strong>Created by</strong>: '.$username.'</p>
-                    <p class="p-1"><strong>Category:</strong> '.$category.'</p>
-                    <p class="p-1"><strong>Color:</strong> '.$color.'</p>
-                    <p class="p-1"><strong>Age:</strong> '.$age.' weeks</p>
+                    <p class="p-0.5"><strong>Category:</strong> '.$category.'</p>
+                    <p class="p-0.5"><strong>Type:</strong> '.$type.'</p>
+                    <p class="p-0.5"><strong>Color:</strong> '.$color.'</p>
+                    <p class="p-0.5"><strong>Age:</strong> '.$age.' weeks</p>
+                    <p class="p-0.5"><strong>Height:</strong> '.$height.' metres</p>
                 </div>'?>
             <?php
             if(isset($_SESSION['sign-in-sign-out'])){
@@ -165,6 +167,64 @@ $email=$data['email'];
            
         </div>';}
 
+        ?>
+
+    </div>
+
+    <br>
+    <h1 class="my-6">My Favorites</h1>
+    <hr class="my-4">
+    <div class="container-fluid">
+        <?php
+
+        $sql1="select plantID from favorites as plantID where userid=$id";
+            $result1=mysqli_query($connection,$sql1);
+            while ($row1=mysqli_fetch_assoc($result1)) {
+                $favoritePlantID = $row1['plantID'];
+
+                $sql="select * from plants where id=$favoritePlantID";
+                $result=mysqli_query($connection,$sql);
+
+                while ($row=mysqli_fetch_assoc($result)) {
+                    $name = $row['name'];
+                    $type = $row['type'];
+                    $category = $row['category'];
+                    $color = $row['color'];
+                    $age = $row['age'];
+                    $height = $row['height'];
+                    $image = $row['url'];
+                    $username=$row['username'];
+                    $plant_id=$row['id'];
+                    $plant_user=$row['userid'];
+                    echo '
+    <div class="card-grid">
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="'.$image.'">
+                </div>
+                <div class="card-body">
+                    <h5 class="p-2"><strong>'.$name.'</strong> </h5>
+                    <p class="p-1"><strong>Created by</strong>: '.$username.'</p>
+                    <p class="p-0.5"><strong>Category:</strong> '.$category.'</p>
+                    <p class="p-0.5"><strong>Type:</strong> '.$type.'</p>
+                    <p class="p-0.5"><strong>Color:</strong> '.$color.'</p>
+                    <p class="p-0.5"><strong>Age:</strong> '.$age.' weeks</p>
+                    <p class="p-0.5"><strong>Height:</strong> '.$height.' metres</p>
+                </div>'?>
+                    <?php
+                    if(isset($_SESSION['sign-in-sign-out'])){
+
+                        echo ' <div class="card-footer">
+               <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=1">
+                   <ion-icon size="large" name="eye-outline"></ion-icon>
+               </a>
+                </div>';
+                    }
+                    ?>
+                    <?php echo '  </div>
+           
+        </div>';}
+            }
         ?>
 
     </div>

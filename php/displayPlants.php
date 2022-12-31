@@ -61,10 +61,12 @@ include "connection.php";
                 </div>
                 <div class="card-body">
                     <h5 class="p-2"><strong>'.$name.'</strong> </h5>
-                    <p class="p-1"><strong>Created by</strong>: '.$username.'</p>
-                    <p class="p-1"><strong>Category:</strong> '.$category.'</p>
-                    <p class="p-1"><strong>Color:</strong> '.$color.'</p>
-                    <p class="p-1"><strong>Age:</strong> '.$age.' weeks</p>
+                    <p class="p-0.5"><strong>Created by</strong>: '.$username.'</p>
+                    <p class="p-0.5"><strong>Category:</strong> '.$category.'</p>
+                    <p class="p-0.5"><strong>Type:</strong> '.$type.'</p>
+                    <p class="p-0.5"><strong>Color:</strong> '.$color.'</p>
+                    <p class="p-0.5"><strong>Age:</strong> '.$age.' weeks</p>
+                    <p class="p-0.5"><strong>Height:</strong> '.$height.' metres</p>
                 </div>'?>
     <?php
     if(isset($_SESSION['sign-in-sign-out'])){
@@ -78,6 +80,9 @@ include "connection.php";
              </a>
              <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
                  <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
+             <a class="rounded-button-Add" href="favorite.php? plant_id='.$plant_id.'">
+                 <ion-icon size="large" name="add-outline"></ion-icon>
              </a>
               </div>';
     }else{
