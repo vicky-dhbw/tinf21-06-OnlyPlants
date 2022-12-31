@@ -124,6 +124,7 @@ if (isset($_SESSION['alert'])) {
 
 
         <div class="container my-5 shadow-lg p-2">
+            <h1>Filter/Sorter</h1>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
