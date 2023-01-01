@@ -47,10 +47,10 @@ $number=0;
 }
 
     .row{
-        border:1px solid black;
+
     }
     .myCol{
-        border:1px solid black;
+
     }
     .plant{
         font-size: 5vw;
@@ -74,7 +74,7 @@ $number=0;
 
 <div class="container align-items-start">
 
-    <div class="row align-items-start">
+    <div class="row align-items-center">
         <div class="col-md-6 col-sm-5 col-xs-10 animDiv myCol">
             <div id="animContainer" class="anim ">
                 <script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js'></script> <!-- path of bodymovin library-->
