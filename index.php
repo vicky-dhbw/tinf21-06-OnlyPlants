@@ -41,55 +41,66 @@ $number=0;
 <?php include __DIR__."/php/templates/nav.php"; ?>
 
 <style>
-    .container{
-        margin-top: 150px;
-        width: 1000px;
-        height: 250px;
+
+    .container-fluid{
+        padding-right: 300px;
+        padding-left: 50px;
+    }
+    .anim{
+        max-width: 800px;
+        height: auto;
+        margin-top: auto;
+    }
+    .animDiv{
+
+        padding-left: 10vw;
+    }
+    .col{
+        margin-top: 140px;
+    }
+    .plant{
+        font-size: 8vw;
+        font-weight: bolder;
+    }
+    .btn{
+        width: 300px;
+        border-radius: 20px;
+        height: 70px;
+    }
+
+    @media (max-width: 1200px) {
+        .btn{
+            width: 180px;
+            border-radius: 30px;
+            height: 45px;
+        }
+
     }
 </style>
 
-<div class="container">
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-                <img src="assets/images/leaf_sky.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="assets/images/leaves.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/images/myPlant.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                </div>
+<div class="container-fluid">
+
+    <div class="row  justify-content-md-center">
+        <div class="col animDiv">
+            <div id="animContainer" class="anim ">
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js'></script> <!-- path of bodymovin library-->
+                <script  src="js/script.js"></script>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="col colText">
+            <div class="d-flex align-items-start flex-column">
+                <h1 class="plant p-2">Plant a plant today!</h1>
+                <br>
+                <button type="button" class="btn btn-dark">Explore</button>
+            </div>
+        </div>
     </div>
 
+
+
+
     <?php
-    echo "STATUS: ".$sign_in_sign_out."<br>";
+    /*echo "STATUS: ".$sign_in_sign_out."<br>";
     echo "<br>";
     echo "USER ".$is_signed_in;
     echo "<br>";
@@ -101,7 +112,7 @@ $number=0;
     echo "<br>";
     if(isset($_SESSION['id'])){
         $number=$_SESSION['id'];}
-    echo $number;
+    echo $number;*/
     ?>
 
 </div>

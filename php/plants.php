@@ -106,12 +106,12 @@ if (isset($_SESSION['alert'])) {
                 }
                 elseif ($showAlert == 5) {
                     echo '<div class="alert alert-primary" role="alert">
-  Plants successfully added to your favorite list! 🪴 
+  Plants successfully added to your favorite list! 
 </div>';
                 }
                 elseif ($showAlert == 6) {
                     echo '<div class="alert alert-primary" role="alert">
-  Plant already in your favorite list! 🪴 
+  Plant already in your favorite list! 
 </div>';
                 }
 
