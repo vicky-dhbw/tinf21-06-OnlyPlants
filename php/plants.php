@@ -217,65 +217,67 @@ if (isset($_SESSION['alert'])) {
                         </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse filter-div2 p-2" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                        <h1 class="h1">Plant Sorter</h1>
-                        <div class="row">
-                            <div class="col">
-                                <div class="d-flex align-items-start flex-column mb-3">
-                                    <h5>Views</h5>
+                        <form method="get">
+                            <h1 class="h1">Plant Sorter</h1>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="d-flex align-items-start flex-column mb-3">
+                                        <h5>Views</h5>
 
-                                    <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                            <input type="checkbox" name="sameCheck" class="checkbox form-check-input p-2" id="1" onchange="checkChange()">
-                                            <label class="form-check-label" for="inlineCheckbox1">ascending</label>
+                                        <div class="d-flex">
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox" name="views_ascending" value="views_ascending" class="checkbox form-check-input p-2" id="1" onchange="checkChange()">
+                                                <label class="form-check-label" for="inlineCheckbox1">ascending</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox" name="views_descending" class="checkbox form-check-input p-2" id="2" onchange="checkChange()">
+                                                <label class="form-check-label" for="inlineCheckbox1">descending</label>
+                                            </div>
                                         </div>
-                                        <div class="form-check form-check-inline">
-                                            <input type="checkbox" name="sameCheck" class="checkbox form-check-input p-2" id="2" onchange="checkChange()">
-                                            <label class="form-check-label" for="inlineCheckbox1">descending</label>
-                                        </div>
+
                                     </div>
+                                </div>
 
+                                <div class="col">
+
+                                    <div class="d-flex align-items-start flex-column mb-3">
+                                        <h5>Likes</h5>
+
+                                        <div class="d-flex">
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox" name="likes_ascending" class="checkbox form-check-input p-2" id="3" onchange="checkChange()">
+                                                <label class="form-check-label" for="inlineCheckbox1">ascending</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox" name="likes_descending" class="checkbox form-check-input p-2" id="4" onchange="checkChange()">
+                                                <label class="form-check-label" for="inlineCheckbox1">descending</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col">
+
+                                    <div class="d-flex align-items-start flex-column mb-3">
+                                        <h5>Sort by</h5>
+
+                                        <div class="d-flex">
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox" name="sort_NewToOld" class="checkbox form-check-input p-2" id="5" onchange="checkChange()">
+                                                <label class="form-check-label" for="inlineCheckbox1">newest to oldest</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox" name="sort_OldToNew" class="checkbox form-check-input p-2" id="6" onchange="checkChange()">
+                                                <label class="form-check-label" for="inlineCheckbox1">oldest to newest</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="col">
-
-                                <div class="d-flex align-items-start flex-column mb-3">
-                                    <h5>Likes</h5>
-
-                                    <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                            <input type="checkbox" name="sameCheck" class="checkbox form-check-input p-2" id="3" onchange="checkChange()">
-                                            <label class="form-check-label" for="inlineCheckbox1">ascending</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input type="checkbox" name="sameCheck" class="checkbox form-check-input p-2" id="4" onchange="checkChange()">
-                                            <label class="form-check-label" for="inlineCheckbox1">descending</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col">
-
-                                <div class="d-flex align-items-start flex-column mb-3">
-                                    <h5>Sort by</h5>
-
-                                    <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                            <input type="checkbox" name="sameCheck" class="checkbox form-check-input p-2" id="5" onchange="checkChange()">
-                                            <label class="form-check-label" for="inlineCheckbox1">newest to oldest</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input type="checkbox" name="sameCheck" class="checkbox form-check-input p-2" id="6" onchange="checkChange()">
-                                            <label class="form-check-label" for="inlineCheckbox1">oldest to newest</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" name="submit" class="b1">submit</button>
+                            <button type="submit" name="sortSubmit" class="b1">submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -383,10 +385,103 @@ if (isset($_SESSION['alert'])) {
                     $counter++;
                 }
                 if($counter==0){
-                    echo '<h4>No results found!</h4>';
+                    echo '<h2>No results found!</h2>';
             }
+            }
+            elseif (isset($_GET['sortSubmit'])) {
 
+                include "connection.php";
+                if(isset($_GET['views_ascending'])){
+                    $sql="select * from plants order by views ASC limit 10";
+                    echo '<h2 class="mb-3">Views ascending order</h2>';
+                }
+                if(isset($_GET['views_descending'])){
+                    $sql="select * from plants order by views DESC limit 10";
+                    echo '<h2 class="mb-3">Views descending order</h2>';
+                }
+                if(isset($_GET['likes_ascending'])){
+                    $sql="select * from plants order by likes ASC limit 10";
+                    echo '<h2 class="mb-3">Likes ascending order</h2>';
+                }
+                if(isset($_GET['likes_descending'])){
+                    $sql="select * from plants order by likes DESC limit 10";
+                    echo '<h2 class="mb-3">Likes descending order</h2>';
+                }
+                if(isset($_GET['sort_NewToOld'])){
+                    $sql="select * from plants order by created DESC limit 10";
+                    echo '<h2 class="mb-3">Newest to oldest</h2>';
+                }
+                if(isset($_GET['sort_OldToNew'])){
+                    $sql="select * from plants order by created ASC limit 10";
+                    echo '<h2 class="mb-3">Oldest to newest</h2>';
+                }
+
+                    $result=mysqli_query($connection,$sql);
+
+                    while($row=mysqli_fetch_assoc($result)){
+                    $name = $row['name'];
+                    $type = $row['type'];
+                    $category = $row['category'];
+                    $color = $row['color'];
+                    $age = $row['age'];
+                    $height = $row['height'];
+                    $image = $row['url'];
+                    $username=$row['username'];
+                    $plant_id=$row['id'];
+                    $plant_user=$row['userid'];
+                    $likes=$row['likes'];
+                    if($likes==NULL){
+                        $likes=0;
+                    }
+                    $views=$row['views'];
+                    if($views==NULL){
+                        $views=0;
+                    }
+                    $posted=date('M j Y g:i A', strtotime($row['created']));
+
+                    echo '
+    <div class="card-grid">
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="'.$image.'">
+                </div>
+                <div class="card-body">
+                    <h5 class="p-2"><strong>'.$name.'</strong> </h5>
+                    <p class="p-0.5"><strong>Created by</strong>: '.$username.'</p>
+                    <p class="p-0.5"><strong>Category:</strong> '.$category.'</p>
+                    <p class="p-0.5"><strong>Type:</strong> '.$type.'</p>
+                    <p class="p-0.5"><strong>Likes:</strong> '.$likes.'</p>
+                    <p class="p-0.5"><strong>Views:</strong> '.$views.'</p>
+                    <p class="p-0.5"><strong>posted on:</strong> '.$posted.'</p>
+                </div>'?>
+            <?php
+            if(isset($_SESSION['sign-in-sign-out'])){
+
+                echo ' <div class="card-footer">
+              <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="create-outline"></ion-icon>
+             </a>
+             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="trash-outline"></ion-icon>
+             </a>
+             <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+                 <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
+              </div>';
             }else{
+                echo ' <div class="card-footer">
+             <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.'">
+                 <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
+              </div>';
+            }
+            ?>
+            <?php echo '  </div>
+           
+        </div>';
+            }
+            }else
+            {
                 include "displayPlants.php" ;
             }
 
