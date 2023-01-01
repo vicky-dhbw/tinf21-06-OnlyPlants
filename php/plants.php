@@ -437,7 +437,7 @@ if (isset($_SESSION['alert'])) {
                     if($views==NULL){
                         $views=0;
                     }
-                    $posted=date('M j Y g:i A', strtotime($row['created']));
+                    $created_=date('M j Y g:i A', strtotime($row['created']));
 
                     echo '
     <div class="card-grid">
@@ -452,7 +452,7 @@ if (isset($_SESSION['alert'])) {
                     <p class="p-0.5"><strong>Type:</strong> '.$type.'</p>
                     <p class="p-0.5"><strong>Likes:</strong> '.$likes.'</p>
                     <p class="p-0.5"><strong>Views:</strong> '.$views.'</p>
-                    <p class="p-0.5"><strong>posted on:</strong> '.$posted.'</p>
+                    <p class="p-0.5"><strong>posted on:</strong> '.$created_.'</p>
                 </div>'?>
             <?php
             if(isset($_SESSION['sign-in-sign-out'])){

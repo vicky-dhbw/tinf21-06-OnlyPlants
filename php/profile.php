@@ -184,6 +184,7 @@ $email=$data['email'];
 
                 $sql="select * from plants where id=$favoritePlantID";
                 $result=mysqli_query($connection,$sql);
+                $counter=0;
 
                 while ($row=mysqli_fetch_assoc($result)) {
                     $name = $row['name'];

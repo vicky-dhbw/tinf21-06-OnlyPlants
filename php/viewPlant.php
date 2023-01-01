@@ -126,7 +126,7 @@ $result=mysqli_query($connection,$sql);
                 <a class="rounded-buttonCreator">
                     <ion-icon name="person-outline"></ion-icon>
                 </a>
-                <p class="pad"><i>created by <?php echo $username. " on ".$posted?></i></p>
+                <p class="pad"><i>created by <?php echo $username. " on ".$posted?>></i></p>
             </div>
 
             <h5 class="p-1"><strong>Category: </strong><?php echo $category?></h5>
@@ -142,7 +142,7 @@ $result=mysqli_query($connection,$sql);
 
     <br>
     <div class="d-flex align-items-center justify-content-start">
-        <a class="rounded-buttonLike" href="like.php? plant_id=<?php echo $plant_id?>">
+        <a class="rounded-buttonLike" href="like.php? plant_id=<?php echo $plant_id?> & no_of_views=<?php echo $no_of_views?>">
             <ion-icon size="small"  name="heart-outline"></ion-icon>
         </a>
 
