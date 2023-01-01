@@ -42,6 +42,7 @@ $number=0;
         border: 1px solid #ccc;
     }
 </style>
+
 <div class="form-container">
     <h1>Contact Page</h1>
     <form action="" method="post">

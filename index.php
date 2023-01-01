@@ -50,14 +50,14 @@ $number=0;
         font-size: 5vw;
         font-weight: bolder;
     }
-    .btn{
+    .myButton{
         width: 250px;
         border-radius: 20px;
         height: 60px;
     }
 
     @media (max-width: 1200px) {
-        .btn{
+        .myButton{
             width: 150px;
             border-radius: 25px;
             height: 45px;
@@ -78,7 +78,7 @@ $number=0;
         <div class="col-md-6 col-sm-6 col-xs-10 colText myCol">
             <div class="d-flex align-items-start flex-column">
                 <h1 class="plant p-3">Plant a plant today!</h1>
-                <a href="php/plants.php"><button type="button" class="btn btn-dark">Explore</button></a>
+                <a href="php/plants.php"><button type="button" class="btn btn-dark myButton">Explore</button></a>
 
                 <p class="my-4"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, commodi culpa deserunt dolores ducimus eaque est fuga fugiat hic itaque minima nemo, nesciunt nihil omnis pariatur repellendus sapiente vel veniam.</i></p>
             </div>
