@@ -77,6 +77,10 @@ if (isset($_SESSION['alert'])) {
             padding-bottom: 10px;
             color: black;
         }
+        .explore{
+            font-size: 4vw;
+            font-weight: bolder;
+        }
     </style>
     <?php include __DIR__ . '/templates/nav.php'; ?>
 
@@ -122,8 +126,12 @@ if (isset($_SESSION['alert'])) {
             ?>
         </div>
 
+        <div class="container my-3">
+            <h1 class="explore">Explore Plants</h1>
+        </div>
 
         <div class="container my-5 shadow-lg p-2">
+
             <h1>Filter/Sorter</h1>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">

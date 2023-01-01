@@ -18,7 +18,7 @@ include "connection.php";
 
 <div class="container-fluid">
     <?php
-    $names=['leaf_sky.jpg','cute.jpg','leaves.jpg','img3.jpg'];
+    $names=['wheat.jpg','onion.jpg','Lily.jpg','hib.jpeg'];
     foreach ($names as $name){ ?>
         <div class="card-grid">
             <div class="card card-shadow">
