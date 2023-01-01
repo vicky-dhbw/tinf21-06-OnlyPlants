@@ -53,7 +53,7 @@ if(isset($_SESSION['type'])){
         font-family: "Montserrat", sans-serif;
         text-decoration: none;
     }
-    @media (max-width: 800px){
+    @media (max-width: 1200px){
         .nav_links{
             display: none;
         }

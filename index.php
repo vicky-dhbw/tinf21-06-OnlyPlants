@@ -22,7 +22,7 @@ $profile="php/profile.php";
 $currentUser=$_SESSION['user'];
 $number=0;
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,80 +42,76 @@ $number=0;
 
 <style>
 
-    .container-fluid{
-        padding-right: 300px;
-        padding-left: 50px;
-    }
-    .anim{
-        max-width: 800px;
-        height: auto;
-        margin-top: auto;
-    }
-    .animDiv{
+.container{
+    margin-top: 150px;
+}
 
-        padding-left: 10vw;
+    .row{
+        border:1px solid black;
     }
-    .col{
-        margin-top: 140px;
+    .myCol{
+        border:1px solid black;
     }
     .plant{
-        font-size: 8vw;
+        font-size: 5vw;
         font-weight: bolder;
     }
     .btn{
-        width: 300px;
+        width: 250px;
         border-radius: 20px;
-        height: 70px;
+        height: 60px;
     }
 
     @media (max-width: 1200px) {
         .btn{
-            width: 180px;
-            border-radius: 30px;
+            width: 150px;
+            border-radius: 25px;
             height: 45px;
         }
 
     }
 </style>
 
-<div class="container-fluid">
+<div class="container align-items-start">
 
-    <div class="row  justify-content-md-center">
-        <div class="col animDiv">
+    <div class="row align-items-start">
+        <div class="col-md-6 col-sm-5 col-xs-10 animDiv myCol">
             <div id="animContainer" class="anim ">
                 <script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js'></script> <!-- path of bodymovin library-->
                 <script  src="js/script.js"></script>
             </div>
         </div>
-        <div class="col colText">
+        <div class="col-md-6 col-sm-6 col-xs-10 colText myCol">
             <div class="d-flex align-items-start flex-column">
-                <h1 class="plant p-2">Plant a plant today!</h1>
-                <br>
-                <button type="button" class="btn btn-dark">Explore</button>
+                <h1 class="plant p-3">Plant a plant today!</h1>
+                <a href="php/plants.php"><button type="button" class="btn btn-dark">Explore</button></a>
+
+                <p class="my-4"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, commodi culpa deserunt dolores ducimus eaque est fuga fugiat hic itaque minima nemo, nesciunt nihil omnis pariatur repellendus sapiente vel veniam.</i>i></p>
             </div>
         </div>
     </div>
 
 
-
-
-    <?php
-    /*echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "<br>";
-    echo "USER ".$is_signed_in;
-    echo "<br>";
-    if(isset($_SESSION['user'])){echo "USER: ".$_SESSION['user']."<br>";}
-    if(isset($_SESSION['id'])){echo "ID: ".$_SESSION['id']."<br>";}
-    if(isset($_SESSION['type'])){echo "TYPE: ".$_SESSION['type']."<br>";}
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    if(isset($_SESSION['id'])){
-        $number=$_SESSION['id'];}
-    echo $number;*/
-    ?>
-
 </div>
+<br>
+
+<?php
+/*echo "STATUS: ".$sign_in_sign_out."<br>";
+echo "<br>";
+echo "USER ".$is_signed_in;
+echo "<br>";
+if(isset($_SESSION['user'])){echo "USER: ".$_SESSION['user']."<br>";}
+if(isset($_SESSION['id'])){echo "ID: ".$_SESSION['id']."<br>";}
+if(isset($_SESSION['type'])){echo "TYPE: ".$_SESSION['type']."<br>";}
+echo "<br>";
+echo "<br>";
+echo "<br>";
+if(isset($_SESSION['id'])){
+    $number=$_SESSION['id'];}
+echo $number;*/
+?>
+
+
 
 
 
