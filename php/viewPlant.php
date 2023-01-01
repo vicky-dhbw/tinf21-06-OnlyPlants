@@ -24,8 +24,13 @@ include "connection.php";
 
 $plant_id = $_GET['plant_id'];
 $plant_user = $_GET['plant_user'];
-$current_user_id=$_SESSION['id'];
-$current_user_type=$_SESSION['type'];
+if(isset($_SESSION['id'])){
+    $current_user_id=$_SESSION['id'];
+}
+if(isset($_SESSION['type'])){
+    $current_user_type=$_SESSION['type'];
+}
+
 $redirect="";
 
 if(isset($_GET['redirect'])){
