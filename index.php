@@ -61,9 +61,12 @@ $number=0;
         width: 250px;
         border-radius: 0;
         height: 60px;
-        background: #1F8475;
+        background: #325A32;
         color: white;
         border:1px solid black;
+    }
+    .myButton2:hover{
+        background: black;
     }
 
     body{
