@@ -58,6 +58,9 @@ $number=0;
         height: 60px;
     }
 
+    body{
+        min-height: 100vh;
+    }
 
 
     @media (max-width: 1200px) {
@@ -143,6 +146,7 @@ echo "<br>";
 if(isset($_SESSION['id'])){
     $number=$_SESSION['id'];}
 echo $number;*/
+include "php/templates/footer.php";
 ?>
 
 
