@@ -57,6 +57,14 @@ $number=0;
         border-radius: 20px;
         height: 60px;
     }
+    .myButton2{
+        width: 250px;
+        border-radius: 0;
+        height: 60px;
+        background: #1F8475;
+        color: white;
+        border:1px solid black;
+    }
 
     body{
         min-height: 100vh;
@@ -129,11 +137,10 @@ $number=0;
                 </figure>
             </div>
             <div class="d-flex justify-content-center align-items-center"">
-                <a href="php/register.php"><button type="button" class="btn btn-dark myButton shadow">Sign up</button></a>
-                <img src="assets/images/myLeaf.png" style="width: 100px; height: auto">
+                <a href="php/register.php"><button type="button" class="btn btn-dark myButton2 shadow">Sign up</button></a>
+                <img src="assets/images/myLeaf.png" style="width: 100px; height: 100px">
             </div>
         </div>
-    </div>
 </section>
 
 <?php
