@@ -49,11 +49,9 @@ $number=0;
 
 </style>
 
+
+
 <div class="container myCont-">
-
-</div>
-
-<div class="container">
     <div class="row align-items-center justify-content-start">
         <div class="col-lg-2 col-md-10 col-sm-8 col-xs-6 myCol-">
             <div id="animContainer" class="anim">
@@ -65,7 +63,7 @@ $number=0;
             <h1>Contact Us!</h1>
         </div>
     </div>
-    <div class="form-container p-4">
+    <div class="form-container shadow p-4">
         <form action="" method="post">
             <p>Please read our <a href="/privacy-policy.html">privacy policy</a> before filling out the form.</p>
             <div class="form-group mb-4">
@@ -84,7 +82,7 @@ $number=0;
                 <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
                 <label for="privacy-policy">I have read the <a href="/privacy-policy.html">privacy policy</a> and agree to the processing of my data according to the privacy policy.</label>
             </div>
-            <button type="submit" class="btn btn-primary">Send message</button>
+            <button type="submit" class="btn btn-dark">Send message</button>
             <?php
             if (isset($_POST['name'], $_POST['email'], $_POST['message'], $_POST['privacy-policy'])) {
                 $name = $_POST['name'];
