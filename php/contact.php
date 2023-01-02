@@ -40,7 +40,7 @@ $number=0;
     }
 
     .myCont-{
-        margin: 170px;
+        margin-top: 170px;
     }
     .anim{
         width: 20vh;
