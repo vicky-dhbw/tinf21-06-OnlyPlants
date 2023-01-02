@@ -85,7 +85,7 @@ $number=0;
         <div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 colText myCol">
             <div class="d-flex align-items-start flex-column">
                 <h1 class="plant p-3">Plant a plant today!</h1>
-                <a href="php/plants.php"><button type="button" class="btn btn-dark myButton">Explore</button></a>
+                <a href="php/plants.php"><button type="button" class="btn btn-dark myButton shadow">Explore</button></a>
 
                 <p class="my-4"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, commodi culpa deserunt dolores ducimus eaque est fuga fugiat hic itaque minima nemo, nesciunt nihil omnis pariatur repellendus sapiente vel veniam.</i></p>
             </div>
@@ -129,7 +129,7 @@ $number=0;
                 </figure>
             </div>
             <div class="d-flex justify-content-center align-items-center"">
-                <a href="php/register.php"><button type="button" class="btn btn-dark myButton">Sign up</button></a>
+                <a href="php/register.php"><button type="button" class="btn btn-dark myButton shadow">Sign up</button></a>
                 <img src="assets/images/myLeaf.png" style="width: 100px; height: auto">
             </div>
         </div>
