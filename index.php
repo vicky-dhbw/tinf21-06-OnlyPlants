@@ -56,6 +56,7 @@ $number=0;
         height: 60px;
     }
 
+
     @media (max-width: 1200px) {
         .myButton{
             width: 150px;
@@ -84,11 +85,45 @@ $number=0;
             </div>
         </div>
     </div>
-
-
 </div>
-<br>
 
+<section class="vh-50" style="background-color: #A6E1A8;">
+
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center h-100">
+            <div class="col col-lg-6 mb-4 mb-lg-0">
+                <figure class="text-center bg-white py-5 px-4 shadow-lg" style="border-radius: .75rem;">
+                    <i class="far fa-gem fa-lg mb-4" style="color: #f9a169;"></i>
+                    <blockquote class="blockquote pb-2">
+                        <p>
+                            <i class="fas fa-angle-double-left" style="color: #f9a169;"></i>
+                            <span class="lead font-italic">“The best time to plant a tree was 20 years ago. The second best time is now.”</span>
+                            <i class="fas fa-angle-double-right" style="color: #f9a169;"></i>
+                        </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer mb-0 font-italic">
+                        Chinese proverb
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col col-lg-6">
+                <figure class="text-center bg-white py-5 px-4 shadow-lg" style="border-radius: .75rem;">
+                    <i class="far fa-gem fa-lg mb-4" style="color: #f36f63;"></i>
+                    <blockquote class="blockquote pb-2">
+                        <p>
+                            <i class="fas fa-angle-double-left" style="color: #f36f63;"></i>
+                            <span class="lead font-italic">“In some Native languages the term for plants translates to “those who take care of us.” </span>
+                            <i class="fas fa-angle-double-right" style="color: #f36f63;"></i>
+                        </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer mb-0 font-italic">
+                        Robin Wall Kimmerer
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
 <?php
 /*echo "STATUS: ".$sign_in_sign_out."<br>";
 echo "<br>";
