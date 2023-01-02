@@ -42,19 +42,22 @@ $number=0;
 
 <style>
 
-.container{
-    margin-top: 150px;
-}
+    .myCont_{
+        margin-top: 150px;
+        padding-bottom: 50px;
+    }
 
     .plant{
         font-size: 5vw;
         font-weight: bolder;
     }
+
     .myButton{
         width: 250px;
         border-radius: 20px;
         height: 60px;
     }
+
 
 
     @media (max-width: 1200px) {
@@ -67,16 +70,16 @@ $number=0;
     }
 </style>
 
-<div class="container align-items-start">
+<div class="container myCont_ align-items-start">
 
     <div class="row align-items-center">
-        <div class="col-md-6 col-sm-5 col-xs-10 animDiv myCol">
+        <div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 myCol">
             <div id="animContainer" class="anim ">
                 <script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js'></script> <!-- path of bodymovin library-->
                 <script  src="js/script.js"></script>
             </div>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-10 colText myCol">
+        <div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 colText myCol">
             <div class="d-flex align-items-start flex-column">
                 <h1 class="plant p-3">Plant a plant today!</h1>
                 <a href="php/plants.php"><button type="button" class="btn btn-dark myButton">Explore</button></a>
@@ -85,8 +88,9 @@ $number=0;
             </div>
         </div>
     </div>
-</div>
 
+
+</div>
 <section class="vh-50" style="background-color: #A6E1A8;">
 
     <div class="container py-5 h-100">
@@ -124,6 +128,7 @@ $number=0;
         </div>
     </div>
 </section>
+
 <?php
 /*echo "STATUS: ".$sign_in_sign_out."<br>";
 echo "<br>";
