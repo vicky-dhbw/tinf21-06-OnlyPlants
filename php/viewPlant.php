@@ -53,6 +53,14 @@ $image = $row['url'];
 $username = $row['username'];
 $plant_id = $row['id'];
 $plant_user = $row['userid'];
+$isPremium=$row['isPremium'];
+$premium="";
+if($isPremium==0){
+    $premium="No";
+}
+else{
+    $premium="Yes";
+}
 $posted=date('M j Y g:i A', strtotime($row['created']));
 
 // updating views
@@ -131,7 +139,7 @@ $result=mysqli_query($connection,$sql);
                 <a class="rounded-buttonCreator">
                     <ion-icon name="person-outline"></ion-icon>
                 </a>
-                <p class="pad"><i>created by <?php echo $username. " on ".$posted?>></i></p>
+                <p class="pad"><i>created by <?php echo $username. " on ".$posted?></i></p>
             </div>
 
             <h5 class="p-1"><strong>Category: </strong><?php echo $category?></h5>
@@ -139,7 +147,7 @@ $result=mysqli_query($connection,$sql);
             <h5 class="p-1"><strong>Color: </strong><?php echo $color?></h5>
             <h5 class="p-1"><strong>Age in weeks: </strong><?php echo $age?></h5>
             <h5 class="p-1"><strong>Height in meters: </strong><?php echo $height?></h5>
-            <h5 class="p-1"><strong>is Premium: </strong></h5>
+            <h5 class="p-1"><strong>is Premium: </strong><?php echo $premium?></h5>
             <br>
             <br>
         </div>

@@ -121,6 +121,8 @@ $email=$data['email'];
         $sql="select * from plants where userid=$id";
         $result=mysqli_query($connection,$sql);
 
+        $counter=0;
+
         while ($row=mysqli_fetch_assoc($result)) {
             $name = $row['name'];
             $type = $row['type'];
@@ -165,8 +167,23 @@ $email=$data['email'];
             ?>
             <?php echo '  </div>
            
-        </div>';}
+        </div>';
+        $counter++;
+        }
 
+        if($counter==0){
+            echo ' <div class="row align-items-center justify-content-start">
+        <div class="col-4 myCol-">
+            <div id="animContainer" class="anim">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"></script> <!-- path of bodymovin library-->
+                <script  src="../js/script3.js"></script>
+            </div>
+        </div>
+        <div class="col-5 myCol-">
+            <h2>No posts yet!</h2>
+        </div>
+    </div>';
+        }
         ?>
 
     </div>
@@ -177,6 +194,9 @@ $email=$data['email'];
     <div class="container-fluid">
         <?php
 
+        $counterFav=0;
+        $counterFav1=0;
+
         $sql1="select plantID from favorites as plantID where userid=$id";
             $result1=mysqli_query($connection,$sql1);
             while ($row1=mysqli_fetch_assoc($result1)) {
@@ -184,7 +204,7 @@ $email=$data['email'];
 
                 $sql="select * from plants where id=$favoritePlantID";
                 $result=mysqli_query($connection,$sql);
-                $counter=0;
+
 
                 while ($row=mysqli_fetch_assoc($result)) {
                     $name = $row['name'];
@@ -227,10 +247,22 @@ $email=$data['email'];
                     ?>
                     <?php echo '  </div>
            
-        </div>';}
+        </div>';
+                $counterFav1++;
+                }
+
+                $counterFav++;
+            }
+            if($counterFav==0){
+                echo '<h2>No favorites yet</h2>';
+            }
+            elseif ($counterFav!=$counterFav1){
+                echo '<h2>Sorry! Some of your favorite posts might have been deleted! </h2>';
             }
         ?>
 
+        <br>
+        <br>
     </div>
 </div>
 

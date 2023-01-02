@@ -78,8 +78,7 @@ if (isset($_SESSION['alert'])) {
             color: black;
         }
         .explore{
-            font-size: 4vw;
-            font-weight: bolder;
+            font-size: 3vw;
         }
     </style>
     <?php include __DIR__ . '/templates/nav.php'; ?>
