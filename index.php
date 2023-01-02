@@ -128,6 +128,10 @@ $number=0;
                     </figcaption>
                 </figure>
             </div>
+            <div class="d-flex justify-content-center align-items-center"">
+                <a href="php/register.php"><button type="button" class="btn btn-dark myButton">Sign up</button></a>
+                <img src="assets/images/myLeaf.png" style="width: 100px; height: auto">
+            </div>
         </div>
     </div>
 </section>
@@ -146,6 +150,7 @@ echo "<br>";
 if(isset($_SESSION['id'])){
     $number=$_SESSION['id'];}
 echo $number;*/
+
 include "php/templates/footer.php";
 ?>
 
