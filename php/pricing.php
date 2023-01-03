@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 if(isset($_SESSION['sign-in-sign-out'])){
     $sign_in_sign_out=$_SESSION['sign-in-sign-out'];
     $user=$_SESSION['user'];
