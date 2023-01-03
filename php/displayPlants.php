@@ -18,27 +18,6 @@ include "connection.php";
 
 <div class="container-fluid">
     <?php
-    $names=['wheat.jpg','onion.jpg','Lily.jpg','hib.jpeg'];
-    foreach ($names as $name){ ?>
-        <div class="card-grid">
-            <div class="card card-shadow">
-                <div class="card-header card-image">
-                    <img src="<?php echo "../assets/images/". $name?>">
-                </div>
-                <div class="card-body">
-                    <p>Name: </p>
-                    <p>Category: </p>
-                    <p>Created by: </p>
-                    <p>Age: </p>
-                </div>
-                <div class="card-footer">
-                    <button class="btn_">Edit</button>
-                    <button class="btn_ btn-outline">Delete</button>
-                </div>
-            </div>
-        </div>
-    <?php }
-
     $sql="select * from plants where isPremium=0";
     $result=mysqli_query($connection,$sql);
 
