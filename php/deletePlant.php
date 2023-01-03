@@ -8,15 +8,15 @@ $type="";
 if(isset($_SESSION['type'])){
     $type=$_SESSION['type'];
 }
-$redirectProfile=0;
+$redirectDelete="";
 
-if(isset($_GET['redirectProfile'])){
-    $redirectProfile=1;
+if(isset($_GET['redirectDelete'])){
+    $redirectDelete=$_GET['redirectDelete'];
 }
 
 if(!isset($_SESSION['id'])){
     $_SESSION['alert']=1;
-    header("Location: plants.php");
+    header("Location: $redirectDelete");
 }else{
     $current_user_id=$_SESSION['id'];
     if(isset($_GET['plant_user'])&& isset($_GET['plant_id'])){
@@ -26,9 +26,13 @@ if(!isset($_SESSION['id'])){
             $sql="delete from plants where id=$plant_id";
             $result=mysqli_query($connection,$sql);
             if($result){
-                if($redirectProfile==0){
+                if($redirectDelete=="plants.php"){
                     $_SESSION['alert']=2;
                     header("Location: plants.php");
+                }
+                elseif ($redirectDelete=="premiumContent.php"){
+                    $_SESSION['alert']=2;
+                    header("Location: premiumContent.php");
                 }
                 else{
                     header("Location: profile.php");
@@ -40,7 +44,7 @@ if(!isset($_SESSION['id'])){
         }
         else{
             $_SESSION['alert']=1;
-            header("Location: plants.php");
+            header("Location: $redirectDelete");
         }
     }
 }

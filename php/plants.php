@@ -109,7 +109,7 @@ if (isset($_SESSION['alert'])) {
                 }
                 elseif ($showAlert == 5) {
                     echo '<div class="alert alert-primary" role="alert">
-  Plants successfully added to your favorite list! 
+  Plant successfully added to your favorite list! 
 </div>';
                 }
                 elseif ($showAlert == 6) {
@@ -382,11 +382,14 @@ if (isset($_SESSION['alert'])) {
               <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectEdit=plants.php">
                  <ion-icon size="large" name="create-outline"></ion-icon>
              </a>
-             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectDelete=plants.php">
                  <ion-icon size="large" name="trash-outline"></ion-icon>
              </a>
              <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=plants.php">
                  <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
+             <a class="rounded-button-Add" href="favorite.php? plant_id='.$plant_id.' & redirectFav=plants.php">
+                 <ion-icon size="large" name="add-outline"></ion-icon>
              </a>
               </div>';
                     }else{
@@ -488,11 +491,14 @@ if (isset($_SESSION['alert'])) {
               <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectEdit=plants.php">
                  <ion-icon size="large" name="create-outline"></ion-icon>
              </a>
-             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
+             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectDelete=plants.php">
                  <ion-icon size="large" name="trash-outline"></ion-icon>
              </a>
              <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=plants.php">
                  <ion-icon size="large" name="eye-outline"></ion-icon>
+             </a>
+             <a class="rounded-button-Add" href="favorite.php? plant_id='.$plant_id.' & redirectFav=plants.php">
+                 <ion-icon size="large" name="add-outline"></ion-icon>
              </a>
               </div>';
             }else{

@@ -32,16 +32,14 @@ echo "Commenter ID: " .$id;
 echo "<br>";
 echo "Comment: " .$comment;
 */
-$redirect=0;
+$redirect="";
+
 if(isset($_GET['redirect'])){
     $redirect=$_GET['redirect'];
 }
 
 $sql="insert into comments(plantID,commenter,commenterID,comment) values($plant_id,'$commenter',$id,'$comment')";
 $result = mysqli_query($connection, $sql);
-if (isset($_GET['redirect'])) {
-    header("Location: viewPlant.php? plant_id=$plant_id & redirect1=$redirect");
-}
-else{
-    header("Location: viewPlant.php? plant_id=$plant_id");
+if ($result) {
+    header("Location: viewPlant.php? plant_id=$plant_id & redirect=$redirect");
 }

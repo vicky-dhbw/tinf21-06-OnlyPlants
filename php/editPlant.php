@@ -40,7 +40,7 @@ $current_user_type=$_SESSION['type'];
 
 if(($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0)||!isset($_SESSION['id'])){
     $_SESSION['alert']=4;
-    header("Location: plants.php");
+    header("Location: $redirectEdit");
 }
 
     $sql = "select * from plants where id='$plant_id'";
@@ -87,6 +87,7 @@ if(($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0)||!is
                         header("Location: plants.php");
                     }
                     elseif($redirectEdit=="premiumContent.php"){
+                        $_SESSION['alert']=3;
                         header("Location: premiumContent.php");
                     }
                     else{

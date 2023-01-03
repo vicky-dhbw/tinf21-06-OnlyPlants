@@ -164,7 +164,7 @@ $email=$data['email'];
              <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectEdit=profile.php">
                  <ion-icon size="large" name="create-outline"></ion-icon>
              </a>
-             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectProfile=1">
+             <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectDelete=profile.php">
                  <ion-icon size="large" name="trash-outline"></ion-icon>
              </a>
                <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=profile.php">

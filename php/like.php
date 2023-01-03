@@ -10,6 +10,11 @@ if(isset($_GET['no_of_views'])){
     $no_of_views--;
 }
 
+$redirect="";
+if(isset($_GET['redirect'])){
+    $redirect=$_GET['redirect'];
+}
+
 include "connection.php";
 $sql="select * from plants where id='$plant_id'";
 $result = mysqli_query($connection, $sql);
@@ -29,7 +34,7 @@ $result=mysqli_query($connection,$sql);
 $sql="update plants set views=$no_of_views where id='$plant_id'";
 $result=mysqli_query($connection,$sql);
 if($result){
-    header("Location: viewPlant.php? plant_id=$plant_id");
+    header("Location: viewPlant.php? plant_id=$plant_id & redirect=$redirect");
 }else{
     die(mysqli_error($connection));
 }

@@ -19,6 +19,10 @@ $currentPage='premiumContent';
 $admin_page="adminPage.php";
 $profile="profile.php";
 $number=0;
+$showAlert = 0;
+if (isset($_SESSION['alert'])) {
+    $showAlert = $_SESSION['alert'];
+}
 
 ?>
 <!doctype html>
@@ -84,6 +88,45 @@ $number=0;
 
 
 <div class="MyContainer">
+
+    <div class="alertDiv">
+
+        <?php
+        if (isset($_SESSION['alert'])) {
+            if ($showAlert == 1) {
+                echo '<div class="alert alert-danger" role="alert">
+  Plant could not be deleted!
+</div>';
+            } elseif ($showAlert == 2) {
+                echo '<div class="alert alert-success" role="alert">
+  Plant deleted successfully!
+</div>';
+            } elseif ($showAlert == 3) {
+                echo '<div class="alert alert-success" role="alert">
+  Plant updated successfully!
+</div>';
+            } elseif ($showAlert == 4) {
+                echo '<div class="alert alert-danger" role="alert">
+  Oops! Plant could not be updated!
+</div>';
+            }
+            elseif ($showAlert == 5) {
+                echo '<div class="alert alert-primary" role="alert">
+  Plant successfully added to your favorite list! 
+</div>';
+            }
+            elseif ($showAlert == 6) {
+                echo '<div class="alert alert-primary" role="alert">
+  Plant already in your favorite list! 
+</div>';
+            }
+
+            $_SESSION['alert'] = 0;
+        }
+
+
+        ?>
+    </div>
 
     <?php
     if(isset($_SESSION['sign-in-sign-out'])){

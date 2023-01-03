@@ -153,7 +153,7 @@ $result=mysqli_query($connection,$sql);
 
     <br>
     <div class="d-flex align-items-center justify-content-start">
-        <a class="rounded-buttonLike" href="like.php? plant_id=<?php echo $plant_id?> & no_of_views=<?php echo $no_of_views?>">
+        <a class="rounded-buttonLike" href="like.php? plant_id=<?php echo $plant_id?> & no_of_views=<?php echo $no_of_views?> & redirect=<?php echo $redirect?>">
             <ion-icon size="small"  name="heart-outline"></ion-icon>
         </a>
 
@@ -269,6 +269,7 @@ $result=mysqli_query($connection,$sql);
         echo '<form class="mb-4" action="comment.php">
         <div class="mb-3">
             <input type="hidden" id="disabledTextInput" class="form-control" name="plant_id" value="'.$plant_id.'">
+            <input type="hidden" id="redirect" class="form-control" name="redirect" value="'.$redirect.'">
             <label for="guestName">Name</label>
             <input type="text" required class="form-control mb-4" name="guestName" id="guestName" placeholder="mr. guest..">
             <label for="comment">Leave a comment</label>

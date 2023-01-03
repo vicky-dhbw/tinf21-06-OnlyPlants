@@ -4,6 +4,10 @@ $plant_id=0;
 if(isset($_GET['plant_id'])){
     $plant_id=$_GET['plant_id'];
 }
+$redirectFav="";
+if(isset($_GET['redirectFav'])){
+    $redirectFav=$_GET['redirectFav'];
+}
 
 $user="";
 $user=$_SESSION['id'];
@@ -25,7 +29,10 @@ if($add){
     $result = mysqli_query($connection, $sql);
     if ($result) {
         $_SESSION['alert']=5;
-        header("Location: plants.php");
+        header("Location: $redirectFav");
+
+
+
     }
 }else{
     $_SESSION['alert']=6;
