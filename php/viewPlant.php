@@ -34,9 +34,7 @@ if(isset($_SESSION['type'])){
 $redirect="";
 
 if(isset($_GET['redirect'])){
-    $redirect="profile.php";
-}else{
-    $redirect="plants.php";
+    $redirect=$_GET['redirect'];
 }
 
 $sql = "select * from plants where id='$plant_id'";

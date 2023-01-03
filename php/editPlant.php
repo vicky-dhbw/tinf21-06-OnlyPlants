@@ -18,12 +18,15 @@ $home_page = "../index.php";
 $signin_page = "signin.php";
 $controlButtonPage = 'controlButton.php';
 $profile='profile.php';
-$redirectProfile="";
 
-if(isset($_GET['redirectProfile'])){
-    $redirectProfile="profile.php";
-}else{
-    $redirectProfile="plants.php";
+$redirectEdit="";
+
+if(isset($_GET['redirectEdit'])){
+    $redirectEdit=$_GET['redirectEdit'];
+}
+
+if(isset($_GET['counter'])){
+    $counterEdit=$_GET['counter'];
 }
 
 include "templates/nav.php";
@@ -79,9 +82,12 @@ if(($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0)||!is
                 $sql="update plants set name='$name_',type='$type_',category='$category_',color='$color_',age='$age_',height='$height_',url='$upload_image' where id=$plant_id";
                 $result = mysqli_query($connection, $sql);
                 if ($result) {
-                    if($redirectProfile==0){
+                    if($redirectEdit=="plants.php"){
                         $_SESSION['alert']=3;
                         header("Location: plants.php");
+                    }
+                    elseif($redirectEdit=="premiumContent.php"){
+                        header("Location: premiumContent.php");
                     }
                     else{
                         header("Location: profile.php");
@@ -121,7 +127,7 @@ if(($current_user_id!=$plant_user && strcmp($current_user_type,"admin")!=0)||!is
 <div class="container">
     <div class="d-flex justify-content-between">
         <h1 class="display-4">Edit Plant</h1>
-        <button class="btn btn-dark mb-5 float-right"><a href="<?php echo $redirectProfile?>" style="text-decoration: none" class="text-light" >Go back</a></button>
+        <button class="btn btn-dark mb-5 float-right"><a href="<?php echo $redirectEdit?>" style="text-decoration: none" class="text-light" >Go back</a></button>
     </div>
 
     <form method="post" enctype="multipart/form-data">

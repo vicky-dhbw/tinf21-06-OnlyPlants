@@ -25,7 +25,7 @@ if(isset($_SESSION['id'])){
 }
 include "connection.php";
 
-$sql="SELECT count(*) as total_posts from plants where userid=$id and isPremium=0";
+$sql="SELECT count(*) as total_posts from plants where userid=$id";
 $result=mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 $total_posts=$data['total_posts'];
@@ -161,13 +161,13 @@ $email=$data['email'];
             if(isset($_SESSION['sign-in-sign-out'])){
 
                 echo ' <div class="card-footer">
-             <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectProfile=1">
+             <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectEdit=profile.php">
                  <ion-icon size="large" name="create-outline"></ion-icon>
              </a>
              <a class="rounded-button" href="deletePlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirectProfile=1">
                  <ion-icon size="large" name="trash-outline"></ion-icon>
              </a>
-               <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=1">
+               <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=profile.php">
                    <ion-icon size="large" name="eye-outline"></ion-icon>
                </a>
                 </div>';
@@ -252,7 +252,7 @@ $email=$data['email'];
                     if(isset($_SESSION['sign-in-sign-out'])){
 
                         echo ' <div class="card-footer">
-               <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=1">
+               <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' & redirect=profile.php">
                    <ion-icon size="large" name="eye-outline"></ion-icon>
                </a>
                <a class="rounded-button-Add" href="remove.php? plant_id='.$plant_id.'">
