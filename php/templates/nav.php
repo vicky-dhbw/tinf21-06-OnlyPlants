@@ -71,7 +71,7 @@ if(isset($_SESSION['type'])){
         <ul class="nav_links">
             <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
             <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
-            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Contents</a></li>
+            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Plants</a></li>
             <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a></li>
 
             <li><a class="" href="<?php
@@ -104,7 +104,7 @@ if(isset($_SESSION['type'])){
                         <a class="nav-link <?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Contents</a>
+                        <a class="nav-link <?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Plants</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a>

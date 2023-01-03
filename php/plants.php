@@ -63,7 +63,7 @@ if (isset($_SESSION['alert'])) {
             background-size: cover;
         }
         .layer2 {
-            background-image: url("../assets/images/greenWave8.svg");
+
         }
         .filter-div{
             background-color:#C0DDB3;
@@ -125,13 +125,14 @@ if (isset($_SESSION['alert'])) {
             ?>
         </div>
 
+
         <div class="container my-3">
             <h1 class="explore">Explore Plants</h1>
         </div>
 
         <div class="container my-5 shadow-lg p-2">
 
-            <h1>Filter/Sorter</h1>
+            <h2>Filter/Sorter</h2>
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
@@ -139,7 +140,7 @@ if (isset($_SESSION['alert'])) {
                             Filter plants
                         </button>
                     </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse filter-div p-2" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div id="flush-collapseOne" class="accordion-collapse collapse filter-div p-4" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                         <table id="table1">
                             <tr>
                                 <th>
@@ -223,9 +224,9 @@ if (isset($_SESSION['alert'])) {
                             Sort Plants
                         </button>
                     </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse filter-div2 p-2" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse filter-div2 p-4" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                         <form method="get">
-                            <h1 class="h1">Plant Sorter</h1>
+                            <h2 class="h1">Plant Sorter</h2>
                             <div class="row">
                                 <div class="col">
                                     <div class="d-flex align-items-start flex-column mb-3">

@@ -34,7 +34,7 @@ $profile="profile.php";
 </head>
 <style>
     .premCont {
-        background: #AFE1BD;
+        background: #A6E1A8;
         padding-left: 60px;
 
     }
