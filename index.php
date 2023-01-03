@@ -107,7 +107,7 @@ $number=0;
 </div>
 <section class="vh-50" style="background-color: #A6E1A8;">
 
-    <div class="container py-5 h-100">
+    <div class="container py-5 h-50">
         <div class="row d-flex align-items-center h-100">
             <div class="col col-lg-6 mb-4 mb-lg-0">
                 <figure class="text-center bg-white py-5 px-4 shadow-lg" style="border-radius: .75rem;">
