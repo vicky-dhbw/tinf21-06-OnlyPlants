@@ -20,6 +20,11 @@ $profile="profile.php";
 $user=$_SESSION['id'][0];
 $username=$_SESSION['user'];
 
+$isPremium=0;
+if(isset($_GET['premiumPlant'])){
+    $isPremium=1;
+}
+
 if(isset($_POST['submit'])) {
     $name = $_POST['plant_name'];
     $type = $_POST['type'];
@@ -39,7 +44,7 @@ if(isset($_POST['submit'])) {
     if (in_array($file_ext, $extension)) {
         $upload_image = '../assets/images/' . $image_filename;
         move_uploaded_file($image_file_temp, $upload_image);
-        $sql = "insert into plants(userid,username,name,type,category,color,age,height,url,isPremium) values ('$user','$username','$name','$type','$category','$color','$age','$height','$upload_image',0)";
+        $sql = "insert into plants(userid,username,name,type,category,color,age,height,url,isPremium) values ('$user','$username','$name','$type','$category','$color','$age','$height','$upload_image','$isPremium')";
         $result = mysqli_query($connection, $sql);
         if ($result) {
             header("Location: plants.php");

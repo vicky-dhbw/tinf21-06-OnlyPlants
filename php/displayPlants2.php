@@ -39,7 +39,7 @@ include "connection.php";
         </div>
     <?php }
 
-    $sql="select * from plants where isPremium=0";
+    $sql="select * from plants where isPremium=1";
     $result=mysqli_query($connection,$sql);
 
     while ($row=mysqli_fetch_assoc($result)) {
@@ -76,10 +76,10 @@ include "connection.php";
                     <p class="p-0.5"><strong>Height:</strong> '.$height.' metres</p>
                     <p class="p-0.5"><strong>Premium:</strong> '.$showPremiumLabel.'</p>
                 </div>'?>
-    <?php
-    if(isset($_SESSION['sign-in-sign-out'])){
+        <?php
+        if(isset($_SESSION['sign-in-sign-out'])){
 
-        echo ' <div class="card-footer">
+            echo ' <div class="card-footer">
               <a class="rounded-button2" href="editPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.' ">
                  <ion-icon size="large" name="create-outline"></ion-icon>
              </a>
@@ -93,15 +93,15 @@ include "connection.php";
                  <ion-icon size="large" name="add-outline"></ion-icon>
              </a>
               </div>';
-    }else{
-        echo ' <div class="card-footer">
+        }else{
+            echo ' <div class="card-footer">
              <a class="rounded-buttonView" href="viewPlant.php? plant_id='.$plant_id.' & plant_user='.$plant_user.'">
                  <ion-icon size="large" name="eye-outline"></ion-icon>
              </a>
               </div>';
-    }
+        }
         ?>
-    <?php echo '  </div>
+        <?php echo '  </div>
            
         </div>';}
 
