@@ -50,7 +50,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <form method="get" class="f1" action="plants.php">
+                            <form method="get" class="f1" action="premiumContent.php">
                                 <label class="c1">category:
                                     <select name="category" class="c2">
                                         <option value="none"> none </option>
@@ -126,7 +126,7 @@
                 </button>
             </h2>
             <div id="flush-collapseTwo" class="accordion-collapse collapse filter-div2 p-4" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                <form method="get">
+                <form method="get" action="premiumContent.php">
                     <h2 class="h1">Plant Sorter</h2>
                     <div class="row">
                         <div class="col">

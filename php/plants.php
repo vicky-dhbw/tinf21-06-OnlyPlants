@@ -331,6 +331,7 @@ if (isset($_SESSION['alert'])) {
                 $age_ = $_GET['age'];
                 $color_=$_GET['color'];
                 $counter=0;
+                $prem=0;
 
 
                 include "connection.php";
@@ -349,6 +350,14 @@ if (isset($_SESSION['alert'])) {
                     $username=$row['username'];
                     $plant_id=$row['id'];
                     $plant_user=$row['userid'];
+                    $premiumPlant_=$row['isPremium'];
+                    $showPremiumLabel="";
+                    if($premiumPlant_!=1){
+                        $showPremiumLabel_="No";
+                    }else{
+                        $showPremiumLabel_="Yes";
+                        continue;
+                    }
 
                     echo '
     <div class="card-grid">
@@ -364,6 +373,7 @@ if (isset($_SESSION['alert'])) {
                     <p class="p-0.5"><strong>Color:</strong> '.$color.'</p>
                     <p class="p-0.5"><strong>Age:</strong> '.$age.' weeks</p>
                     <p class="p-0.5"><strong>Height:</strong> '.$height.' metres</p>
+                    <p class="p-0.5"><strong>Premium:</strong> '.$showPremiumLabel_.'</p>
                 </div>'?>
                     <?php
                     if(isset($_SESSION['sign-in-sign-out'])){
@@ -438,6 +448,14 @@ if (isset($_SESSION['alert'])) {
                     $plant_id=$row['id'];
                     $plant_user=$row['userid'];
                     $likes=$row['likes'];
+                        $premiumPlant_=$row['isPremium'];
+                        $showPremiumLabel="";
+                        if($premiumPlant_!=1){
+                            $showPremiumLabel_="No";
+                        }else{
+                            $showPremiumLabel_="Yes";
+                            continue;
+                        }
                     if($likes==NULL){
                         $likes=0;
                     }
@@ -461,6 +479,7 @@ if (isset($_SESSION['alert'])) {
                     <p class="p-0.5"><strong>Likes:</strong> '.$likes.'</p>
                     <p class="p-0.5"><strong>Views:</strong> '.$views.'</p>
                     <p class="p-0.5"><strong>posted on:</strong> '.$created_.'</p>
+                    <p class="p-0.5"><strong>Premium:</strong> '.$showPremiumLabel_.'</p>
                 </div>'?>
             <?php
             if(isset($_SESSION['sign-in-sign-out'])){

@@ -33,13 +33,13 @@
             $username=$row['username'];
             $plant_id=$row['id'];
             $plant_user=$row['userid'];
-            $premiumPlant=$row['isPremium'];
+            $premiumPlant_=$row['isPremium'];
             $showPremiumLabel="";
-            if($premiumPlant==0){
-                $showPremiumLabel="No";
-                continue;
+            if($premiumPlant_!=0){
+                $showPremiumLabel_="Yes";
             }else{
-                $showPremiumLabel="Yes";
+                $showPremiumLabel_="No";
+                continue;
             }
 
             echo '
@@ -56,7 +56,7 @@
                     <p class="p-0.5"><strong>Color:</strong> '.$color.'</p>
                     <p class="p-0.5"><strong>Age:</strong> '.$age.' weeks</p>
                     <p class="p-0.5"><strong>Height:</strong> '.$height.' metres</p>
-                    <p class="p-0.5"><strong>Premium:</strong> '.$showPremiumLabel.'</p>
+                    <p class="p-0.5"><strong>Premium:</strong> '.$showPremiumLabel_.'</p>
                 </div>'?>
             <?php
             if(isset($_SESSION['sign-in-sign-out'])){
