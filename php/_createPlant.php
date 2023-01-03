@@ -19,10 +19,11 @@ $admin_page="adminPage.php";
 $profile="profile.php";
 $user=$_SESSION['id'][0];
 $username=$_SESSION['user'];
-
+$redirectTo="plants.php";
 $isPremium=0;
 if(isset($_GET['premiumPlant'])){
     $isPremium=1;
+    $redirectTo="premiumContent.php";
 }
 
 if(isset($_POST['submit'])) {
@@ -47,7 +48,7 @@ if(isset($_POST['submit'])) {
         $sql = "insert into plants(userid,username,name,type,category,color,age,height,url,isPremium) values ('$user','$username','$name','$type','$category','$color','$age','$height','$upload_image','$isPremium')";
         $result = mysqli_query($connection, $sql);
         if ($result) {
-            header("Location: plants.php");
+            header("Location: $redirectTo");
         } else {
             echo '<div class="alert alert-danger" role="alert">
                   <strong>Something is fishy! We could not create your plant!</strong>
