@@ -105,7 +105,15 @@ $number=0;
                 <h1 class="plant p-3">Plant a plant today!</h1>
                 <a href="php/plants.php"><button type="button" class="btn btn-dark myButton shadow">Explore</button></a>
 
-                <p class="my-4"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, commodi culpa deserunt dolores ducimus eaque est fuga fugiat hic itaque minima nemo, nesciunt nihil omnis pariatur repellendus sapiente vel veniam.</i></p>
+                <p class="my-4"><i>
+                        Plants play a vital role in maintaining the balance of our planet's ecosystems.
+                        They are responsible for producing oxygen, sequestering carbon dioxide, and providing
+                        habitat and food for a wide range of species. In addition, plants have been used for
+                        centuries as a source of medicine and have the potential to provide solutions to many
+                        of the health challenges facing society today. By supporting and conserving plants, we
+                        can not only improve the health and well-being of our planet, but also ourselves. It is
+                        therefore important that we prioritize the protection and preservation of plants in our daily lives.
+                    </i></p>
             </div>
         </div>
     </div>
