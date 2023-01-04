@@ -1,15 +1,65 @@
-<?php
-session_start();
-if(isset($_SESSION['sign-in-sign-out'])){
-    $currentUserID=$_SESSION['id'];
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    include "connection.php";
-    $sql="update users set isPremium=1 where id='$currentUserID'";
-    $result = mysqli_query($connection, $sql);
-    if($result){
-        header("Location: premiumContent.php");
+    <link rel="stylesheet" href="../css/signin.css">
+    <title>Purchase premium!</title>
+</head>
+<style>
+    .container{
+        margin-top: 15rem;
     }
-}
-else{
-    header("Location: register.php");
-}
+</style>
+<body>
+<section class="Form my-4 mx-5">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-5">
+                <img src="../assets/images/plant.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-7 px-5 pt-5">
+                <img src="../assets/images/Logo.png" alt="logo" height="100" width="250">
+                <h4>Purchase premium!</h4>
+                <form action="process-premium.php" method="post">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" name="iban" placeholder="enter your IBAN" class="form-control my-2 p-2" id="ibanInput" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <label>
+                                <input type="checkbox" name="acceptDirectDebit" value="accept" required>
+                                I accept the direct debit payment method
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn1 mt-3 mb-3">purchase now</button>
+                        </div>
+                    </div>
+                    <p>Already have an account? <a href="signin.php">sign in here</a></p>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!-- a small change from example branch -->
