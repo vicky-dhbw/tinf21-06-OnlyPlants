@@ -74,7 +74,7 @@
                         <div class="col-lg-7">
                             <label>
                                 <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-                                I have read the <a href="privacyPolicy.php">privacy policy</a> and agree to the processing of my data according to the privacy policy.
+                                I have read the <a href="legals/privacyPolicy.php">privacy policy</a> and agree to the processing of my data according to the privacy policy.
                             </label>
                         </div>
                     </div>
