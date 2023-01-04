@@ -21,7 +21,12 @@ $profile="php/profile.php";
 $imprint = "php/legals/imprint.php";
 $privacyPolicy ="php/legals/privacyPolicy.php";
 $termsOfUse ="php/legals/termsOfUse.php";
-$currentUser=$_SESSION['user'];
+
+$currentUser="";
+if(isset($_SESSION['user'])){
+    $currentUser=$_SESSION['user'];
+}
+
 $number=0;
 
 ?>
@@ -32,11 +37,12 @@ $number=0;
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <title>Only Plants</title>
+    <link rel="icon" href="favicon.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>OnlyPlants</title>
-    <link rel="icon" href="favicon.png">
+
+
     <!--This link has to be in the head for bootstrap-->
 </head>
 <body>
