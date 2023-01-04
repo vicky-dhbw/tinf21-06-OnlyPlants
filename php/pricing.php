@@ -139,7 +139,7 @@ $profile="profile.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Like or Dislike Plants</li>
                             </ul>
                             <div class="d-grid">
-                                <a href="signin.php" class="btn btn-success text-uppercase">Sign in</a>
+                                <a href="register.php" class="btn btn-success text-uppercase">Sign in</a>
                                 <br>
                             </div>
                             <img src="../assets/images/sapling.jpg";>
