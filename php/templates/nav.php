@@ -18,7 +18,8 @@ if(isset($_SESSION['type'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap demo</title>
+    <title>Only Plants</title>
+
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
