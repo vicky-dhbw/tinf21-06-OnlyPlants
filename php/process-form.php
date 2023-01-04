@@ -6,7 +6,8 @@ $password = '';
 $name=$_POST["name"];
 $email=$_POST["email"];
 $password=$_POST["password"];
-$type=$_POST["type"];
+$premium=$_POST["type"]=="premium"?1:0;
+$iban=$_POST["iban"];
 
 /*
 echo "$name"."<br>";
@@ -25,7 +26,7 @@ try {
 }
 if(strlen($name)!=0&&strlen($password)!=0&&strlen($email)!=0){
 
-    $sql="INSERT INTO users(name,email,password,type,isPremium) VALUES ('$name','$email','$password','$type',0)";
+    $sql="INSERT INTO users(name,email,password,type,isPremium, iban) VALUES ('$name','$email','$password','user',$premium, '$iban')";
     $conn->exec($sql);
     //echo "data taken";
     $name=null;

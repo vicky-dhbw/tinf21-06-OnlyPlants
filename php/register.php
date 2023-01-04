@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../css/signin.css">
-    <title>Hello, world!</title>
+    <title>Register yourself!</title>
 </head>
 <style>
     .container{
@@ -29,29 +29,55 @@
                 <form action="process-form.php" method="post">
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="text" name="name" placeholder="enter your name" class="form-control my-2 p-2">
+                            <input type="text" name="name" placeholder="enter your name" class="form-control my-2 p-2" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="text" name="email" placeholder="enter your email" class="form-control my-2 p-2">
+                            <input type="text" name="email" placeholder="enter your email" class="form-control my-2 p-2" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="password" name="password" placeholder="******" class="form-control my-2 p-2">
+                            <input type="password" name="password" placeholder="******" class="form-control my-2 p-2" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
                             <label>
                                 <input type="radio" name="type" value="user" checked>
-                                user
+                                default (10$/month)
+                            </label>
+                        </div>
+                        <div class="col-lg-7">
+                            <label>
+                                <input type="radio" name="type" value="premium">
+                                premium (49$/month)
                             </label>
                         </div>
                     </div>
-
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="text" name="iban" placeholder="enter your IBAN" class="form-control my-2 p-2" id="ibanInput" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <label>
+                                <input type="checkbox" name="acceptDirectDebit" value="accept" required>
+                                I accept the direct debit payment method
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <label>
+                                <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                                I have read the <a href="privacyPolicy.php">privacy policy</a> and agree to the processing of my data according to the privacy policy.
+                            </label>
+                        </div>
+                    </div>
                     <div class="form-row">
                         <div class="col-lg-7">
                             <button type="submit" class="btn1 mt-3 mb-3">register now</button>
@@ -61,6 +87,8 @@
                 </form>
             </div>
         </div>
+
+
 
     </div>
 </section>

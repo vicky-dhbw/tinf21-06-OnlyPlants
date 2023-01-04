@@ -87,6 +87,7 @@ $termsOfUse ="legals/termsOfUse.php";
         transition: all 0.2s;
     }
 
+
     /* Hover Effects on Card */
 
     @media (min-width: 992px) {
@@ -142,8 +143,13 @@ $termsOfUse ="legals/termsOfUse.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Like or Dislike Plants</li>
                             </ul>
                             <div class="d-grid">
-                                <a href="signin.php" class="btn btn-success text-uppercase">Sign in</a>
-                                <br>
+                                <?php if(isset($_SESSION['sign-in-sign-out'])):?>
+                                    <a href="#" hidden class="btn btn-success text-uppercase">Register</a>
+                                    <br>
+                                <?php else :?>
+                                    <a href="register.php" class="btn btn-success text-uppercase">Register</a>
+                                    <br>
+                                <?php endif ?>
                             </div>
                             <img src="../assets/images/sapling.jpg";>
                         </div>
@@ -165,8 +171,13 @@ $termsOfUse ="legals/termsOfUse.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Look at Premium Content</li>
                             </ul>
                             <div class="d-grid">
-                                <a href="premiumMembership.php" class="btn btn-success text-uppercase">Get Premium</a>
-                                <br>
+                                <?php if(isset($_SESSION['sign-in-sign-out'])):?>
+                                    <a href="premiumMembership.php" class="btn btn-success text-uppercase">Get Premium</a>
+                                    <br>
+                                <?php else :?>
+                                    <a href="register.php" class="btn btn-success text-uppercase">Get Premium</a>
+                                    <br>
+                                <?php endif ?>
                             </div>
                             <img src="../assets/images/plantPricing.jpg">
                         </div>

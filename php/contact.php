@@ -18,9 +18,6 @@ $controlButtonPage='controlButton.php';
 $currentPage='contact';
 $admin_page="adminPage.php";
 $profile="profile.php";
-$imprint = "legals/imprint.php";
-$privacyPolicy ="legals/privacyPolicy.php";
-$termsOfUse ="legals/termsOfUse.php";
 $number=0;
 ?>
 <!doctype html>
@@ -33,6 +30,7 @@ $number=0;
     <title>Contact</title>
     <link rel="icon" href="../favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <?php include __DIR__.'/templates/nav.php'; ?>
@@ -50,10 +48,10 @@ $number=0;
         width: 20vh;
         height: auto;
     }
-
 </style>
 
 <div class="container mb-5 myCont-">
+
     <div class="row align-items-center justify-content-start">
         <div class="col-lg-2 col-md-10 col-sm-8 col-xs-6 myCol-">
             <div id="animContainer" class="anim">
@@ -67,6 +65,7 @@ $number=0;
     </div>
     <div class="form-container shadow p-4">
         <form action="" method="post">
+            <p>Please read our <a href="privacyPolicy.php">privacy policy</a> before filling out the form.</p>
             <div class="form-group mb-4">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control my-2" id="name" name="name" required>
@@ -81,7 +80,7 @@ $number=0;
             </div>
             <div class="form-group mb-4">
                 <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-                <label for="privacy-policy">I have read the <a href="<?php echo $privacyPolicy;?>">privacy policy</a> and agree to the processing of my data according to the privacy policy.</label>
+                <label for="privacy-policy">I have read the <a href="privacyPolicy.php">privacy policy</a> and agree to the processing of my data according to the privacy policy.</label>
             </div>
             <button type="submit" class="btn btn-dark">Send message</button>
             <?php
@@ -112,29 +111,10 @@ $number=0;
             ?>
         </form>
     </div>
+
 </div>
 
-
-
-    <?php
-    /*
-    echo "STATUS: ".$sign_in_sign_out."<br>";
-    echo "<br>";
-    echo "USER ".$is_signed_in;
-    echo "<br>";
-    if(isset($_SESSION['user'])){echo "USER: ".$_SESSION['user']."<br>";}
-    if(isset($_SESSION['id'])){echo "ID: ".$_SESSION['id']."<br>";}
-    if(isset($_SESSION['type'])){echo "TYPE: ".$_SESSION['type']."<br>";}
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    if(isset($_SESSION['id'])){
-        $number=$_SESSION['id'];}
-    echo $number;*/
-    include "templates/footer.php";
-    ?>
-
-
+<?php include "templates/footer.php"?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
