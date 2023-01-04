@@ -17,6 +17,7 @@ $controlButtonPage='controlButton.php';
 $currentPage='plants';
 $admin_page="adminPage.php";
 $profile="profile.php";
+
 $user=$_SESSION['id'][0];
 $username=$_SESSION['user'];
 $redirectTo="plants.php";

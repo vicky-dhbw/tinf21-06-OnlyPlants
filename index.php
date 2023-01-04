@@ -21,7 +21,12 @@ $profile="php/profile.php";
 $imprint = "php/legals/imprint.php";
 $privacyPolicy ="php/legals/privacyPolicy.php";
 $termsOfUse ="php/legals/termsOfUse.php";
-$currentUser=$_SESSION['user'];
+
+$currentUser="";
+if(isset($_SESSION['user'])){
+    $currentUser=$_SESSION['user'];
+}
+
 $number=0;
 
 ?>
