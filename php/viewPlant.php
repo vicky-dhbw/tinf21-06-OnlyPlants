@@ -18,7 +18,9 @@ $home_page = "../index.php";
 $signin_page = "signin.php";
 $controlButtonPage = 'controlButton.php';
 $profile='profile.php';
-
+$imprint = "legals/imprint.php";
+$privacyPolicy ="legals/privacyPolicy.php";
+$termsOfUse ="legals/termsOfUse.php";
 include "templates/nav.php";
 include "connection.php";
 

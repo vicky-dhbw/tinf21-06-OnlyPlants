@@ -18,8 +18,7 @@ if(isset($_SESSION['type'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Only Plants</title>
-
+    <title>Nav</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
@@ -64,6 +63,7 @@ if(isset($_SESSION['type'])){
 </style>
 <body>
 
+
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -72,7 +72,7 @@ if(isset($_SESSION['type'])){
         <ul class="nav_links">
             <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
             <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
-            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Plants</a></li>
+            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Content</a></li>
             <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a></li>
 
             <li><a class="" href="<?php

@@ -18,6 +18,9 @@ $controlButtonPage='controlButton.php';
 $currentPage='contact';
 $admin_page="adminPage.php";
 $profile="profile.php";
+$imprint = "legals/imprint.php";
+$privacyPolicy ="legals/privacyPolicy.php";
+$termsOfUse ="legals/termsOfUse.php";
 $number=0;
 ?>
 <!doctype html>
@@ -65,7 +68,6 @@ $number=0;
     </div>
     <div class="form-container shadow p-4">
         <form action="" method="post">
-            <p>Please read our <a href="privacyPolicy.php">privacy policy</a> before filling out the form.</p>
             <div class="form-group mb-4">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control my-2" id="name" name="name" required>
@@ -80,7 +82,7 @@ $number=0;
             </div>
             <div class="form-group mb-4">
                 <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-                <label for="privacy-policy">I have read the <a href="privacyPolicy.php">privacy policy</a> and agree to the processing of my data according to the privacy policy.</label>
+                <label for="privacy-policy">I have read the <a href="<?php echo $privacyPolicy; ?>">privacy policy</a> and agree to the processing of my data according to the privacy policy.</label>
             </div>
             <button type="submit" class="btn btn-dark">Send message</button>
             <?php

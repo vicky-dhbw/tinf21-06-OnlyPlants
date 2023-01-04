@@ -17,7 +17,9 @@ $controlButtonPage = 'controlButton.php';
 $currentPage = 'plants';
 $admin_page = "adminPage.php";
 $profile = "profile.php";
-
+$imprint = "legals/imprint.php";
+$privacyPolicy ="legals/privacyPolicy.php";
+$termsOfUse ="legals/termsOfUse.php";
 $showAlert = 0;
 if (isset($_SESSION['alert'])) {
     $showAlert = $_SESSION['alert'];

@@ -16,7 +16,9 @@ $home_page="../index.php";
 $signin_page="signin.php";
 $controlButtonPage='controlButton.php';
 $admin_page="adminPage.php";
-
+$imprint = "legals/imprint.php";
+$privacyPolicy ="legals/privacyPolicy.php";
+$termsOfUse ="legals/termsOfUse.php";
 $profile="#";
 
 $id="";
