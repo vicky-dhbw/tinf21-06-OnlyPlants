@@ -117,7 +117,6 @@ $termsOfUse ="legals/termsOfUse.php";
                             <hr>
                             <ul class="fa-ul">
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Look at Plants</li>
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Can't write Comments</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Can't create new Plants</li>
                             </ul>
                             <div class="d-grid">
@@ -137,7 +136,6 @@ $termsOfUse ="legals/termsOfUse.php";
                             <hr>
                             <ul class="fa-ul">
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Look at Plants</li>
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Can write Comments</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Can create a new Plant</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Delete created Plants</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Like or Dislike Plants</li>
@@ -164,7 +162,6 @@ $termsOfUse ="legals/termsOfUse.php";
                             <hr>
                             <ul class="fa-ul">
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Look at Plants</li>
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Can write Comments</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Can create a new Plant</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Delete created Plants</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Like or Dislike Plants</li>
