@@ -99,7 +99,7 @@ $sql="select * from plants where username='Admin' and name='Venus flytrap' and h
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Venus flytrap";
     $type='cactus-succulents';
@@ -118,7 +118,7 @@ $sql="select * from plants where username='Admin' and name='Cactus' and height=3
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Cactus";
     $type='cactus-succulents';
@@ -137,7 +137,7 @@ $sql="select * from plants where username='Admin' and name='Wheat' and height=8"
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Wheat";
     $type='annuals';
@@ -156,7 +156,7 @@ $sql="select * from plants where username='Admin' and name='Weed' and height=5";
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Weed";
     $type='herbs';
@@ -175,7 +175,7 @@ $sql="select * from plants where username='Admin' and name='Coconut' and height=
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Coconut";
     $type='trees';
@@ -194,7 +194,7 @@ $sql="select * from plants where username='Admin' and name='Sunflower' and heigh
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Sunflower";
     $type='shrubs';
@@ -214,7 +214,7 @@ $sql="select * from plants where username='Admin' and name='Hibiscus' and height
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Hibiscus";
     $type='orchids';
@@ -234,7 +234,7 @@ $sql="select * from plants where username='Admin' and name='Mangrove' and height
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Mangrove";
     $type='perennials';
@@ -253,7 +253,7 @@ $sql="select * from plants where username='Admin' and name='Giant redwood' and h
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Giant redwood";
     $type='trees';
@@ -273,7 +273,7 @@ $sql="select * from plants where username='Admin' and name='Pampas grass' and he
 $result= mysqli_query($connection,$sql);
 $data=mysqli_fetch_assoc($result);
 
-if($data['id']==NULL){
+if($data==NULL){
     $username='Admin';
     $name="Pampas grass";
     $type='ornamental grasses';
