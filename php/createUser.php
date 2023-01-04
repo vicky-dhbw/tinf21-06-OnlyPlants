@@ -29,12 +29,15 @@ if(isset($_POST['submit'])){
     $name=$_POST['name'];
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $type=$_POST['type'];
-
-    if(isset($_GET['admin'])){
-        $sql="insert into users (name,email,password,type,isPremium) values('$name','$email','$password','$type',1)";
-    }else{
-        $sql="insert into users (name,email,password,type,isPremium) values('$name','$email','$password','$type',0)";
+    $type="";
+    if(isset($_POST['type'])){
+        if($_POST['type']=="admin"){
+            $type="admin";
+            $sql="insert into users (name,email,password,type,isPremium) values('$name','$email','$password','$type',1)";
+        }else{
+            $type="user";
+            $sql="insert into users (name,email,password,type,isPremium) values('$name','$email','$password','$type',0)";
+        }
     }
 
 
@@ -93,11 +96,11 @@ if(isset($_POST['submit'])){
         <label for="radios">User Type</label>
         <div class="form-row my-2 mb-4" id="radios">
                 <label>
-                    <input type="radio" name="type" value="user" checked>
+                    <input type="radio" name="type" value="user">
                     user
                 </label>
                 <label>
-                    <input type="radio" name="admin" value="admin">
+                    <input type="radio" name="type" value="admin">
                     admin
                 </label>
         </div>
