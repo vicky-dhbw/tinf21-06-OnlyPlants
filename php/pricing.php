@@ -120,7 +120,7 @@ $termsOfUse ="legals/termsOfUse.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Can't write Comments</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Can't create new Plants</li>
                             </ul>
-                            <div class="d-grid">
+                            <div class="d-grid p-3">
                                 <a href="../index.php" class="btn btn-success text-uppercase">Go to Main Page</a>
                                 <br>
                             </div>
@@ -142,7 +142,7 @@ $termsOfUse ="legals/termsOfUse.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Delete created Plants</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Like or Dislike Plants</li>
                             </ul>
-                            <div class="d-grid">
+                            <div class="d-grid p-3">
                                 <?php if(isset($_SESSION['sign-in-sign-out'])):?>
                                     <a href="#" hidden class="btn btn-success text-uppercase">Register</a>
                                     <br>
@@ -170,7 +170,7 @@ $termsOfUse ="legals/termsOfUse.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Like or Dislike Plants</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Look at Premium Content</li>
                             </ul>
-                            <div class="d-grid">
+                            <div class="d-grid p-3">
                                 <?php if(isset($_SESSION['sign-in-sign-out'])):?>
                                     <a href="premiumMembership.php" class="btn btn-success text-uppercase">Get Premium</a>
                                     <br>
