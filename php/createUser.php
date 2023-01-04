@@ -31,8 +31,13 @@ if(isset($_POST['submit'])){
     $password=$_POST['password'];
     $type=$_POST['type'];
 
+    if(isset($_GET['admin'])){
+        $sql="insert into users (name,email,password,type,isPremium) values('$name','$email','$password','$type',1)";
+    }else{
+        $sql="insert into users (name,email,password,type,isPremium) values('$name','$email','$password','$type',0)";
+    }
 
-    $sql="insert into users (name,email,password,type,isPremium) values('$name','$email','$password','$type',0)";
+
     $result=mysqli_query($connection,$sql);
 
     if($result){
@@ -92,7 +97,7 @@ if(isset($_POST['submit'])){
                     user
                 </label>
                 <label>
-                    <input type="radio" name="type" value="admin">
+                    <input type="radio" name="admin" value="admin">
                     admin
                 </label>
         </div>
