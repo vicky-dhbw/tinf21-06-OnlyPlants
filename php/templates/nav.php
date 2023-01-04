@@ -18,7 +18,7 @@ if(isset($_SESSION['type'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap demo</title>
+    <title>Nav</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
@@ -63,16 +63,41 @@ if(isset($_SESSION['type'])){
 </style>
 <body>
 
+<script>
+    function showPlantImageDuringTransition() {
+        var plantImage = new Image();
+
+        plantImage.src = "https://media.istockphoto.com/id/470604022/de/foto/apple-tree.jpg?s=612x612&w=0&k=20&c=m8YL5k6OsB3zY0Zxtr0J3jzDQbCJOwhHnN-Q4OPecCk=";
+
+        plantImage.onload = function() {
+            document.body.appendChild(plantImage);
+        }
+
+        // Entferne das Bild, sobald die neue Seite geladen wurde
+        window.addEventListener("load", function() {
+            document.body.removeChild(plantImage);
+        });
+    }
+
+
+    window.location.href = "<?php $plants_page?>";
+    window.location.href = "<?php $premiumContent_page?>";
+</script>
+
+
+
+
+
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="<?php echo $Logo?>" width="180" height="55" class="d-inline-block align-text-top">
         </a>
         <ul class="nav_links">
-            <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>">Home</a></li>
-            <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>">Plants</a></li>
-            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>">Premium Plants</a></li>
-            <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>">Contact</a></li>
+            <li><a class="<?php echo $currentPage == 'index' ? 'active' : ''?>" href="<?php echo $home_page; ?>" onclick="showPlantImageDuringTransition();">Home</a></li>
+            <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href="<?php echo $plants_page; ?>" onclick="showPlantImageDuringTransition();">Plants</a></li>
+            <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>" onclick="showPlantImageDuringTransition();">Premium Content</a></li>
+            <li><a class="<?php echo $currentPage == 'contact' ? 'active' : ''?>" href="<?php echo $contact_page;?>" onclick="showPlantImageDuringTransition();">Contact</a></li>
 
             <li><a class="" href="<?php
                 if(strcmp($type,"admin")==0){echo $admin_page;$show="Admin";}

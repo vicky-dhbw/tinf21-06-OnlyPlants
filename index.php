@@ -18,7 +18,9 @@ $controlButtonPage='php/controlButton.php';
 $currentPage='index';
 $admin_page="php/adminPage.php";
 $profile="php/profile.php";
-
+$imprint = "php/legals/imprint.php";
+$privacyPolicy ="php/legals/privacyPolicy.php";
+$termsOfUse ="php/legals/termsOfUse.php";
 $currentUser=$_SESSION['user'];
 $number=0;
 
@@ -38,7 +40,12 @@ $number=0;
     <!--This link has to be in the head for bootstrap-->
 </head>
 <body>
+
+
+
 <?php include __DIR__."/php/templates/nav.php"; ?>
+
+
 
 <style>
 

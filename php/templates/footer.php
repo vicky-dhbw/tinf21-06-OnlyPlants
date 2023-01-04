@@ -5,8 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Navbar</title>
-
+    <title>Footer</title>
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="../css/footer.css">
 </head>
@@ -19,29 +18,31 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <h6>About</h6>
-                <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+                <p>
+                OnlyPlants is an online platform for plant lovers to buy and sell unique plants
+                from around the world. Our team of experienced gardeners and plant enthusiasts are
+                dedicated to the care and propagation of plants. We offer a platform for plant
+                lovers to share their passion and make the world a greener place. We look forward
+                to helping you expand your collection.
+                </p>
             </div>
 
             <div class="col-xs-6 col-md-3">
                 <h6>Categories</h6>
                 <ul class="footer-links">
-                    <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-                    <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-                    <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-                    <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-                    <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-                    <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                    <li><a class="<?php echo $currentPage == 'plants' ? 'active' : ''?>" href= "<?php echo $plants_page; ?>" onclick="showPlantImageDuringTransition();">Plants</a></li>
+                    <li><a class="<?php echo $currentPage == 'premiumContent' ? 'active' : ''?>" href="<?php echo $premiumContent_page;?>" onclick="showPlantImageDuringTransition();">Premium Plants</a></li>
                 </ul>
             </div>
 
             <div class="col-xs-6 col-md-3">
                 <h6>Quick Links</h6>
                 <ul class="footer-links">
-                    <li><a href="http://scanfcode.com/about/">About Us</a></li>
-                    <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-                    <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-                    <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-                    <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                   <!-- <li><a href="php/aboutUs.php">About Us</a></li> -->
+                    <li><a href="<?php echo $contact_page?>">Contact Us</a></li>
+                    <li><a href="<?php echo $imprint?>">Imprint</a></li>
+                    <li><a href="<?php echo $privacyPolicy?>">Privacy Policy</a></li>
+                    <li><a href="<?php echo $termsOfUse?>">Terms of use</a></li>
                 </ul>
             </div>
         </div>

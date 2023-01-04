@@ -19,6 +19,9 @@ $controlButtonPage='controlButton.php';
 $currentPage='plants';
 $admin_page="adminPage.php";
 $profile="profile.php";
+$imprint = "legals/imprint.php";
+$privacyPolicy ="legals/privacyPolicy.php";
+$termsOfUse ="legals/termsOfUse.php";
 ?>
 <!doctype html>
 <html lang="en">
